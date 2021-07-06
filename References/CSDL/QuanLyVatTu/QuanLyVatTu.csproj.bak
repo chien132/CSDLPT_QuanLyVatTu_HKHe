@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C5504EC-01BD-49B7-B920-852C6B9B1D5E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyVatTu</RootNamespace>
+    <AssemblyName>QuanLyVatTu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1" />
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1" />
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.12\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="DSListNVTrung.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSListNVTrung.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FormChiTietNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FormChiTietNhapXuat.Designer.cs">
+      <DependentUpon>FormChiTietNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FormHoatDongNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FormHoatDongNhanVien.Designer.cs">
+      <DependentUpon>FormHoatDongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FormTongHopNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FormTongHopNhapXuat.Designer.cs">
+      <DependentUpon>FormTongHopNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportChitietNhapXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportChitietNhapXuat.Designer.cs">
+      <DependentUpon>ReportChitietNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportDDHChuaLapPN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportDDHChuaLapPN.Designer.cs">
+      <DependentUpon>ReportDDHChuaLapPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportDSNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportDSNhanVien.Designer.cs">
+      <DependentUpon>ReportDSNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportDSVatTu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportDSVatTu.Designer.cs">
+      <DependentUpon>ReportDSVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportHoatDongNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportHoatDongNhanVien.Designer.cs">
+      <DependentUpon>ReportHoatDongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportTongHopNhapXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportTongHopNhapXuat.Designer.cs">
+      <DependentUpon>ReportTongHopNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Test.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\FormKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormKho.Designer.cs">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormNhanVien.Designer.cs">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\FormTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormTaoTaiKhoan.Designer.cs">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\FormVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormVatTu.Designer.cs">
+      <DependentUpon>FormVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLVTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PopupFormNVTrung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PopupFormNVTrung.Designer.cs">
+      <DependentUpon>PopupFormNVTrung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormCTDDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormCTDDH.Designer.cs">
+      <DependentUpon>SubFormCTDDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormCTPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormCTPN.Designer.cs">
+      <DependentUpon>SubFormCTPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormCTPX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormCTPX.Designer.cs">
+      <DependentUpon>SubFormCTPX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormDDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormDDH.Designer.cs">
+      <DependentUpon>SubFormDDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormNhanVien.Designer.cs">
+      <DependentUpon>SubFormNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormPhieuNhap.Designer.cs">
+      <DependentUpon>SubFormPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\SubFormPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\SubFormPhieuXuat.Designer.cs">
+      <DependentUpon>SubFormPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report\FormChiTietNhapXuat.resx">
+      <DependentUpon>FormChiTietNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FormHoatDongNhanVien.resx">
+      <DependentUpon>FormHoatDongNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FormTongHopNhapXuat.resx">
+      <DependentUpon>FormTongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportChitietNhapXuat.resx">
+      <DependentUpon>ReportChitietNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportDDHChuaLapPN.resx">
+      <DependentUpon>ReportDDHChuaLapPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportDSNhanVien.resx">
+      <DependentUpon>ReportDSNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportDSVatTu.resx">
+      <DependentUpon>ReportDSVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportHoatDongNhanVien.resx">
+      <DependentUpon>ReportHoatDongNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportTongHopNhapXuat.resx">
+      <DependentUpon>ReportTongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormKho.resx">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormTaoTaiKhoan.resx">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormVatTu.resx">
+      <DependentUpon>FormVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubForm\PopupFormNVTrung.resx">
+      <DependentUpon>PopupFormNVTrung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormCTDDH.resx">
+      <DependentUpon>SubFormCTDDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormCTPN.resx">
+      <DependentUpon>SubFormCTPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormCTPX.resx">
+      <DependentUpon>SubFormCTPX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormDDH.resx">
+      <DependentUpon>SubFormDDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormNhanVien.resx">
+      <DependentUpon>SubFormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormPhieuNhap.resx">
+      <DependentUpon>SubFormPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\SubFormPhieuXuat.resx">
+      <DependentUpon>SubFormPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DataSetMaster.xsc">
+      <DependentUpon>DataSetMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMaster.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMaster.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetMaster.xss">
+      <DependentUpon>DataSetMaster.xsd</DependentUpon>
+    </None>
+    <None Include="DSListNVTrung.xsc">
+      <DependentUpon>DSListNVTrung.xsd</DependentUpon>
+    </None>
+    <None Include="DSListNVTrung.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListNVTrung.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSListNVTrung.xss">
+      <DependentUpon>DSListNVTrung.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QLVTDataSet.xsc">
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLVTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLVTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLVTDataSet.xss">
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_on_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_on_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_off_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agency_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_off_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_user_96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_user_961.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create-login-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pan-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pan-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-user-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-user-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_detail_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_detail1_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_detail2_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report-dsnv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report-dsvt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\branch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\branch-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report-ctnx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report-ddh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report-tonghop.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
