@@ -31,6 +31,8 @@ namespace QLVT_DATHANG
         {
             // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes' table. You can move, or remove it, as needed.
             this.get_SubscribesTableAdapter.Fill(this.qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes);
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes' table. You can move, or remove it, as needed.
+            this.get_SubscribesTableAdapter.Fill(this.qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes);
 
         }
 
@@ -51,7 +53,7 @@ namespace QLVT_DATHANG
 
             Program.mChinhanh = cb_chi_nhanh.SelectedIndex;
             Console.WriteLine(Program.mChinhanh);
-            Program.bds_dspm = v_DS_PHANMANHBindingSource;
+            Program.bds_dspm = get_SubscribesBindingSource;
             Program.mloginDN = Program.mlogin;
             Program.passwordDN = Program.password;
             String strLenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
