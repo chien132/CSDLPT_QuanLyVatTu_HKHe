@@ -29,10 +29,8 @@ namespace QLVT_DATHANG
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes' table. You can move, or remove it, as needed.
-            this.get_SubscribesTableAdapter.Fill(this.qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes' table. You can move, or remove it, as needed.
-            this.get_SubscribesTableAdapter.Fill(this.qLVT_DATHANGDataSet_DSPhanManh1.Get_Subscribes);
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DSPhanManh.Get_Subscribes' table. You can move, or remove it, as needed.
+            this.get_SubscribesTableAdapter.Fill(this.qLVT_DATHANGDataSet_DSPhanManh.Get_Subscribes);
 
         }
 
@@ -56,7 +54,7 @@ namespace QLVT_DATHANG
             Program.bds_dspm = get_SubscribesBindingSource;
             Program.mloginDN = Program.mlogin;
             Program.passwordDN = Program.password;
-            String strLenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
+            String strLenh = "EXEC SP_THONGTINDANGNHAP '" + Program.mlogin + "'";
 
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null) return;

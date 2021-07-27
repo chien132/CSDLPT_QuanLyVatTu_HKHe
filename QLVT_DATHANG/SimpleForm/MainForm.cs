@@ -30,7 +30,7 @@ namespace QLVT_DATHANG
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            string query = "EXEC SP_DANGNHAP " + Program.mlogin;
+            string query = "EXEC SP_THONGTINDANGNHAP " + Program.mlogin;
 
             using (SqlConnection sqlConnection = new SqlConnection(Program.connstr))
             {
