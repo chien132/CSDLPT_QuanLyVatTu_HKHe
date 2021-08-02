@@ -410,11 +410,6 @@ namespace QLVT_DATHANG
         private void btnChuyenCN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             MessageBox.Show("Chức năng này chưa hoàn thành");
-            Program.nhanVienForm.Enabled = false;
-
-
-
-
         }
 
         private void btnExit_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
