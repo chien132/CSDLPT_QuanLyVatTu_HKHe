@@ -80,8 +80,8 @@ namespace QLVT_DATHANG
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             /*
-             * Để chặn tắt formMain các cờ subForm ít nhất phải 1 cái false
-             * Và subForm phải có thì mới xử lý trường hợp này (tránh TH vừa login bấm đăng xuất thì vào conditon này)
+             * Để chặn tắt formMain các cờ subForm phải có ít nhất 1 cái false
+             * Và subForm phải có thì mới xử lý trường hợp này (tránh TH vừa login bấm đăng xuất thì vào TH này)
             */
             bool formNV = Program.flagCloseFormNV == false && Program.nhanVienForm != null && Program.nhanVienForm.Visible == true;
             bool formVT = Program.flagCloseFormVT == false && Program.vatTuForm != null && Program.vatTuForm.Visible == true;

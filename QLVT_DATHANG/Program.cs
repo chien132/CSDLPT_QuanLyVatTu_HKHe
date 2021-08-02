@@ -83,7 +83,7 @@ namespace QLVT_DATHANG
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng.\n" + e.Message, "", MessageBoxButtons.OK);
                 return 0;
             }
         }

@@ -37,9 +37,15 @@ namespace QLVT_DATHANG
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tb_dang_nhap.Text.Trim() == "" || tb_mat_khau.Text.Trim() == "")
+            if (tb_dang_nhap.Text.Trim() == "") {
+                MessageBox.Show("Tên đăng nhập không được bỏ trống");
+                tb_dang_nhap.Focus();
+                return;
+            }
+            else if( tb_mat_khau.Text.Trim() == "")
             {
-                MessageBox.Show("Tên đăng nhập và mật khẩu không được bỏ trống");
+                MessageBox.Show("Mật khẩu không được bỏ trống");
+                tb_mat_khau.Focus();
                 return;
             }
             Program.mlogin = tb_dang_nhap.Text.Trim();
