@@ -154,7 +154,6 @@
             this.btnVatTu.LargeWidth = 100;
             this.btnVatTu.Name = "btnVatTu";
             this.btnVatTu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVatTu_ItemClick);
             // 
             // btnKho
             // 
@@ -170,7 +169,6 @@
             this.btnKho.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnKho.LargeWidth = 100;
             this.btnKho.Name = "btnKho";
-            this.btnKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKho_ItemClick);
             // 
             // btnThemTK
             // 
@@ -185,7 +183,6 @@
             this.btnThemTK.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnThemTK.LargeWidth = 110;
             this.btnThemTK.Name = "btnThemTK";
-            this.btnThemTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemTK_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -357,6 +354,7 @@
             this.ribbonPageGroup15});
             this.rb_baocao.Name = "rb_baocao";
             this.rb_baocao.Text = "Báo cáo";
+            this.rb_baocao.Visible = false;
             // 
             // ribbonPageGroup2
             // 
@@ -446,7 +444,7 @@
             this.sslMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslMaNhanVien.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sslMaNhanVien.Name = "sslMaNhanVien";
-            this.sslMaNhanVien.Size = new System.Drawing.Size(48, 26);
+            this.sslMaNhanVien.Size = new System.Drawing.Size(48, 17);
             this.sslMaNhanVien.Text = "MANV";
             // 
             // sslTen
@@ -454,7 +452,7 @@
             this.sslTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslTen.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sslTen.Name = "sslTen";
-            this.sslTen.Size = new System.Drawing.Size(33, 26);
+            this.sslTen.Size = new System.Drawing.Size(33, 17);
             this.sslTen.Text = "TEN";
             // 
             // sslNhom
@@ -462,7 +460,7 @@
             this.sslNhom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslNhom.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sslNhom.Name = "sslNhom";
-            this.sslNhom.Size = new System.Drawing.Size(50, 26);
+            this.sslNhom.Size = new System.Drawing.Size(50, 17);
             this.sslNhom.Text = "NHOM";
             // 
             // barButtonItem15

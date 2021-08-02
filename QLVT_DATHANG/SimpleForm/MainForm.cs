@@ -120,39 +120,18 @@ namespace QLVT_DATHANG
 
         private void btnVatTu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form form = this.CheckExists(typeof(VatTuForm));
-            if (form != null) form.Activate();
-            else
-            {
-                Program.vatTuForm = new VatTuForm();
-                Program.vatTuForm.MdiParent = this;
-                Program.vatTuForm.Show();
-            }
+
         }
 
 
         private void btnKho_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form form = this.CheckExists(typeof(KhoForm));
-            if (form != null) form.Activate();
-            else
-            {
-                Program.khoForm = new KhoForm();
-                Program.khoForm.MdiParent = this;
-                Program.khoForm.Show();
-            }
+
         }
 
         private void btnThemTK_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form form = this.CheckExists(typeof(ThemTaiKhoanForm));
-            if (form != null) form.Activate();
-            else
-            {
-                Program.themTaiKhoanForm = new ThemTaiKhoanForm();
-                Program.themTaiKhoanForm.MdiParent = this;
-                Program.themTaiKhoanForm.Show();
-            }
+
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
