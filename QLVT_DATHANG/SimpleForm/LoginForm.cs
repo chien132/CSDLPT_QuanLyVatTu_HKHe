@@ -55,11 +55,10 @@ namespace QLVT_DATHANG
             if (Program.KetNoi() == 0) return;
 
 
-            Program.mChinhanh = cb_chi_nhanh.SelectedIndex;
-            Console.WriteLine(Program.mChinhanh);
+            //Program.mChinhanh = cb_chi_nhanh.SelectedIndex;
             Program.bds_dspm = get_SubscribesBindingSource;
             //Program.mloginDN = Program.mlogin;
-            Program.passwordDN = Program.password;
+            //Program.passwordDN = Program.password;
             String strLenh = "EXEC SP_THONGTINDANGNHAP '" + Program.mlogin + "'";
 
             Program.myReader = Program.ExecSqlDataReader(strLenh);
@@ -73,8 +72,8 @@ namespace QLVT_DATHANG
                 return;
             }
 
-            Program.mHoten = Program.myReader.GetString(1);
-            Program.mGroup = Program.myReader.GetString(2);
+            //Program.mHoten = Program.myReader.GetString(1);
+            //Program.mGroup = Program.myReader.GetString(2);
             Form frm = this.CheckExists(typeof(frmMain));
             if (frm != null) frm.Activate();
             else

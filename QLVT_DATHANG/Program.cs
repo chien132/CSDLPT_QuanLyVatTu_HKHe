@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using DevExpress.LookAndFeel;
-
-using System.Collections.Generic;
-using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -23,44 +19,25 @@ namespace QLVT_DATHANG
         public static String password = "";
 
         public static String database = "QLVT_DATHANG";
-        public static String remotelogin = "htkn";
-        public static String remotepassword = "123";
+        //public static String remotelogin = "htkn";
+        //public static String remotepassword = "123";
         //public static String mloginDN = "";
-        public static String passwordDN = "";
-        public static String mGroup = "";
-        public static String mHoten = "";
+        //public static String passwordDN = "";
+        //public static String mGroup = "";
+        //public static String mHoten = "";
         public static string group = "";    //role
 
 
 
 
         public static bool flagCloseFormNV;
-        public static bool flagCloseFormVT;
-        public static bool flagCloseFormKho;
-        public static bool flagCloseFormTaoTaiKhoan;
 
-        public static int mChinhanh = 0;
-        public static int maNVChuyenCN;
-
-
+        //public static int mChinhanh = 0;
+        //public static int maNVChuyenCN;
 
         public static frmMain frmMain;
         public static NhanVienForm nhanVienForm;
-        public static VatTuForm vatTuForm;
-        public static KhoForm khoForm;
-        public static ThemTaiKhoanForm themTaiKhoanForm;
         public static LoginForm loginForm;
-
-        public static SubForm.NVTrungIncurredForm nVTrungIncurredForm;
-        public static SubForm.ChuyenChiNhanhSubForm chuyenChiNhanhSubForm;
-        public static SubForm.DDHSubForm dDHSubForm;
-        public static SubForm.CTDDHSubForm cTDDHSubForm;
-        public static SubForm.PhieuNhapSubForm phieuNhapSubForm;
-        public static SubForm.CTPNSubForm cTPNSubForm;
-        public static SubForm.PhieuXuatSubForm phieuXuatSubForm;
-        public static SubForm.CTPXSubForm CTPXSubForm;
-
-
 
         public static int manv = 0;         // lưu lại mã nhân viên
 
@@ -123,7 +100,8 @@ namespace QLVT_DATHANG
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                Sqlcmd.ExecuteNonQuery(); conn.Close();
+                Sqlcmd.ExecuteNonQuery(); 
+                conn.Close();
                 return 0;
             }
             catch (SqlException ex)

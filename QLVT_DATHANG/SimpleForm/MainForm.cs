@@ -84,10 +84,7 @@ namespace QLVT_DATHANG
              * Và subForm phải có thì mới xử lý trường hợp này (tránh TH vừa login bấm đăng xuất thì vào TH này)
             */
             bool formNV = Program.flagCloseFormNV == false && Program.nhanVienForm != null && Program.nhanVienForm.Visible == true;
-            bool formVT = Program.flagCloseFormVT == false && Program.vatTuForm != null && Program.vatTuForm.Visible == true;
-            bool formKho = Program.flagCloseFormKho == false && Program.khoForm != null && Program.khoForm.Visible == true;
-            bool formTaoTaiKhoan = Program.flagCloseFormTaoTaiKhoan == false && Program.themTaiKhoanForm != null && Program.themTaiKhoanForm.Visible == true;
-            if (formNV || formVT || formKho || formTaoTaiKhoan)
+            if (formNV)
             {
                 e.Cancel = true;
                 return;

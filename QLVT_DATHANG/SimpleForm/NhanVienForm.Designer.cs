@@ -38,14 +38,14 @@
             System.Windows.Forms.Label mANVLabel;
             System.Windows.Forms.Label trangThaiXoaLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienForm));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode13 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode14 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode15 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode16 = new DevExpress.XtraGrid.GridLevelNode();
             this.gb_thongtinNV = new System.Windows.Forms.GroupBox();
             this.trangThaiXoaCheckBox = new System.Windows.Forms.CheckBox();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -909,7 +909,7 @@
             // 
             // btnUndo
             // 
-            this.btnUndo.Caption = "Phục hồi";
+            this.btnUndo.Caption = "Undo";
             this.btnUndo.Id = 6;
             this.btnUndo.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.undo1;
             this.btnUndo.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1251,27 +1251,27 @@
             this.gcNhanVien.DataSource = this.nhanVienBindingSource;
             this.gcNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcNhanVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            gridLevelNode2.RelationName = "FK_CTDDH_DatHang";
-            gridLevelNode4.RelationName = "FK_CTPN_PhieuNhap";
-            gridLevelNode3.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode4});
-            gridLevelNode3.RelationName = "FK_PhieuNhap_DatHang";
-            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2,
-            gridLevelNode3});
-            gridLevelNode1.RelationName = "FK_DatHang_NhanVien";
-            gridLevelNode6.RelationName = "FK_CTPN_PhieuNhap";
-            gridLevelNode5.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode6});
-            gridLevelNode5.RelationName = "FK_PhieuNhap_NhanVien";
-            gridLevelNode8.RelationName = "FK_CTPX_PX";
-            gridLevelNode7.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode8});
-            gridLevelNode7.RelationName = "FK_PX_NhanVien";
+            gridLevelNode10.RelationName = "FK_CTDDH_DatHang";
+            gridLevelNode12.RelationName = "FK_CTPN_PhieuNhap";
+            gridLevelNode11.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode12});
+            gridLevelNode11.RelationName = "FK_PhieuNhap_DatHang";
+            gridLevelNode9.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode10,
+            gridLevelNode11});
+            gridLevelNode9.RelationName = "FK_DatHang_NhanVien";
+            gridLevelNode14.RelationName = "FK_CTPN_PhieuNhap";
+            gridLevelNode13.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode14});
+            gridLevelNode13.RelationName = "FK_PhieuNhap_NhanVien";
+            gridLevelNode16.RelationName = "FK_CTPX_PX";
+            gridLevelNode15.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode16});
+            gridLevelNode15.RelationName = "FK_PX_NhanVien";
             this.gcNhanVien.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode5,
-            gridLevelNode7});
+            gridLevelNode9,
+            gridLevelNode13,
+            gridLevelNode15});
             this.gcNhanVien.Location = new System.Drawing.Point(0, 80);
             this.gcNhanVien.MainView = this.gvNhanVien;
             this.gcNhanVien.Name = "gcNhanVien";
@@ -1361,7 +1361,6 @@
             this.gvCTDDH.OptionsView.ShowGroupPanel = false;
             this.gvCTDDH.OptionsView.ShowViewCaption = true;
             this.gvCTDDH.ViewCaption = "CHI TIẾT ĐƠN ĐẶT HÀNG";
-            this.gvCTDDH.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvCTDDH_PopupMenuShowing);
             // 
             // colMasoDDH1
             // 
@@ -1457,7 +1456,6 @@
             this.gvDDH.OptionsView.ShowGroupPanel = false;
             this.gvDDH.OptionsView.ShowViewCaption = true;
             this.gvDDH.ViewCaption = "ĐƠN ĐẶT HÀNG";
-            this.gvDDH.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvDDH_PopupMenuShowing);
             // 
             // colMasoDDH
             // 
@@ -1578,7 +1576,6 @@
             this.gvCTPN.OptionsView.ShowGroupPanel = false;
             this.gvCTPN.OptionsView.ShowViewCaption = true;
             this.gvCTPN.ViewCaption = "CHI TIẾT PHIẾU NHẬP";
-            this.gvCTPN.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvCTPN_PopupMenuShowing);
             // 
             // colMAPN1
             // 
@@ -1674,7 +1671,6 @@
             this.gvPN.OptionsView.ShowGroupPanel = false;
             this.gvPN.OptionsView.ShowViewCaption = true;
             this.gvPN.ViewCaption = "PHIẾU NHẬP";
-            this.gvPN.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvPhieuNhap_PopupMenuShowing);
             // 
             // colMAPN
             // 
@@ -1775,7 +1771,6 @@
             this.gvDDH_PN.OptionsView.ShowGroupPanel = false;
             this.gvDDH_PN.OptionsView.ShowViewCaption = true;
             this.gvDDH_PN.ViewCaption = "ĐƠN ĐẶT HÀNG";
-            this.gvDDH_PN.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvDatHangByPN_PopupMenuShowing);
             // 
             // colMasoDDH3
             // 
@@ -1886,7 +1881,6 @@
             this.gvCTPX.OptionsView.ShowGroupPanel = false;
             this.gvCTPX.OptionsView.ShowViewCaption = true;
             this.gvCTPX.ViewCaption = "CHI TIẾT PHIẾU XUẤT";
-            this.gvCTPX.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvCTPX_PopupMenuShowing);
             // 
             // colMAPX1
             // 
@@ -1982,7 +1976,6 @@
             this.gvPX.OptionsView.ShowGroupPanel = false;
             this.gvPX.OptionsView.ShowViewCaption = true;
             this.gvPX.ViewCaption = "PHIẾU XUẤT";
-            this.gvPX.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gvPhieuXuat_PopupMenuShowing);
             // 
             // colMAPX
             // 

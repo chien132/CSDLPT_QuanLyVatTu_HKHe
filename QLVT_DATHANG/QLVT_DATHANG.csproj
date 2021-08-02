@@ -103,12 +103,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLVT_DATHANGDataSet_NVTrung.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SimpleForm\KhoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SimpleForm\KhoForm.Designer.cs">
-      <DependentUpon>KhoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SimpleForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,80 +121,11 @@
     <Compile Include="SimpleForm\NhanVienForm.Designer.cs">
       <DependentUpon>NhanVienForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleForm\ThemTaiKhoanForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SimpleForm\ThemTaiKhoanForm.Designer.cs">
-      <DependentUpon>ThemTaiKhoanForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SimpleForm\VatTuForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SimpleForm\VatTuForm.Designer.cs">
-      <DependentUpon>VatTuForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\ChuyenChiNhanhSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\ChuyenChiNhanhSubForm.Designer.cs">
-      <DependentUpon>ChuyenChiNhanhSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\CTDDHSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\CTDDHSubForm.Designer.cs">
-      <DependentUpon>CTDDHSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\CTPNSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\CTPNSubForm.Designer.cs">
-      <DependentUpon>CTPNSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\CTPXSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\CTPXSubForm.Designer.cs">
-      <DependentUpon>CTPXSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\DDHSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\DDHSubForm.Designer.cs">
-      <DependentUpon>DDHSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\NhanVienSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\NhanVienSubForm.Designer.cs">
-      <DependentUpon>NhanVienSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\NVTrungIncurredForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\NVTrungIncurredForm.Designer.cs">
-      <DependentUpon>NVTrungIncurredForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\PhieuNhapSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\PhieuNhapSubForm.Designer.cs">
-      <DependentUpon>PhieuNhapSubForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\PhieuXuatSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\PhieuXuatSubForm.Designer.cs">
-      <DependentUpon>PhieuXuatSubForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SimpleForm\KhoForm.resx">
-      <DependentUpon>KhoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -210,39 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\NhanVienForm.resx">
       <DependentUpon>NhanVienForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SimpleForm\ThemTaiKhoanForm.resx">
-      <DependentUpon>ThemTaiKhoanForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SimpleForm\VatTuForm.resx">
-      <DependentUpon>VatTuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\ChuyenChiNhanhSubForm.resx">
-      <DependentUpon>ChuyenChiNhanhSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\CTDDHSubForm.resx">
-      <DependentUpon>CTDDHSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\CTPNSubForm.resx">
-      <DependentUpon>CTPNSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\CTPXSubForm.resx">
-      <DependentUpon>CTPXSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\DDHSubForm.resx">
-      <DependentUpon>DDHSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\NhanVienSubForm.resx">
-      <DependentUpon>NhanVienSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\NVTrungIncurredForm.resx">
-      <DependentUpon>NVTrungIncurredForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\PhieuNhapSubForm.resx">
-      <DependentUpon>PhieuNhapSubForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\PhieuXuatSubForm.resx">
-      <DependentUpon>PhieuXuatSubForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
