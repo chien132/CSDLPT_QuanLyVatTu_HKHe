@@ -14,26 +14,12 @@ namespace QLVT_DATHANG
         public static SqlDataReader myReader;
         public static String servername = "";
         public static String username = "";
-
         public static String mlogin = "";
         public static String password = "";
-
         public static String database = "QLVT_DATHANG";
-        //public static String remotelogin = "htkn";
-        //public static String remotepassword = "123";
-        //public static String mloginDN = "";
-        //public static String passwordDN = "";
-        //public static String mGroup = "";
-        //public static String mHoten = "";
         public static string group = "";    //role
 
-
-
-
         public static bool flagCloseFormNV;
-
-        //public static int mChinhanh = 0;
-        //public static int maNVChuyenCN;
 
         public static frmMain frmMain;
         public static NhanVienForm nhanVienForm;

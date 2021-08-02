@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using System.Data.SqlClient;
@@ -42,17 +36,12 @@ namespace QLVT_DATHANG
                 try
                 {
                      dataReader = sqlCommand.ExecuteReader();
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi lấy thông tin đăng nhập! \n" + ex.Message, "Notification", MessageBoxButtons.OK);
 
                 }
-
-                //sqlCommand.CommandType = CommandType.Text;
-                //sqlCommand.CommandTimeout = 600;      //mặc định 3p cái nay set 10p
 
                 dataReader.Read();
                 Program.manv = int.Parse(dataReader.GetValue(0).ToString());
@@ -74,8 +63,6 @@ namespace QLVT_DATHANG
 
             }
         }
-
-
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
