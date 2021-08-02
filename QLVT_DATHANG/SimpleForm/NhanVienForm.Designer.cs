@@ -56,7 +56,7 @@
             this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.ngaySinhDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pbThongBao = new System.Windows.Forms.PictureBox();
             this.lbThongBao = new System.Windows.Forms.Label();
@@ -208,8 +208,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).BeginInit();
             this.pnChiNhanh.SuspendLayout();
@@ -348,7 +348,7 @@
             this.gb_thongtinNV.Controls.Add(hOLabel);
             this.gb_thongtinNV.Controls.Add(this.hOTextEdit);
             this.gb_thongtinNV.Controls.Add(nGAYSINHLabel);
-            this.gb_thongtinNV.Controls.Add(this.nGAYSINHDateEdit);
+            this.gb_thongtinNV.Controls.Add(this.ngaySinhDateEdit);
             this.gb_thongtinNV.Controls.Add(this.pictureBox10);
             this.gb_thongtinNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gb_thongtinNV.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -459,21 +459,21 @@
             this.hOTextEdit.Size = new System.Drawing.Size(176, 22);
             this.hOTextEdit.TabIndex = 19;
             // 
-            // nGAYSINHDateEdit
+            // ngaySinhDateEdit
             // 
-            this.nGAYSINHDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "NGAYSINH", true));
-            this.nGAYSINHDateEdit.EditValue = null;
-            this.nGAYSINHDateEdit.Location = new System.Drawing.Point(868, 63);
-            this.nGAYSINHDateEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.nGAYSINHDateEdit.Name = "nGAYSINHDateEdit";
-            this.nGAYSINHDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nGAYSINHDateEdit.Properties.Appearance.Options.UseFont = true;
-            this.nGAYSINHDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ngaySinhDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "NGAYSINH", true));
+            this.ngaySinhDateEdit.EditValue = null;
+            this.ngaySinhDateEdit.Location = new System.Drawing.Point(868, 63);
+            this.ngaySinhDateEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.ngaySinhDateEdit.Name = "ngaySinhDateEdit";
+            this.ngaySinhDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngaySinhDateEdit.Properties.Appearance.Options.UseFont = true;
+            this.ngaySinhDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ngaySinhDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Size = new System.Drawing.Size(176, 22);
-            this.nGAYSINHDateEdit.TabIndex = 18;
+            this.ngaySinhDateEdit.Size = new System.Drawing.Size(176, 22);
+            this.ngaySinhDateEdit.TabIndex = 18;
             // 
             // pictureBox10
             // 
@@ -2096,8 +2096,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).EndInit();
             this.pnChiNhanh.ResumeLayout(false);
@@ -2161,7 +2161,7 @@
         private DevExpress.XtraEditors.TextEdit dIACHITextEdit;
         private DevExpress.XtraEditors.TextEdit tENTextEdit;
         private DevExpress.XtraEditors.TextEdit hOTextEdit;
-        private DevExpress.XtraEditors.DateEdit nGAYSINHDateEdit;
+        private DevExpress.XtraEditors.DateEdit ngaySinhDateEdit;
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN2;
         private System.Windows.Forms.CheckBox trangThaiXoaCheckBox;
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN3;

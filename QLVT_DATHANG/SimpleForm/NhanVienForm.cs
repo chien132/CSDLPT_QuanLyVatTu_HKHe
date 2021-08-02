@@ -22,25 +22,24 @@ namespace QLVT_DATHANG
 
         private void NhanVienForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.CTPX' table. You can move, or remove it, as needed.
-            this.cTPXTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPX);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.PhieuXuat' table. You can move, or remove it, as needed.
-            this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.CTPN' table. You can move, or remove it, as needed.
-            this.cTPNTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPN);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.PhieuNhap' table. You can move, or remove it, as needed.
-            this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.CTDDH' table. You can move, or remove it, as needed.
-            this.cTDDHTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTDDH);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
-            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DS_NHANVIEN.ChiNhanh' table. You can move, or remove it, as needed.
             this.chiNhanhTableAdapter.Fill(this.qLVT_DATHANGDataSet.ChiNhanh);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DS_NHANVIEN.NhanVien' table. You can move, or remove it, as needed.
+
+            this.cTPXTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPXTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPX);
+            this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
+            this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPNTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPN);
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
+            this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTDDHTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTDDH);
+            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
             this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
 
-            //Cấu hình Default chiều cao của các panel =))
+
             gb_thongtinNV.Height = 270;
             gbDonDatHang.Height = 350;
             gbPhieuNhap.Height = 350;
@@ -137,11 +136,11 @@ namespace QLVT_DATHANG
             mANVNumericUpDown.Value = newMANV();
             lUONGSpinEdit.Value = 4000000;
             ((DataRowView)nhanVienBindingSource[nhanVienBindingSource.Position])["LUONG"] = 4000000;
-            if (cbChiNhanh.Text == "CHI NHÁNH 1")
+            if (cbChiNhanh.Text == "Chi Nhánh 1")
             {
                 mACNTextEdit.Text = "CN1";
             }
-            else if (cbChiNhanh.Text == "CHI NHÁNH 2")
+            else if (cbChiNhanh.Text == "Chi Nhánh 2")
             {
                 mACNTextEdit.Text = "CN2";
             }
@@ -159,11 +158,11 @@ namespace QLVT_DATHANG
             if (!checkValidate(mANVNumericUpDown, "Mã NV is not empty!")) return;
             if (!checkValidate(hOTextEdit, "Họ is not empty!")) return;
             if (!checkValidate(tENTextEdit, "Tên is not empty!")) return;
-            if (nGAYSINHDateEdit.Text.Equals(""))
+            if (ngaySinhDateEdit.Text.Equals(""))
             {
                 MessageBox.Show("Ngày sinh is not empty!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nGAYSINHDateEdit.Focus();
+                ngaySinhDateEdit.Focus();
                 return;
             }
 
@@ -185,10 +184,7 @@ namespace QLVT_DATHANG
                 sqlCommand1.Parameters.AddWithValue("@p2", "MANV");
                 try
                 {
-                    Console.WriteLine("1111");
                     dataReader = sqlCommand1.ExecuteReader();
-                    Console.WriteLine("2222");
-
                 }
                 catch (Exception ex)
                 {
@@ -208,16 +204,16 @@ namespace QLVT_DATHANG
                 //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
                 if (result == 1 && (positionMANV != postionCurrent))
                 {
-                    MessageBox.Show("Mã NV đã tồn tại ở Chi Nhánh hiện tại!", "Thông báo",
+                    MessageBox.Show("Mã NV đã tồn tại!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else if (result == 2)
-                {
-                    MessageBox.Show("Mã NV đã tồn tại ở Chi Nhánh khác!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //else if (result == 2)
+                //{
+                //    MessageBox.Show("Mã NV đã tồn tại ở Chi Nhánh khác!", "Thông báo",
+                //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
                 else
                 {
                     DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào Database?", "Thông báo",
@@ -226,7 +222,6 @@ namespace QLVT_DATHANG
                     {
                         try
                         {
-                            Program.flagCloseFormNV = true; //Bật cờ cho phép tắt Form NV
                             btnThem.Enabled = btnXoa.Enabled = gcNhanVien.Enabled = true;
                             btnChuyenCN.Enabled = btnRefresh.Enabled = true;
                             btnUndo.Enabled = gb_thongtinNV.Enabled = btnLuu.Enabled = true;
@@ -234,17 +229,9 @@ namespace QLVT_DATHANG
                             this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
                             nhanVienBindingSource.Position = positionMANV;
                             pnThongBao.Visible = true;
-                            lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin nhân viên thành công. ";
+                            lbThongBao.Text = "Thêm mới hoặc cập nhật nhân viên thành công. ";
 
-                            //Timer time = new Timer();
-                            //time.Start();
-                            //if (time.Tick=10)
-                            //{
-                            //    pnThongBao.Visible = false;
-                            //}
-
-
-
+                            Program.flagCloseFormNV = true; //Bật cờ cho phép tắt Form NV
                         }
                         catch (Exception ex)
                         {
@@ -453,63 +440,34 @@ namespace QLVT_DATHANG
         }
 
 
-
-
-
-        private bool kiemTraCTDDHCuaNV()
-        {
-            int maNVLapDDH = 0;
-            if (gvDDH.GetRowCellValue(datHangBindingSource.Position, "MANV") != null)
-            {
-                maNVLapDDH = int.Parse(gvDDH.GetRowCellValue(datHangBindingSource.Position, "MANV").ToString().Trim());
-            }
-            return (maNVLapDDH == Program.manv);
-        }
-
-
-
-
-        private DXMenuItem createMenuItem(string caption, Bitmap image)
-        {
-            DXMenuItem menuItem = new DXMenuItem();
-            menuItem.Image = image;
-            menuItem.Caption = caption;
-            return menuItem;
-        }
-
-
-       
-
-
-
         //Getter-Setter các DataSet và BindingSource
-        public BindingSource getDatHangBDS()
-        {
-            return this.datHangBindingSource;
-        }
-        public BindingSource getCTDatHangBDS()
-        {
-            return this.cTDDHBindingSource;
-        }
-        public BindingSource getPhieuNhapBDS()
-        {
-            return this.phieuNhapBindingSource;
-        }
-        public BindingSource getCTPhieuNhapBDS()
-        {
-            return this.cTPNBindingSource;
-        }
-        public BindingSource getPhieuXuatBDS()
-        {
-            return this.phieuXuatBindingSource;
-        }
-        public BindingSource getCTPhieuXuatBDS()
-        {
-            return this.cTPXBindingSource;
-        }
-        public QLVT_DATHANGDataSet getDataSet()
-        {
-            return this.qLVT_DATHANGDataSet;
-        }
+        //public BindingSource getDatHangBDS()
+        //{
+        //    return this.datHangBindingSource;
+        //}
+        //public BindingSource getCTDatHangBDS()
+        //{
+        //    return this.cTDDHBindingSource;
+        //}
+        //public BindingSource getPhieuNhapBDS()
+        //{
+        //    return this.phieuNhapBindingSource;
+        //}
+        //public BindingSource getCTPhieuNhapBDS()
+        //{
+        //    return this.cTPNBindingSource;
+        //}
+        //public BindingSource getPhieuXuatBDS()
+        //{
+        //    return this.phieuXuatBindingSource;
+        //}
+        //public BindingSource getCTPhieuXuatBDS()
+        //{
+        //    return this.cTPXBindingSource;
+        //}
+        //public QLVT_DATHANGDataSet getDataSet()
+        //{
+        //    return this.qLVT_DATHANGDataSet;
+        //}
     }
 }

@@ -115,3 +115,4 @@ C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\bin\Debug\DevExpress.
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\bin\Debug\DevExpress.XtraRichEdit.v20.1.dll
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\bin\Debug\DevExpress.XtraSpellChecker.v20.1.dll
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\bin\Debug\DevExpress.XtraWizard.v20.1.dll
+C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.csproj.AssemblyReference.cache
