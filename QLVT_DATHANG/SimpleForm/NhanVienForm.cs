@@ -62,10 +62,10 @@ namespace QLVT_DATHANG
                 btnThem.Links[0].Visible = btnXoa.Links[0].Visible = btnLuu.Links[0].Visible = false;
                 btnChuyenCN.Links[0].Visible = btnUndo.Links[0].Visible = false;
             }
-      
+
             else if (Program.group == "USER")
             {
-                 btnChuyenCN.Links[0].Visible = false;
+                btnChuyenCN.Links[0].Visible = false;
             }
 
 
@@ -145,11 +145,11 @@ namespace QLVT_DATHANG
             mANVNumericUpDown.Value = newMANV();
             lUONGSpinEdit.Value = 4000000;
             ((DataRowView)nhanVienBindingSource[nhanVienBindingSource.Position])["LUONG"] = 4000000;
-            if(cbChiNhanh.Text=="CHI NHÁNH 1")
+            if (cbChiNhanh.Text == "CHI NHÁNH 1")
             {
                 mACNTextEdit.Text = "CN1";
             }
-           else if (cbChiNhanh.Text == "CHI NHÁNH 2")
+            else if (cbChiNhanh.Text == "CHI NHÁNH 2")
             {
                 mACNTextEdit.Text = "CN2";
             }
@@ -188,7 +188,7 @@ namespace QLVT_DATHANG
             {
                 sqlConnection.Open();
                 SqlCommand sqlCommand1 = new SqlCommand(query, sqlConnection);
-               // sqlCommand1.CommandType = CommandType.Text;
+                // sqlCommand1.CommandType = CommandType.Text;
                 sqlCommand1.Parameters.AddWithValue("@p1", mANVNumericUpDown.Value);
                 sqlCommand1.Parameters.AddWithValue("@p2", "MANV");
                 try
@@ -205,7 +205,7 @@ namespace QLVT_DATHANG
                     return;
                 }
 
-                
+
 
                 dataReader.Read();
                 int result = int.Parse(dataReader.GetValue(0).ToString());
@@ -241,9 +241,9 @@ namespace QLVT_DATHANG
                             this.nhanVienBindingSource.EndEdit();
                             this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
                             nhanVienBindingSource.Position = positionMANV;
-                            pnThongBao.Visible=true;
+                            pnThongBao.Visible = true;
                             lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin nhân viên thành công. ";
-                            
+
                             //Timer time = new Timer();
                             //time.Start();
                             //if (time.Tick=10)
@@ -288,7 +288,7 @@ namespace QLVT_DATHANG
                                                      MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
 
-                if (dr1 == DialogResult.OK)
+            if (dr1 == DialogResult.OK)
             {
                 manv = int.Parse(getDataRow(nhanVienBindingSource, "MANV"));
                 //Kiểm tra MANV có tồn tại trong các Phiếu
@@ -306,11 +306,11 @@ namespace QLVT_DATHANG
                     sqlCommand1.CommandType = CommandType.Text;
 
 
-      
+
                     sqlCommand1.Parameters.AddWithValue("@p1", manv);
                     sqlCommand1.Parameters.AddWithValue("@p2", "MANV_EXIST");
-                    
-                   
+
+
 
                     try
                     {
@@ -398,8 +398,8 @@ namespace QLVT_DATHANG
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             btnThem.Enabled = btnXoa.Enabled = gcNhanVien.Enabled = btnLuu.Enabled = true;
-            btnRefresh.Enabled = btnChuyenCN.Enabled  = btnSwitchPanel.Enabled = true;
-            btnUndo.Enabled  = false;
+            btnRefresh.Enabled = btnChuyenCN.Enabled = btnSwitchPanel.Enabled = true;
+            btnUndo.Enabled = false;
             Program.flagCloseFormNV = true; //Undo lại thì cho phép thoát mà ko kiểm tra dữ liệu
             nhanVienBindingSource.CancelEdit();
             nhanVienBindingSource.Position = position;
@@ -414,7 +414,7 @@ namespace QLVT_DATHANG
             Program.nhanVienForm.Enabled = false;
 
 
- 
+
 
         }
 
@@ -501,7 +501,7 @@ namespace QLVT_DATHANG
             Program.dDHSubForm = new SubForm.DDHSubForm();
             Program.dDHSubForm.Show();
 
-           
+
             Program.nhanVienForm.Enabled = false;
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
@@ -569,7 +569,7 @@ namespace QLVT_DATHANG
         {
             if (Program.group == "CHINHANH" || Program.group == "USER")
             {
-                if (datHangBindingSource.Count != 0)
+                if (datHangBindingSource.Count != 0 && e.Menu != null)
                 {
                     GridViewMenu menu = e.Menu;
                     DXMenuItem menuAddPN = createMenuItem("Thêm Phiếu Nhập", Properties.Resources.plus);

@@ -13,29 +13,26 @@ namespace QLVT_DATHANG
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataReader myReader;
         public static String servername = "";
         public static String username = "";
 
-        public static String mlogin = "";   //my login in LoginForm
+        public static String mlogin = "";
         public static String password = "";
 
         public static String database = "QLVT_DATHANG";
         public static String remotelogin = "htkn";
         public static String remotepassword = "123";
-        public static String mloginDN = "";
+        //public static String mloginDN = "";
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
-        public static string group = "";    //Để khi vào các form con biết đang ở quyền nào
+        public static string group = "";    //role
 
-      
-       
+
+
 
         public static bool flagCloseFormNV;
         public static bool flagCloseFormVT;
@@ -65,9 +62,9 @@ namespace QLVT_DATHANG
 
 
 
-        public static int manv = 0;         //Để khi vào các form con biết mã nv là gì
+        public static int manv = 0;         // lưu lại mã nhân viên
 
-        public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
+        public static BindingSource bds_dspm = new BindingSource();  // lưu lại danh sách phân mảnh
 
 
         public static int KetNoi()
@@ -135,7 +132,7 @@ namespace QLVT_DATHANG
                     MessageBox.Show("Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.");
                 else MessageBox.Show(ex.Message);
                 conn.Close();
-                return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
+                return ex.State; // trang thai lỗi gửi từ RAISERROR trong SQL Server qua
             }
         }
         [STAThread]
@@ -145,8 +142,6 @@ namespace QLVT_DATHANG
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new LoginForm());
-            // Application.Run(new frmDN()); 
-
 
         }
     }

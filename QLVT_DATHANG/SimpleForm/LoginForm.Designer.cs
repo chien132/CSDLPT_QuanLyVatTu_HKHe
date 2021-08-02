@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.bt_dang_nhap = new System.Windows.Forms.Button();
             this.cb_chi_nhanh = new System.Windows.Forms.ComboBox();
+            this.get_SubscribesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVT_DATHANGDataSet_DSPhanManh = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManh();
             this.tb_dang_nhap = new System.Windows.Forms.TextBox();
             this.tb_mat_khau = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -43,17 +45,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.qLVT_DATHANGDataSet_DSPhanManh = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManh();
-            this.get_SubscribesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.get_SubscribesTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManhTableAdapters.Get_SubscribesTableAdapter();
             this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManhTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.get_SubscribesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_DSPhanManh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_DSPhanManh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.get_SubscribesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_dang_nhap
@@ -80,6 +80,16 @@
             this.cb_chi_nhanh.TabIndex = 1;
             this.cb_chi_nhanh.ValueMember = "TENSERVER";
             // 
+            // get_SubscribesBindingSource
+            // 
+            this.get_SubscribesBindingSource.DataMember = "Get_Subscribes";
+            this.get_SubscribesBindingSource.DataSource = this.qLVT_DATHANGDataSet_DSPhanManh;
+            // 
+            // qLVT_DATHANGDataSet_DSPhanManh
+            // 
+            this.qLVT_DATHANGDataSet_DSPhanManh.DataSetName = "QLVT_DATHANGDataSet_DSPhanManh";
+            this.qLVT_DATHANGDataSet_DSPhanManh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tb_dang_nhap
             // 
             this.tb_dang_nhap.Location = new System.Drawing.Point(257, 141);
@@ -87,7 +97,7 @@
             this.tb_dang_nhap.Name = "tb_dang_nhap";
             this.tb_dang_nhap.Size = new System.Drawing.Size(178, 23);
             this.tb_dang_nhap.TabIndex = 2;
-            this.tb_dang_nhap.Text = "LT";
+            this.tb_dang_nhap.Text = "TT";
             // 
             // tb_mat_khau
             // 
@@ -195,16 +205,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Exit);
             // 
-            // qLVT_DATHANGDataSet_DSPhanManh
-            // 
-            this.qLVT_DATHANGDataSet_DSPhanManh.DataSetName = "QLVT_DATHANGDataSet_DSPhanManh";
-            this.qLVT_DATHANGDataSet_DSPhanManh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // get_SubscribesBindingSource
-            // 
-            this.get_SubscribesBindingSource.DataMember = "Get_Subscribes";
-            this.get_SubscribesBindingSource.DataSource = this.qLVT_DATHANGDataSet_DSPhanManh;
-            // 
             // get_SubscribesTableAdapter
             // 
             this.get_SubscribesTableAdapter.ClearBeforeFill = true;
@@ -241,13 +241,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.get_SubscribesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_DSPhanManh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_DSPhanManh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.get_SubscribesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

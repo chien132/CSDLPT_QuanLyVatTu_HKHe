@@ -52,7 +52,7 @@ namespace QLVT_DATHANG
             Program.mChinhanh = cb_chi_nhanh.SelectedIndex;
             Console.WriteLine(Program.mChinhanh);
             Program.bds_dspm = get_SubscribesBindingSource;
-            Program.mloginDN = Program.mlogin;
+            //Program.mloginDN = Program.mlogin;
             Program.passwordDN = Program.password;
             String strLenh = "EXEC SP_THONGTINDANGNHAP '" + Program.mlogin + "'";
 
