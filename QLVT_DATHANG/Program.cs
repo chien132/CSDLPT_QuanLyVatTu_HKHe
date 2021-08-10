@@ -23,12 +23,12 @@ namespace QLVT_DATHANG
         public static String password = "";
 
         public static String database = "QLVT_DATHANG";
-        public static String remotelogin = "htkn";
-        public static String remotepassword = "123";
+        //public static String remotelogin = "htkn";
+        //public static String remotepassword = "123";
         //public static String mloginDN = "";
-        public static String passwordDN = "";
-        public static String mGroup = "";
-        public static String mHoten = "";
+        //public static String passwordDN = "";
+        //public static String mGroup = "";
+        //public static String mHoten = "";
         public static string group = "";    //role
 
 
@@ -39,8 +39,8 @@ namespace QLVT_DATHANG
         public static bool flagCloseFormKho;
         public static bool flagCloseFormTaoTaiKhoan;
 
-        public static int mChinhanh = 0;
-        public static int maNVChuyenCN;
+        //public static int mChinhanh = 0;
+        //public static int maNVChuyenCN;
 
 
 
@@ -83,7 +83,7 @@ namespace QLVT_DATHANG
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng.\n" + e.Message, "", MessageBoxButtons.OK);
                 return 0;
             }
         }
@@ -123,7 +123,8 @@ namespace QLVT_DATHANG
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                Sqlcmd.ExecuteNonQuery(); conn.Close();
+                Sqlcmd.ExecuteNonQuery(); 
+                conn.Close();
                 return 0;
             }
             catch (SqlException ex)

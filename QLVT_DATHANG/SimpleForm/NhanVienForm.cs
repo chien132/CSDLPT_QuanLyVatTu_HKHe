@@ -30,30 +30,36 @@ namespace QLVT_DATHANG
 
         private void NhanVienForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.CTPX' table. You can move, or remove it, as needed.
-            this.cTPXTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPX);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.PhieuXuat' table. You can move, or remove it, as needed.
-            this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.CTPN' table. You can move, or remove it, as needed.
-            this.cTPNTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPN);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.PhieuNhap' table. You can move, or remove it, as needed.
-            this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.CTDDH' table. You can move, or remove it, as needed.
-            this.cTDDHTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTDDH);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
-            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DS_NHANVIEN.ChiNhanh' table. You can move, or remove it, as needed.
             this.chiNhanhTableAdapter.Fill(this.qLVT_DATHANGDataSet.ChiNhanh);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DS_NHANVIEN.NhanVien' table. You can move, or remove it, as needed.
+
+            this.cTPXTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPXTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPX);
+
+            this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
+
+            this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTPNTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPN);
+
+            this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
+
+            this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cTDDHTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTDDH);
+
+            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
+
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
             this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
 
-            //Cấu hình Default chiều cao của các panel =))
+            //Cấu hình chiều cao của các panel
             gb_thongtinNV.Height = 270;
             gbDonDatHang.Height = 350;
             gbPhieuNhap.Height = 350;
             gbPhieuXuat.Height = 350;
             gcNhanVien.Height = 345;
+
             //Tắt các panel của PhieuNhap - PhieuXuat - DatHang trước
             gbDonDatHang.Visible = gbPhieuNhap.Visible = gbPhieuXuat.Visible = false;
 
@@ -74,7 +80,7 @@ namespace QLVT_DATHANG
             cbChiNhanh.ValueMember = "TENSERVER";
 
             cbChiNhanh.Enabled = false;
-            mACNTextEdit.Enabled = false;
+            maCNTextEdit.Enabled = false;
         }
 
         public static int newMANV()
@@ -97,7 +103,7 @@ namespace QLVT_DATHANG
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi tìm Mã Nhân Viên mới! \n" + ex.Message, "Notification", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi khi tìm Mã Nhân Viên mới! \n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
 
                 }
             }
@@ -110,7 +116,8 @@ namespace QLVT_DATHANG
 
         private bool checkValidate(NumericUpDown nu, string str)
         {
-            if (nu.Value == 0)
+            Console.WriteLine(nu.Value);
+            if (nu.Value == 0 && nu.Value.ToString().Trim().Length < 1)
             {
                 MessageBox.Show(str, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 nu.Focus();
@@ -142,19 +149,19 @@ namespace QLVT_DATHANG
             position = nhanVienBindingSource.Position;
             this.nhanVienBindingSource.AddNew();
             //Giá trị mặc định khi Thêm NV
-            mANVNumericUpDown.Value = newMANV();
-            lUONGSpinEdit.Value = 4000000;
+            maNVNumericUpDown.Value = newMANV();
+            luongSpinEdit.Value = 4000000;
             ((DataRowView)nhanVienBindingSource[nhanVienBindingSource.Position])["LUONG"] = 4000000;
-            if (cbChiNhanh.Text == "CHI NHÁNH 1")
+            if (cbChiNhanh.Text == "Chi Nhánh 1")
             {
-                mACNTextEdit.Text = "CN1";
+                maCNTextEdit.Text = "CN1";
             }
-            else if (cbChiNhanh.Text == "CHI NHÁNH 2")
+            else if (cbChiNhanh.Text == "Chi Nhánh 2")
             {
-                mACNTextEdit.Text = "CN2";
+                maCNTextEdit.Text = "CN2";
             }
 
-            mACNTextEdit.Enabled = false;
+            maCNTextEdit.Enabled = false;
             trangThaiXoaCheckBox.Checked = trangThaiXoaCheckBox.Enabled = false;
             btnThem.Enabled = btnXoa.Enabled = gcNhanVien.Enabled = false;
             btnChuyenCN.Enabled = btnRefresh.Enabled = false;
@@ -164,14 +171,14 @@ namespace QLVT_DATHANG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!checkValidate(mANVNumericUpDown, "Mã NV is not empty!")) return;
-            if (!checkValidate(hOTextEdit, "Họ is not empty!")) return;
-            if (!checkValidate(tENTextEdit, "Tên is not empty!")) return;
-            if (nGAYSINHDateEdit.Text.Equals(""))
+            if (!checkValidate(maNVNumericUpDown, "Hãy nhập Mã NV!")) return;
+            if (!checkValidate(hoTextEdit, "Hãy nhập Họ!")) return;
+            if (!checkValidate(tenTextEdit, "Hãy nhập Tên!")) return;
+            if (ngaySinhDateEdit.Text.Equals(""))
             {
-                MessageBox.Show("Ngày sinh is not empty!", "Notification",
+                MessageBox.Show("Hãy nhập Ngày sinh!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nGAYSINHDateEdit.Focus();
+                ngaySinhDateEdit.Focus();
                 return;
             }
 
@@ -189,18 +196,15 @@ namespace QLVT_DATHANG
                 sqlConnection.Open();
                 SqlCommand sqlCommand1 = new SqlCommand(query, sqlConnection);
                 // sqlCommand1.CommandType = CommandType.Text;
-                sqlCommand1.Parameters.AddWithValue("@p1", mANVNumericUpDown.Value);
+                sqlCommand1.Parameters.AddWithValue("@p1", maNVNumericUpDown.Value);
                 sqlCommand1.Parameters.AddWithValue("@p2", "MANV");
                 try
                 {
-                    Console.WriteLine("1111");
                     dataReader = sqlCommand1.ExecuteReader();
-                    Console.WriteLine("2222");
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
+                    MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -211,18 +215,12 @@ namespace QLVT_DATHANG
                 int result = int.Parse(dataReader.GetValue(0).ToString());
                 dataReader.Close();
 
-                int positionMANV = nhanVienBindingSource.Find("MANV", mANVNumericUpDown.Value);
+                int positionMANV = nhanVienBindingSource.Find("MANV", maNVNumericUpDown.Value);
                 int postionCurrent = nhanVienBindingSource.Position;
                 //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
                 if (result == 1 && (positionMANV != postionCurrent))
                 {
-                    MessageBox.Show("Mã NV đã tồn tại ở Chi Nhánh hiện tại!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else if (result == 2)
-                {
-                    MessageBox.Show("Mã NV đã tồn tại ở Chi Nhánh khác!", "Thông báo",
+                    MessageBox.Show("Mã NV đã tồn tại!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -243,22 +241,12 @@ namespace QLVT_DATHANG
                             nhanVienBindingSource.Position = positionMANV;
                             pnThongBao.Visible = true;
                             lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin nhân viên thành công. ";
-
-                            //Timer time = new Timer();
-                            //time.Start();
-                            //if (time.Tick=10)
-                            //{
-                            //    pnThongBao.Visible = false;
-                            //}
-
-
-
                         }
                         catch (Exception ex)
                         {
                             //Khi Update database lỗi thì xóa record vừa thêm trong bds
                             nhanVienBindingSource.RemoveCurrent();
-                            MessageBox.Show("Ghi dữ liệu thất lại. Vui lòng kiểm tra lại!\n" + ex.Message, "Error",
+                            MessageBox.Show("Ghi dữ liệu thất lại. Vui lòng kiểm tra lại!\n" + ex.Message, "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -268,17 +256,17 @@ namespace QLVT_DATHANG
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            int positionNV = nhanVienBindingSource.Find("MANV", mANVNumericUpDown.Value);
+            int positionNV = nhanVienBindingSource.Find("MANV", maNVNumericUpDown.Value);
             int trangthaixoaNV = int.Parse(((DataRowView)nhanVienBindingSource[positionNV])["TrangThaiXoa"].ToString());
             if (trangthaixoaNV == 1)
             {
-                MessageBox.Show("Nhân Viên này đã bị xóa hoặc chuyển chi nhánh. Vui lòng chọn nhân viên khác!\n", "Error",
+                MessageBox.Show("Nhân Viên này đã bị xóa hoặc chuyển chi nhánh. Vui lòng chọn nhân viên khác!\n", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (mANVNumericUpDown.Value == Program.manv)
+            if (maNVNumericUpDown.Value == Program.manv)
             {
-                MessageBox.Show("Tài khoản Nhân Viên đang được đăng nhập không thể xóa. Vui lòng chọn nhân viên khác!\n", "Error",
+                MessageBox.Show("Tài khoản Nhân Viên đang được đăng nhập không thể xóa. Vui lòng chọn nhân viên khác!\n", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -318,7 +306,7 @@ namespace QLVT_DATHANG
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
+                        MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
@@ -347,7 +335,7 @@ namespace QLVT_DATHANG
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
+                        MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
                         nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", manv);
@@ -358,13 +346,13 @@ namespace QLVT_DATHANG
                     dataReader.Close();
                     if (result == 1)
                     {
-                        MessageBox.Show("Xóa Login không thành công. Vui lòng liên hệ Quản trị viên!", "Notification",
+                        MessageBox.Show("Xóa Login không thành công. Vui lòng liên hệ Quản trị viên!", "Thông báo",
                              MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     else if (result == 2)
                     {
-                        MessageBox.Show("Xóa User không thành công. Vui lòng liên hệ Quản trị viên!", "Notification",
+                        MessageBox.Show("Xóa User không thành công. Vui lòng liên hệ Quản trị viên!", "Thông báo",
                              MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }

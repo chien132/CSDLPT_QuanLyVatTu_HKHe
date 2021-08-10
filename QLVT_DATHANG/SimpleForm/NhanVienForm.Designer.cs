@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label nGAYSINHLabel;
-            System.Windows.Forms.Label hOLabel;
-            System.Windows.Forms.Label tENLabel;
-            System.Windows.Forms.Label dIACHILabel;
-            System.Windows.Forms.Label lUONGLabel;
-            System.Windows.Forms.Label mACNLabel;
-            System.Windows.Forms.Label mANVLabel;
+            System.Windows.Forms.Label ngaySinhLabel;
+            System.Windows.Forms.Label hoLabel;
+            System.Windows.Forms.Label tenLabel;
+            System.Windows.Forms.Label diaChiLabel;
+            System.Windows.Forms.Label luongLabel;
+            System.Windows.Forms.Label maCNLabel;
+            System.Windows.Forms.Label maNVLabel;
             System.Windows.Forms.Label trangThaiXoaLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienForm));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
@@ -50,13 +50,13 @@
             this.trangThaiXoaCheckBox = new System.Windows.Forms.CheckBox();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.mANVNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.mACNTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.lUONGSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.maNVNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.maCNTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.luongSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.diaChiTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tenTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.hoTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ngaySinhDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pbThongBao = new System.Windows.Forms.PictureBox();
             this.lbThongBao = new System.Windows.Forms.Label();
@@ -191,25 +191,25 @@
             this.phieuXuatTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter();
             this.cTPXTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPXTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
-            nGAYSINHLabel = new System.Windows.Forms.Label();
-            hOLabel = new System.Windows.Forms.Label();
-            tENLabel = new System.Windows.Forms.Label();
-            dIACHILabel = new System.Windows.Forms.Label();
-            lUONGLabel = new System.Windows.Forms.Label();
-            mACNLabel = new System.Windows.Forms.Label();
-            mANVLabel = new System.Windows.Forms.Label();
+            ngaySinhLabel = new System.Windows.Forms.Label();
+            hoLabel = new System.Windows.Forms.Label();
+            tenLabel = new System.Windows.Forms.Label();
+            diaChiLabel = new System.Windows.Forms.Label();
+            luongLabel = new System.Windows.Forms.Label();
+            maCNLabel = new System.Windows.Forms.Label();
+            maNVLabel = new System.Windows.Forms.Label();
             trangThaiXoaLabel1 = new System.Windows.Forms.Label();
             this.gb_thongtinNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mACNTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maNVNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maCNTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luongSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaChiTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).BeginInit();
             this.pnChiNhanh.SuspendLayout();
@@ -252,74 +252,74 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).BeginInit();
             this.SuspendLayout();
             // 
-            // nGAYSINHLabel
+            // ngaySinhLabel
             // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(786, 64);
-            nGAYSINHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(77, 18);
-            nGAYSINHLabel.TabIndex = 17;
-            nGAYSINHLabel.Text = "Ngày sinh:";
+            ngaySinhLabel.AutoSize = true;
+            ngaySinhLabel.Location = new System.Drawing.Point(786, 64);
+            ngaySinhLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            ngaySinhLabel.Name = "ngaySinhLabel";
+            ngaySinhLabel.Size = new System.Drawing.Size(77, 18);
+            ngaySinhLabel.TabIndex = 17;
+            ngaySinhLabel.Text = "Ngày sinh:";
             // 
-            // hOLabel
+            // hoLabel
             // 
-            hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(786, 20);
-            hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(31, 18);
-            hOLabel.TabIndex = 18;
-            hOLabel.Text = "Họ:";
+            hoLabel.AutoSize = true;
+            hoLabel.Location = new System.Drawing.Point(786, 20);
+            hoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            hoLabel.Name = "hoLabel";
+            hoLabel.Size = new System.Drawing.Size(31, 18);
+            hoLabel.TabIndex = 18;
+            hoLabel.Text = "Họ:";
             // 
-            // tENLabel
+            // tenLabel
             // 
-            tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(1080, 15);
-            tENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(39, 18);
-            tENLabel.TabIndex = 19;
-            tENLabel.Text = "Tên:";
+            tenLabel.AutoSize = true;
+            tenLabel.Location = new System.Drawing.Point(1080, 15);
+            tenLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            tenLabel.Name = "tenLabel";
+            tenLabel.Size = new System.Drawing.Size(39, 18);
+            tenLabel.TabIndex = 19;
+            tenLabel.Text = "Tên:";
             // 
-            // dIACHILabel
+            // diaChiLabel
             // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(524, 105);
-            dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(55, 18);
-            dIACHILabel.TabIndex = 20;
-            dIACHILabel.Text = "Đia chỉ:";
+            diaChiLabel.AutoSize = true;
+            diaChiLabel.Location = new System.Drawing.Point(524, 105);
+            diaChiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            diaChiLabel.Name = "diaChiLabel";
+            diaChiLabel.Size = new System.Drawing.Size(55, 18);
+            diaChiLabel.TabIndex = 20;
+            diaChiLabel.Text = "Đia chỉ:";
             // 
-            // lUONGLabel
+            // luongLabel
             // 
-            lUONGLabel.Location = new System.Drawing.Point(1080, 62);
-            lUONGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lUONGLabel.Name = "lUONGLabel";
-            lUONGLabel.Size = new System.Drawing.Size(64, 30);
-            lUONGLabel.TabIndex = 27;
-            lUONGLabel.Text = "Lương:";
+            luongLabel.Location = new System.Drawing.Point(1080, 62);
+            luongLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            luongLabel.Name = "luongLabel";
+            luongLabel.Size = new System.Drawing.Size(64, 30);
+            luongLabel.TabIndex = 27;
+            luongLabel.Text = "Lương:";
             // 
-            // mACNLabel
+            // maCNLabel
             // 
-            mACNLabel.AutoSize = true;
-            mACNLabel.Location = new System.Drawing.Point(523, 65);
-            mACNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            mACNLabel.Name = "mACNLabel";
-            mACNLabel.Size = new System.Drawing.Size(100, 18);
-            mACNLabel.TabIndex = 22;
-            mACNLabel.Text = "Mã chi nhánh:";
+            maCNLabel.AutoSize = true;
+            maCNLabel.Location = new System.Drawing.Point(523, 65);
+            maCNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            maCNLabel.Name = "maCNLabel";
+            maCNLabel.Size = new System.Drawing.Size(100, 18);
+            maCNLabel.TabIndex = 22;
+            maCNLabel.Text = "Mã chi nhánh:";
             // 
-            // mANVLabel
+            // maNVLabel
             // 
-            mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(524, 25);
-            mANVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(101, 18);
-            mANVLabel.TabIndex = 24;
-            mANVLabel.Text = "Mã nhân viên:";
+            maNVLabel.AutoSize = true;
+            maNVLabel.Location = new System.Drawing.Point(524, 25);
+            maNVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            maNVLabel.Name = "maNVLabel";
+            maNVLabel.Size = new System.Drawing.Size(101, 18);
+            maNVLabel.TabIndex = 24;
+            maNVLabel.Text = "Mã nhân viên:";
             // 
             // trangThaiXoaLabel1
             // 
@@ -335,20 +335,20 @@
             // 
             this.gb_thongtinNV.Controls.Add(trangThaiXoaLabel1);
             this.gb_thongtinNV.Controls.Add(this.trangThaiXoaCheckBox);
-            this.gb_thongtinNV.Controls.Add(mANVLabel);
-            this.gb_thongtinNV.Controls.Add(this.mANVNumericUpDown);
-            this.gb_thongtinNV.Controls.Add(mACNLabel);
-            this.gb_thongtinNV.Controls.Add(this.mACNTextEdit);
-            this.gb_thongtinNV.Controls.Add(lUONGLabel);
-            this.gb_thongtinNV.Controls.Add(this.lUONGSpinEdit);
-            this.gb_thongtinNV.Controls.Add(dIACHILabel);
-            this.gb_thongtinNV.Controls.Add(this.dIACHITextEdit);
-            this.gb_thongtinNV.Controls.Add(tENLabel);
-            this.gb_thongtinNV.Controls.Add(this.tENTextEdit);
-            this.gb_thongtinNV.Controls.Add(hOLabel);
-            this.gb_thongtinNV.Controls.Add(this.hOTextEdit);
-            this.gb_thongtinNV.Controls.Add(nGAYSINHLabel);
-            this.gb_thongtinNV.Controls.Add(this.nGAYSINHDateEdit);
+            this.gb_thongtinNV.Controls.Add(maNVLabel);
+            this.gb_thongtinNV.Controls.Add(this.maNVNumericUpDown);
+            this.gb_thongtinNV.Controls.Add(maCNLabel);
+            this.gb_thongtinNV.Controls.Add(this.maCNTextEdit);
+            this.gb_thongtinNV.Controls.Add(luongLabel);
+            this.gb_thongtinNV.Controls.Add(this.luongSpinEdit);
+            this.gb_thongtinNV.Controls.Add(diaChiLabel);
+            this.gb_thongtinNV.Controls.Add(this.diaChiTextEdit);
+            this.gb_thongtinNV.Controls.Add(tenLabel);
+            this.gb_thongtinNV.Controls.Add(this.tenTextEdit);
+            this.gb_thongtinNV.Controls.Add(hoLabel);
+            this.gb_thongtinNV.Controls.Add(this.hoTextEdit);
+            this.gb_thongtinNV.Controls.Add(ngaySinhLabel);
+            this.gb_thongtinNV.Controls.Add(this.ngaySinhDateEdit);
             this.gb_thongtinNV.Controls.Add(this.pictureBox10);
             this.gb_thongtinNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.gb_thongtinNV.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,98 +382,98 @@
             this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet_DS_NHANVIEN";
             this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // mANVNumericUpDown
+            // maNVNumericUpDown
             // 
-            this.mANVNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.nhanVienBindingSource, "MANV", true));
-            this.mANVNumericUpDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mANVNumericUpDown.Location = new System.Drawing.Point(640, 18);
-            this.mANVNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
-            this.mANVNumericUpDown.Maximum = new decimal(new int[] {
+            this.maNVNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.nhanVienBindingSource, "MANV", true));
+            this.maNVNumericUpDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maNVNumericUpDown.Location = new System.Drawing.Point(640, 18);
+            this.maNVNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.maNVNumericUpDown.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
-            this.mANVNumericUpDown.Name = "mANVNumericUpDown";
-            this.mANVNumericUpDown.Size = new System.Drawing.Size(94, 23);
-            this.mANVNumericUpDown.TabIndex = 25;
+            this.maNVNumericUpDown.Name = "maNVNumericUpDown";
+            this.maNVNumericUpDown.Size = new System.Drawing.Size(94, 23);
+            this.maNVNumericUpDown.TabIndex = 25;
             // 
-            // mACNTextEdit
+            // maCNTextEdit
             // 
-            this.mACNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "MACN", true));
-            this.mACNTextEdit.Location = new System.Drawing.Point(640, 63);
-            this.mACNTextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.mACNTextEdit.Name = "mACNTextEdit";
-            this.mACNTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mACNTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.mACNTextEdit.Size = new System.Drawing.Size(94, 22);
-            this.mACNTextEdit.TabIndex = 23;
+            this.maCNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "MACN", true));
+            this.maCNTextEdit.Location = new System.Drawing.Point(640, 63);
+            this.maCNTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.maCNTextEdit.Name = "maCNTextEdit";
+            this.maCNTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maCNTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.maCNTextEdit.Size = new System.Drawing.Size(94, 22);
+            this.maCNTextEdit.TabIndex = 23;
             // 
-            // lUONGSpinEdit
+            // luongSpinEdit
             // 
-            this.lUONGSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "LUONG", true));
-            this.lUONGSpinEdit.EditValue = new decimal(new int[] {
+            this.luongSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "LUONG", true));
+            this.luongSpinEdit.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.lUONGSpinEdit.Location = new System.Drawing.Point(1152, 59);
-            this.lUONGSpinEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.lUONGSpinEdit.Name = "lUONGSpinEdit";
-            this.lUONGSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUONGSpinEdit.Properties.Appearance.Options.UseFont = true;
-            this.lUONGSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.luongSpinEdit.Location = new System.Drawing.Point(1152, 59);
+            this.luongSpinEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.luongSpinEdit.Name = "luongSpinEdit";
+            this.luongSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.luongSpinEdit.Properties.Appearance.Options.UseFont = true;
+            this.luongSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lUONGSpinEdit.Size = new System.Drawing.Size(167, 22);
-            this.lUONGSpinEdit.TabIndex = 22;
+            this.luongSpinEdit.Size = new System.Drawing.Size(167, 22);
+            this.luongSpinEdit.TabIndex = 22;
             // 
-            // dIACHITextEdit
+            // diaChiTextEdit
             // 
-            this.dIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "DIACHI", true));
-            this.dIACHITextEdit.Location = new System.Drawing.Point(640, 102);
-            this.dIACHITextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.dIACHITextEdit.Name = "dIACHITextEdit";
-            this.dIACHITextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dIACHITextEdit.Properties.Appearance.Options.UseFont = true;
-            this.dIACHITextEdit.Size = new System.Drawing.Size(404, 22);
-            this.dIACHITextEdit.TabIndex = 21;
+            this.diaChiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "DIACHI", true));
+            this.diaChiTextEdit.Location = new System.Drawing.Point(640, 102);
+            this.diaChiTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.diaChiTextEdit.Name = "diaChiTextEdit";
+            this.diaChiTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diaChiTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.diaChiTextEdit.Size = new System.Drawing.Size(404, 22);
+            this.diaChiTextEdit.TabIndex = 21;
             // 
-            // tENTextEdit
+            // tenTextEdit
             // 
-            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "TEN", true));
-            this.tENTextEdit.Location = new System.Drawing.Point(1152, 15);
-            this.tENTextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.tENTextEdit.Name = "tENTextEdit";
-            this.tENTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tENTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.tENTextEdit.Size = new System.Drawing.Size(167, 22);
-            this.tENTextEdit.TabIndex = 28;
+            this.tenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "TEN", true));
+            this.tenTextEdit.Location = new System.Drawing.Point(1152, 15);
+            this.tenTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.tenTextEdit.Name = "tenTextEdit";
+            this.tenTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.tenTextEdit.Size = new System.Drawing.Size(167, 22);
+            this.tenTextEdit.TabIndex = 28;
             // 
-            // hOTextEdit
+            // hoTextEdit
             // 
-            this.hOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "HO", true));
-            this.hOTextEdit.Location = new System.Drawing.Point(868, 21);
-            this.hOTextEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.hOTextEdit.Name = "hOTextEdit";
-            this.hOTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hOTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.hOTextEdit.Size = new System.Drawing.Size(176, 22);
-            this.hOTextEdit.TabIndex = 19;
+            this.hoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "HO", true));
+            this.hoTextEdit.Location = new System.Drawing.Point(868, 21);
+            this.hoTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.hoTextEdit.Name = "hoTextEdit";
+            this.hoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.hoTextEdit.Size = new System.Drawing.Size(176, 22);
+            this.hoTextEdit.TabIndex = 19;
             // 
-            // nGAYSINHDateEdit
+            // ngaySinhDateEdit
             // 
-            this.nGAYSINHDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "NGAYSINH", true));
-            this.nGAYSINHDateEdit.EditValue = null;
-            this.nGAYSINHDateEdit.Location = new System.Drawing.Point(868, 63);
-            this.nGAYSINHDateEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.nGAYSINHDateEdit.Name = "nGAYSINHDateEdit";
-            this.nGAYSINHDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nGAYSINHDateEdit.Properties.Appearance.Options.UseFont = true;
-            this.nGAYSINHDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ngaySinhDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nhanVienBindingSource, "NGAYSINH", true));
+            this.ngaySinhDateEdit.EditValue = null;
+            this.ngaySinhDateEdit.Location = new System.Drawing.Point(868, 63);
+            this.ngaySinhDateEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.ngaySinhDateEdit.Name = "ngaySinhDateEdit";
+            this.ngaySinhDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngaySinhDateEdit.Properties.Appearance.Options.UseFont = true;
+            this.ngaySinhDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ngaySinhDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Size = new System.Drawing.Size(176, 22);
-            this.nGAYSINHDateEdit.TabIndex = 18;
+            this.ngaySinhDateEdit.Size = new System.Drawing.Size(176, 22);
+            this.ngaySinhDateEdit.TabIndex = 18;
             // 
             // pictureBox10
             // 
@@ -2097,14 +2097,14 @@
             this.gb_thongtinNV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANVNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mACNTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUONGSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maNVNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maCNTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luongSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaChiTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).EndInit();
             this.pnChiNhanh.ResumeLayout(false);
@@ -2163,12 +2163,12 @@
         private System.Windows.Forms.BindingSource chiNhanhBindingSource;
         private System.Windows.Forms.PictureBox pictureBox10;
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN1;
-        private DevExpress.XtraEditors.TextEdit mACNTextEdit;
-        private DevExpress.XtraEditors.SpinEdit lUONGSpinEdit;
-        private DevExpress.XtraEditors.TextEdit dIACHITextEdit;
-        private DevExpress.XtraEditors.TextEdit tENTextEdit;
-        private DevExpress.XtraEditors.TextEdit hOTextEdit;
-        private DevExpress.XtraEditors.DateEdit nGAYSINHDateEdit;
+        private DevExpress.XtraEditors.TextEdit maCNTextEdit;
+        private DevExpress.XtraEditors.SpinEdit luongSpinEdit;
+        private DevExpress.XtraEditors.TextEdit diaChiTextEdit;
+        private DevExpress.XtraEditors.TextEdit tenTextEdit;
+        private DevExpress.XtraEditors.TextEdit hoTextEdit;
+        private DevExpress.XtraEditors.DateEdit ngaySinhDateEdit;
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN2;
         private System.Windows.Forms.CheckBox trangThaiXoaCheckBox;
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN3;
@@ -2234,7 +2234,7 @@
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet1;
         private QLVT_DATHANGDataSet qlvT_DATHANGDataSet2;
         private System.Windows.Forms.Panel pnThongBao;
-        private System.Windows.Forms.NumericUpDown mANVNumericUpDown;
+        private System.Windows.Forms.NumericUpDown maNVNumericUpDown;
         private System.Windows.Forms.BindingSource datHangBindingSource;
         private QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
         private System.Windows.Forms.BindingSource cTDDHBindingSource;
