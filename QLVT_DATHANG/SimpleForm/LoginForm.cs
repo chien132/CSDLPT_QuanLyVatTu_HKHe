@@ -16,6 +16,7 @@ namespace QLVT_DATHANG
         public LoginForm()
         {
             InitializeComponent();
+            Program.loginForm = this;
         }
 
         private Form CheckExists(Type ftype)
@@ -26,12 +27,17 @@ namespace QLVT_DATHANG
             return null;
         }
 
+        public void reset()
+        {
+            tb_dang_nhap.Text = "";
+            tb_mat_khau.Text = "";
+            cb_chi_nhanh.SelectedIndex = 0;
+        }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet_DSPhanManh.Get_Subscribes' table. You can move, or remove it, as needed.
             this.get_SubscribesTableAdapter.Fill(this.qLVT_DATHANGDataSet_DSPhanManh.Get_Subscribes);
-
         }
 
 
@@ -59,8 +65,8 @@ namespace QLVT_DATHANG
             //Program.mChinhanh = cb_chi_nhanh.SelectedIndex;
             //Console.WriteLine(Program.mChinhanh);
             Program.bds_dspm = get_SubscribesBindingSource;
-            //Program.mloginDN = Program.mlogin;
-            //Program.passwordDN = Program.password;
+            Program.mloginDN = Program.mlogin;
+            Program.passwordDN = Program.password;
             String strLenh = "EXEC SP_THONGTINDANGNHAP '" + Program.mlogin + "'";
 
             Program.myReader = Program.ExecSqlDataReader(strLenh);
@@ -81,8 +87,9 @@ namespace QLVT_DATHANG
             else
             {
                 this.Hide();
-                frmMain f = new frmMain();
-                f.Show();
+                //frmMain f = new frmMain();
+                Program.mainForm = new frmMain();
+                Program.mainForm.Show();
                // NhanVienForm f = new NhanVienForm();
                 //f.Show();
             }

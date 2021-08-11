@@ -30,9 +30,11 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnThongBao = new System.Windows.Forms.Panel();
+            this.pbThongBao = new System.Windows.Forms.PictureBox();
             this.lbThongBao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThoatTTK = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.rdUser = new System.Windows.Forms.RadioButton();
@@ -46,12 +48,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbThongBao = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.pnThongBao.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,17 @@
             this.pnThongBao.Size = new System.Drawing.Size(1157, 35);
             this.pnThongBao.TabIndex = 21;
             this.pnThongBao.Visible = false;
+            // 
+            // pbThongBao
+            // 
+            this.pbThongBao.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pbThongBao.Image = global::QLVT_DATHANG.Properties.Resources.notification;
+            this.pbThongBao.Location = new System.Drawing.Point(274, 2);
+            this.pbThongBao.Name = "pbThongBao";
+            this.pbThongBao.Size = new System.Drawing.Size(32, 32);
+            this.pbThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbThongBao.TabIndex = 13;
+            this.pbThongBao.TabStop = false;
             // 
             // lbThongBao
             // 
@@ -129,6 +140,16 @@
             this.btnThoatTTK.UseVisualStyleBackColor = false;
             this.btnThoatTTK.Click += new System.EventHandler(this.btnThoatTTK_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVT_DATHANG.Properties.Resources.add_user__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(252, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Lime;
@@ -151,6 +172,7 @@
             this.btnUser.TabIndex = 34;
             this.btnUser.Text = "...";
             this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // rdUser
             // 
@@ -259,27 +281,6 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Tên đăng nhập:";
             // 
-            // pbThongBao
-            // 
-            this.pbThongBao.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pbThongBao.Image = global::QLVT_DATHANG.Properties.Resources.notification;
-            this.pbThongBao.Location = new System.Drawing.Point(274, 2);
-            this.pbThongBao.Name = "pbThongBao";
-            this.pbThongBao.Size = new System.Drawing.Size(32, 32);
-            this.pbThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbThongBao.TabIndex = 13;
-            this.pbThongBao.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QLVT_DATHANG.Properties.Resources.add_user__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(252, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
-            // 
             // ThemTaiKhoanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,9 +294,9 @@
             this.groupBox2.PerformLayout();
             this.pnThongBao.ResumeLayout(false);
             this.pnThongBao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

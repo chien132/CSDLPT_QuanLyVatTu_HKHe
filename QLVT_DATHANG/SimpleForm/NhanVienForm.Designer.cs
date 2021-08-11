@@ -396,6 +396,7 @@
             this.maNVNumericUpDown.Name = "maNVNumericUpDown";
             this.maNVNumericUpDown.Size = new System.Drawing.Size(94, 23);
             this.maNVNumericUpDown.TabIndex = 25;
+            this.maNVNumericUpDown.Leave += new System.EventHandler(this.maNVNumericUpDown_Leave);
             // 
             // maCNTextEdit
             // 

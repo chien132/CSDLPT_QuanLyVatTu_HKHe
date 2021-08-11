@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.chiNhanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbChiNhanh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(14, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -66,17 +66,18 @@
             this.panel1.Size = new System.Drawing.Size(1004, 58);
             this.panel1.TabIndex = 0;
             // 
-            // comboBox1
+            // cbChiNhanh
             // 
-            this.comboBox1.DataSource = this.chiNhanhBindingSource;
-            this.comboBox1.DisplayMember = "ChiNhanh";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(145, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 24);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.ValueMember = "MACN";
+            this.cbChiNhanh.DataSource = this.chiNhanhBindingSource;
+            this.cbChiNhanh.DisplayMember = "ChiNhanh";
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(145, 17);
+            this.cbChiNhanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(233, 24);
+            this.cbChiNhanh.TabIndex = 1;
+            this.cbChiNhanh.ValueMember = "MACN";
+            this.cbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cbChiNhanh_SelectedIndexChanged);
             // 
             // chiNhanhBindingSource
             // 
@@ -128,6 +129,7 @@
             // nhanVienGridControl
             // 
             this.nhanVienGridControl.DataSource = this.nhanVienBindingSource;
+            this.nhanVienGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nhanVienGridControl.Location = new System.Drawing.Point(14, 66);
             this.nhanVienGridControl.MainView = this.gridView1;
             this.nhanVienGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -240,6 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NhanVienSubForm";
             this.Text = "Danh sách nhân viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVienSubForm_FormClosing);
             this.Load += new System.EventHandler(this.NhanVienSubForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -255,7 +258,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbChiNhanh;
         private System.Windows.Forms.Label label1;
         private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
         private System.Windows.Forms.BindingSource chiNhanhBindingSource;

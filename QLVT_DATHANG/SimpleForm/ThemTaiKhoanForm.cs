@@ -32,5 +32,12 @@ namespace QLVT_DATHANG
         {
             this.Close();
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            Program.nhanVienSubForm = new SubForm.NhanVienSubForm();
+            Program.nhanVienSubForm.Show();
+            Program.mainForm.Enabled = false;
+        }
     }
 }

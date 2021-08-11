@@ -538,7 +538,7 @@ namespace QLVT_DATHANG
             }
             Program.phieuNhapSubForm = new SubForm.PhieuNhapSubForm();
             Program.phieuNhapSubForm.Show();
-            Program.frmMain.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
 
 
@@ -750,6 +750,15 @@ namespace QLVT_DATHANG
         public QLVT_DATHANGDataSet getDataSet()
         {
             return this.qLVT_DATHANGDataSet;
+        }
+
+        private void maNVNumericUpDown_Leave(object sender, EventArgs e)
+        {
+            if (maNVNumericUpDown.Text == "")
+            {
+                maNVNumericUpDown.Value = newMANV();
+                maNVNumericUpDown.Text = maNVNumericUpDown.Value.ToString();
+            }
         }
     }
 }
