@@ -59,7 +59,7 @@
             // bt_dang_nhap
             // 
             this.bt_dang_nhap.BackColor = System.Drawing.Color.LightCyan;
-            this.bt_dang_nhap.Location = new System.Drawing.Point(132, 275);
+            this.bt_dang_nhap.Location = new System.Drawing.Point(132, 267);
             this.bt_dang_nhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bt_dang_nhap.Name = "bt_dang_nhap";
             this.bt_dang_nhap.Size = new System.Drawing.Size(250, 60);
@@ -195,9 +195,9 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(178, 353);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.BackColor = System.Drawing.Color.LightPink;
+            this.button1.Location = new System.Drawing.Point(178, 345);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 47);
             this.button1.TabIndex = 11;
@@ -220,7 +220,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 401);
+            this.ClientSize = new System.Drawing.Size(441, 374);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -235,8 +235,8 @@
             this.Controls.Add(this.cb_chi_nhanh);
             this.Controls.Add(this.bt_dang_nhap);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("LoginForm.IconOptions.LargeImage")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";

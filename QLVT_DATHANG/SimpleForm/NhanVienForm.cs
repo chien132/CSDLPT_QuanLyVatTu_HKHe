@@ -30,6 +30,8 @@ namespace QLVT_DATHANG
 
         private void NhanVienForm_Load(object sender, EventArgs e)
         {
+            this.qLVT_DATHANGDataSet.EnforceConstraints = false;
+
             this.chiNhanhTableAdapter.Fill(this.qLVT_DATHANGDataSet.ChiNhanh);
 
             this.cTPXTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -399,7 +401,7 @@ namespace QLVT_DATHANG
         {
             Program.chuyenChiNhanhSubForm = new SubForm.ChuyenChiNhanhSubForm();
             Program.chuyenChiNhanhSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
 
 
 

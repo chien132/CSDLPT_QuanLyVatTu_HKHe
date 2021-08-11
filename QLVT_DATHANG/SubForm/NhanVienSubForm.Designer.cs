@@ -120,12 +120,14 @@
             // nhanVienGridControl
             // 
             this.nhanVienGridControl.DataSource = this.nhanVienBindingSource;
-            this.nhanVienGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nhanVienGridControl.Location = new System.Drawing.Point(12, 66);
+            this.nhanVienGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nhanVienGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.nhanVienGridControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhanVienGridControl.Location = new System.Drawing.Point(0, 0);
             this.nhanVienGridControl.MainView = this.gridView1;
             this.nhanVienGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nhanVienGridControl.Name = "nhanVienGridControl";
-            this.nhanVienGridControl.Size = new System.Drawing.Size(920, 411);
+            this.nhanVienGridControl.Size = new System.Drawing.Size(948, 411);
             this.nhanVienGridControl.TabIndex = 1;
             this.nhanVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -223,7 +225,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(847, 484);
+            this.btnOk.Location = new System.Drawing.Point(847, 418);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 33);
             this.btnOk.TabIndex = 2;
@@ -236,11 +238,12 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 529);
+            this.ClientSize = new System.Drawing.Size(948, 455);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.nhanVienGridControl);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IconOptions.Image = global::QLVT_DATHANG.Properties.Resources.officer;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NhanVienSubForm";

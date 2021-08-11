@@ -129,7 +129,12 @@ namespace QLVT_DATHANG.SubForm
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            Program.nhanVienForm.Enabled = true;
+        }
+
+        private void ChuyenChiNhanhSubForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.mainForm.Enabled = true;
+            Program.mainForm.Focus();
         }
     }
 }

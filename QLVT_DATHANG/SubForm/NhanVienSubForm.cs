@@ -21,6 +21,7 @@ namespace QLVT_DATHANG.SubForm
 
         private void NhanVienSubForm_Load(object sender, EventArgs e)
         {
+            this.qLVT_DATHANGDataSet.EnforceConstraints = false;
             if (Program.mGroup == "CHINHANH" || Program.group == "USER")
             {
                 cbChiNhanh.Visible = false;
@@ -92,7 +93,7 @@ namespace QLVT_DATHANG.SubForm
         {
             if (Program.themTaiKhoanForm != null)    //Thỏa điều kiện Form Tạo TK đang mở => có đối tượng => mới set được value
             {
-                Program.themTaiKhoanForm.tbUser.Text = ((DataRowView)nhanVienBindingSource.Current)["MANV"].ToString();
+                Program.themTaiKhoanForm.tbNhanVien.Text = ((DataRowView)nhanVienBindingSource.Current)["MANV"].ToString();
             }
 
             //if (Program.FormHoatDongNhanVien != null) //Thỏa điều kiện Form Báo cáo Hoạt động NV đang mở => có đối tượng => mới set được value
