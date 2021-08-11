@@ -136,12 +136,6 @@
     <Compile Include="SimpleForm\VatTuForm.Designer.cs">
       <DependentUpon>VatTuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubForm\ChuyenChiNhanhSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\ChuyenChiNhanhSubForm.Designer.cs">
-      <DependentUpon>ChuyenChiNhanhSubForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SubForm\CTDDHSubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,9 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\VatTuForm.resx">
       <DependentUpon>VatTuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\ChuyenChiNhanhSubForm.resx">
-      <DependentUpon>ChuyenChiNhanhSubForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\CTDDHSubForm.resx">
       <DependentUpon>CTDDHSubForm.cs</DependentUpon>

@@ -399,13 +399,95 @@ namespace QLVT_DATHANG
         // CHUYEN CHI NHANH
         private void btnChuyenCN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.chuyenChiNhanhSubForm = new SubForm.ChuyenChiNhanhSubForm();
-            Program.chuyenChiNhanhSubForm.Show();
-            Program.mainForm.Enabled = false;
+            //int positionNV = bdsNV.Find("MANV", mANVNumericUpDown.Value);
+            //int trangthaixoaNV = int.Parse(((DataRowView)bdsNV[positionNV])["TrangThaiXoa"].ToString());
+            //if (trangthaixoaNV == 1)
+            //{
+            //    MessageBox.Show("Nhân Viên này đã bị xóa hoặc chuyển chi nhánh. Vui lòng chọn nhân viên khác!\n", "Error",
+            //                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //if (mANVNumericUpDown.Value == Program.manv)
+            //{
+            //    MessageBox.Show("Tài khoản Nhân Viên đang được đăng nhập không thể chuyển chi nhánh. Vui lòng chọn nhân viên khác!\n", "Error",
+            //                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //DialogResult resultDR = MessageBox.Show("Bạn có chắc muốn chuyển nhân viên này?", "Xác nhận",
+            //    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //if (resultDR == DialogResult.OK)
+            //{
+            //    vitri = bdsNV.Position;
+            //    int MANVCurrent = 0;
+            //    int MANVNew = 0;
+            //    try
+            //    {
+            //        MANVCurrent = int.Parse(((DataRowView)bdsNV[bdsNV.Position])["MANV"].ToString());
+            //        MANVNew = newMANV();
+            //        if (MANVNew == -1) return;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Lỗi khi Parse Int!\n" + ex.Message, "Notification",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
 
+            //    string query = "DECLARE	@result int " +
+            //                   "EXEC @result = SP_ChuyenCN @p1, @p2 " +
+            //                   "SELECT 'result' = @result";
+            //    SqlCommand sqlCommand = new SqlCommand(query, Program.connection);
+            //    sqlCommand.Parameters.AddWithValue("@p1", MANVCurrent);
+            //    sqlCommand.Parameters.AddWithValue("@p2", MANVNew);
+            //    SqlDataReader dataReader = null;
+            //    try
+            //    {
+            //        dataReader = sqlCommand.ExecuteReader();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        //dataReader.Close();
+            //        return;
+            //    }
+            //    dataReader.Read();
+            //    int result = int.Parse(dataReader.GetValue(0).ToString());
+            //    dataReader.Close();
 
-
-
+            //    if (result == -2)         //Trường hợp 1: Kiểm tra thấy bên chi nhánh kia có ít nhất 1 NV giống nhau về họ tên, ngày sinh
+            //    {
+            //        Program.maNVChuyenCN = MANVCurrent;
+            //        Program.PopupFormNVTrung = new PopupFormNVTrung();
+            //        Program.PopupFormNVTrung.Show();
+            //        Program.formMain.Enabled = false;
+            //    }
+            //    else if (result == -1)    //Trường hợp thất bại
+            //    {
+            //        MessageBox.Show("Chuyển Chi nhánh thất bại! Dữ liệu đã được Roolback!", "Notification",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+            //    else if (result == -3)
+            //    {
+            //        MessageBox.Show("Xóa Login không thành công. Vui lòng liên hệ Quản trị viên!", "Notification",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+            //    else if (result == -4)
+            //    {
+            //        MessageBox.Show("Xóa User không thành công. Vui lòng liên hệ Quản trị viên!", "Notification",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+            //    else if (result == 0)     //Trường hợp thành công khi bên Chi nhánh kia nhân viên chưa từng chuyển chi nhánh
+            //    {
+            //        MessageBox.Show("Chuyển chi nhánh thành công. Với Mã Nhân Viên mới là: " + MANVNew, "Notification",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);  //Cập nhật xong Refresh lại 
+            //    bdsNV.Position = vitri;                  //Cho con trỏ chuột về vị trí trước đó
+            //}
         }
 
         private void btnExit_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
