@@ -21,7 +21,7 @@ namespace QLVT_DATHANG.SubForm
 
         private void NhanVienSubForm_Load(object sender, EventArgs e)
         {
-            if (Program.group == "CHINHANH" || Program.group == "USER")
+            if (Program.mGroup == "CHINHANH" || Program.group == "USER")
             {
                 cbChiNhanh.Visible = false;
                 label1.Visible = false;
@@ -35,6 +35,8 @@ namespace QLVT_DATHANG.SubForm
             this.cbChiNhanh.DataSource = Program.bds_dspm; //DataSource của cbChiNhanh tham chiếu đến bindingSource ở LoginForm
             cbChiNhanh.DisplayMember = "TENCN";
             cbChiNhanh.ValueMember = "TENSERVER";
+            Console.WriteLine(cbChiNhanh.SelectedValue);
+
         }
 
 
@@ -72,13 +74,38 @@ namespace QLVT_DATHANG.SubForm
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Kết nối Server thất bại! " + ex.Message, "Notification", MessageBoxButtons.OK);
+                        MessageBox.Show("Kết nối Server thất bại! " + ex.Message, "Thông báo", MessageBoxButtons.OK);
                         return;
                     }
                     this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
                 }
             }
+        }
+
+        private void nhanVienGridControl_DoubleClick(object sender, EventArgs e)
+        {
+            confirm();
+        }
+
+        private void confirm()
+        {
+            if (Program.themTaiKhoanForm != null)    //Thỏa điều kiện Form Tạo TK đang mở => có đối tượng => mới set được value
+            {
+                Program.themTaiKhoanForm.tbUser.Text = ((DataRowView)nhanVienBindingSource.Current)["MANV"].ToString();
+            }
+
+            //if (Program.FormHoatDongNhanVien != null) //Thỏa điều kiện Form Báo cáo Hoạt động NV đang mở => có đối tượng => mới set được value
+            //{
+            //    Program.FormHoatDongNhanVien.tbMANV.Text = ((DataRowView)nhanVienBindingSource.Current)["MANV"].ToString();
+            //}
+            this.Close();
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            confirm();
+
         }
     }
 }

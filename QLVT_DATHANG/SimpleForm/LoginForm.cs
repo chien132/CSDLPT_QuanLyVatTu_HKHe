@@ -80,8 +80,8 @@ namespace QLVT_DATHANG
                 return;
             }
 
-            //Program.mHoten = Program.myReader.GetString(1);
-            //Program.mGroup = Program.myReader.GetString(2);
+            Program.mHoten = Program.myReader.GetString(1);
+            Program.mGroup = Program.myReader.GetString(2);
             Form frm = this.CheckExists(typeof(frmMain));
             if (frm != null) frm.Activate();
             else
