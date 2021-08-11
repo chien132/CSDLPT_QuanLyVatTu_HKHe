@@ -62,12 +62,10 @@
             this.lbThongBao = new System.Windows.Forms.Label();
             this.pnChiNhanh = new System.Windows.Forms.Panel();
             this.cbChiNhanh = new System.Windows.Forms.ComboBox();
-            this.chiNhanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnThongBao = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.nhanVienTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.NhanVienTableAdapter();
             this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
-            this.chiNhanhTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.ChiNhanhTableAdapter();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -95,6 +93,7 @@
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
@@ -140,6 +139,9 @@
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gbPhieuNhap = new System.Windows.Forms.GroupBox();
             this.cTPNGridControl = new DevExpress.XtraGrid.GridControl();
+            this.cTPNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fKDatHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvCTPN = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -180,10 +182,7 @@
             this.cTDDHTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter();
             this.phieuXuatTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter();
             this.cTPXTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPXTableAdapter();
-            this.fKDatHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phieuNhapTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter();
-            this.cTPNBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cTPNTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter();
             ngaySinhLabel = new System.Windows.Forms.Label();
             hoLabel = new System.Windows.Forms.Label();
@@ -207,7 +206,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).BeginInit();
             this.pnChiNhanh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).BeginInit();
             this.pnThongBao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
@@ -223,6 +221,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDDH)).BeginInit();
             this.gbPhieuNhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPN)).BeginInit();
@@ -235,9 +236,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuXuatGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ngaySinhLabel
@@ -383,7 +381,7 @@
             0});
             this.maNVNumericUpDown.Name = "maNVNumericUpDown";
             this.maNVNumericUpDown.Size = new System.Drawing.Size(94, 23);
-            this.maNVNumericUpDown.TabIndex = 25;
+            this.maNVNumericUpDown.TabIndex = 99;
             this.maNVNumericUpDown.Leave += new System.EventHandler(this.maNVNumericUpDown_Leave);
             // 
             // maCNTextEdit
@@ -395,7 +393,7 @@
             this.maCNTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maCNTextEdit.Properties.Appearance.Options.UseFont = true;
             this.maCNTextEdit.Size = new System.Drawing.Size(94, 22);
-            this.maCNTextEdit.TabIndex = 23;
+            this.maCNTextEdit.TabIndex = 3;
             // 
             // luongSpinEdit
             // 
@@ -413,7 +411,7 @@
             this.luongSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luongSpinEdit.Size = new System.Drawing.Size(167, 22);
-            this.luongSpinEdit.TabIndex = 22;
+            this.luongSpinEdit.TabIndex = 5;
             // 
             // diaChiTextEdit
             // 
@@ -424,7 +422,7 @@
             this.diaChiTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.diaChiTextEdit.Properties.Appearance.Options.UseFont = true;
             this.diaChiTextEdit.Size = new System.Drawing.Size(404, 22);
-            this.diaChiTextEdit.TabIndex = 21;
+            this.diaChiTextEdit.TabIndex = 6;
             // 
             // tenTextEdit
             // 
@@ -435,7 +433,7 @@
             this.tenTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenTextEdit.Properties.Appearance.Options.UseFont = true;
             this.tenTextEdit.Size = new System.Drawing.Size(167, 22);
-            this.tenTextEdit.TabIndex = 28;
+            this.tenTextEdit.TabIndex = 2;
             // 
             // hoTextEdit
             // 
@@ -446,7 +444,7 @@
             this.hoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hoTextEdit.Properties.Appearance.Options.UseFont = true;
             this.hoTextEdit.Size = new System.Drawing.Size(176, 22);
-            this.hoTextEdit.TabIndex = 19;
+            this.hoTextEdit.TabIndex = 1;
             // 
             // ngaySinhDateEdit
             // 
@@ -462,7 +460,7 @@
             this.ngaySinhDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaySinhDateEdit.Size = new System.Drawing.Size(176, 22);
-            this.ngaySinhDateEdit.TabIndex = 18;
+            this.ngaySinhDateEdit.TabIndex = 4;
             // 
             // pictureBox10
             // 
@@ -513,9 +511,6 @@
             // 
             // cbChiNhanh
             // 
-            this.cbChiNhanh.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.chiNhanhBindingSource, "ChiNhanh", true));
-            this.cbChiNhanh.DataSource = this.chiNhanhBindingSource;
-            this.cbChiNhanh.DisplayMember = "ChiNhanh";
             this.cbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbChiNhanh.FormattingEnabled = true;
@@ -524,12 +519,6 @@
             this.cbChiNhanh.Name = "cbChiNhanh";
             this.cbChiNhanh.Size = new System.Drawing.Size(252, 23);
             this.cbChiNhanh.TabIndex = 11;
-            this.cbChiNhanh.ValueMember = "MACN";
-            // 
-            // chiNhanhBindingSource
-            // 
-            this.chiNhanhBindingSource.DataMember = "ChiNhanh";
-            this.chiNhanhBindingSource.DataSource = this.qLVT_DATHANGDataSet;
             // 
             // pnThongBao
             // 
@@ -561,7 +550,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChiNhanhTableAdapter = this.chiNhanhTableAdapter;
+            this.tableAdapterManager.ChiNhanhTableAdapter = null;
             this.tableAdapterManager.CTDDHTableAdapter = null;
             this.tableAdapterManager.CTPNTableAdapter = null;
             this.tableAdapterManager.CTPXTableAdapter = null;
@@ -572,10 +561,6 @@
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VattuTableAdapter = null;
-            // 
-            // chiNhanhTableAdapter
-            // 
-            this.chiNhanhTableAdapter.ClearBeforeFill = true;
             // 
             // bar2
             // 
@@ -800,9 +785,10 @@
             this.btnPhieuNhap,
             this.btnPhieuXuat,
             this.btnSwitchPanel,
-            this.btnInfo});
+            this.btnInfo,
+            this.btnEdit});
             this.barManager3.MainMenu = this.bar8;
-            this.barManager3.MaxItemId = 20;
+            this.barManager3.MaxItemId = 22;
             this.barManager3.StatusBar = this.bar9;
             // 
             // bar8
@@ -814,10 +800,11 @@
             this.bar8.FloatLocation = new System.Drawing.Point(19, 132);
             this.bar8.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUndo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnChuyenCN),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSwitchPanel),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnExit)});
@@ -847,6 +834,18 @@
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnXoa.Size = new System.Drawing.Size(80, 0);
             this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Caption = "Sửa";
+            this.btnEdit.Id = 21;
+            this.btnEdit.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.pencil;
+            this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
+            this.btnEdit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnLuu
             // 
@@ -1493,6 +1492,21 @@
             this.cTPNGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTPN});
             // 
+            // cTPNBindingSource
+            // 
+            this.cTPNBindingSource.DataMember = "FK_CTPN_PhieuNhap";
+            this.cTPNBindingSource.DataSource = this.phieuNhapBindingSource;
+            // 
+            // phieuNhapBindingSource
+            // 
+            this.phieuNhapBindingSource.DataMember = "FK_PhieuNhap_DatHang";
+            this.phieuNhapBindingSource.DataSource = this.fKDatHangBindingSource;
+            // 
+            // fKDatHangBindingSource
+            // 
+            this.fKDatHangBindingSource.DataMember = "FK_DatHang_NhanVien";
+            this.fKDatHangBindingSource.DataSource = this.nhanVienBindingSource;
+            // 
             // gvCTPN
             // 
             this.gvCTPN.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -1996,24 +2010,9 @@
             // 
             this.cTPXTableAdapter.ClearBeforeFill = true;
             // 
-            // fKDatHangBindingSource
-            // 
-            this.fKDatHangBindingSource.DataMember = "FK_DatHang_NhanVien";
-            this.fKDatHangBindingSource.DataSource = this.nhanVienBindingSource;
-            // 
-            // phieuNhapBindingSource
-            // 
-            this.phieuNhapBindingSource.DataMember = "FK_PhieuNhap_DatHang";
-            this.phieuNhapBindingSource.DataSource = this.fKDatHangBindingSource;
-            // 
             // phieuNhapTableAdapter
             // 
             this.phieuNhapTableAdapter.ClearBeforeFill = true;
-            // 
-            // cTPNBindingSource
-            // 
-            this.cTPNBindingSource.DataMember = "FK_CTPN_PhieuNhap";
-            this.cTPNBindingSource.DataSource = this.phieuNhapBindingSource;
             // 
             // cTPNTableAdapter
             // 
@@ -2068,7 +2067,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbThongBao)).EndInit();
             this.pnChiNhanh.ResumeLayout(false);
             this.pnChiNhanh.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).EndInit();
             this.pnThongBao.ResumeLayout(false);
             this.pnThongBao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -2085,6 +2083,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDDH)).EndInit();
             this.gbPhieuNhap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPN)).EndInit();
@@ -2097,9 +2098,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuXuatGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2112,8 +2110,6 @@
         private System.Windows.Forms.BindingSource nhanVienBindingSource;
         private QLVT_DATHANGDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
         private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private QLVT_DATHANGDataSetTableAdapters.ChiNhanhTableAdapter chiNhanhTableAdapter;
-        private System.Windows.Forms.BindingSource chiNhanhBindingSource;
         private System.Windows.Forms.PictureBox pictureBox10;
         private DevExpress.XtraEditors.TextEdit maCNTextEdit;
         private DevExpress.XtraEditors.SpinEdit luongSpinEdit;
@@ -2245,5 +2241,6 @@
         private QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
         private System.Windows.Forms.BindingSource cTPNBindingSource;
         private QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter cTPNTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem btnEdit;
     }
 }

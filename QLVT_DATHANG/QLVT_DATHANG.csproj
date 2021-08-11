@@ -258,6 +258,7 @@
   <ItemGroup>
     <Content Include="Properties\account.png" />
     <Content Include="Properties\lock.png" />
+    <None Include="Resources\pencil1.png" />
     <None Include="Resources\export %281%29.png" />
     <None Include="Resources\inventory22.png" />
     <None Include="Resources\packing-list3.png" />

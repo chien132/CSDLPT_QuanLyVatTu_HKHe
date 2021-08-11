@@ -222,6 +222,7 @@
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("NVTrungIncurredForm.IconOptions.Image")));
             this.Name = "NVTrungIncurredForm";
             this.Text = "Nhân viên trùng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NVTrungIncurredForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_NVTrung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CheckNVTrungBindingSource)).EndInit();
             this.fillToolStrip.ResumeLayout(false);
