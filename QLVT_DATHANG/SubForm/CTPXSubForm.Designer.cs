@@ -359,6 +359,7 @@
             this.Name = "CTPXSubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập chi tiết phiếu xuất";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CTPXSubForm_FormClosing);
             this.Load += new System.EventHandler(this.CTPXSubForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).EndInit();

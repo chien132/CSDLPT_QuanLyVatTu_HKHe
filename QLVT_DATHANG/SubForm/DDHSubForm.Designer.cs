@@ -206,7 +206,7 @@
             // 
             // khoGridControl
             // 
-            this.khoGridControl.DataSource = this.datHangBindingSource;
+            this.khoGridControl.DataSource = this.khoBindingSource;
             this.khoGridControl.Dock = System.Windows.Forms.DockStyle.Right;
             this.khoGridControl.Location = new System.Drawing.Point(393, 0);
             this.khoGridControl.MainView = this.gvKho;
@@ -310,6 +310,7 @@
             this.Name = "DDHSubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm đơn đặt hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DDHSubForm_FormClosing);
             this.Load += new System.EventHandler(this.DDHSubForm_Load);
             this.Shown += new System.EventHandler(this.SubFormDDH_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();

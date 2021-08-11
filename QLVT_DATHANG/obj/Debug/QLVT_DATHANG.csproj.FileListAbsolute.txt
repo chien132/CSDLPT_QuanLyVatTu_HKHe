@@ -4,7 +4,6 @@ C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHAN
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.NhanVienForm.resources
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.ThemTaiKhoanForm.resources
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.VatTuForm.resources
-C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.SubForm.ChuyenChiNhanhSubForm.resources
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.SubForm.CTDDHSubForm.resources
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.SubForm.CTPNSubForm.resources
 C:\Users\Chien\GitHub\CSDLPT_QuanLyVatTu_HKHe\QLVT_DATHANG\obj\Debug\QLVT_DATHANG.SubForm.CTPXSubForm.resources

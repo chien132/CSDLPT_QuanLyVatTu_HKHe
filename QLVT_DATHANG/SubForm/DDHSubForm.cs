@@ -32,15 +32,14 @@ namespace QLVT_DATHANG.SubForm
 
         private void DDHSubForm_Load(object sender, EventArgs e)
         {
+            this.qLVT_DATHANGDataSet.EnforceConstraints = false;
 
             this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
             this.khoTableAdapter.Connection.ConnectionString = Program.connstr;
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DatHang' table. You can move, or remove it, as needed.
-            this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.Kho' table. You can move, or remove it, as needed.
+
             this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
             this.khoTableAdapter.Fill(this.qLVT_DATHANGDataSet.Kho);
-            
+
             this.datHangBindingSource.DataSource = Program.nhanVienForm.getDatHangBDS();
 
         }
@@ -151,6 +150,9 @@ namespace QLVT_DATHANG.SubForm
             }
         }
 
-
+        private void DDHSubForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.mainForm.Enabled = true;
+        }
     }
 }

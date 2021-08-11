@@ -22,5 +22,10 @@ namespace QLVT_DATHANG.SubForm
         {
             this.Close();
         }
+
+        private void PhieuNhapSubForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.mainForm.Enabled = true;
+        }
     }
 }

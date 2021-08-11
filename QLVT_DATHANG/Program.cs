@@ -54,7 +54,6 @@ namespace QLVT_DATHANG
         public static LoginForm loginForm;
 
         public static SubForm.NVTrungIncurredForm nVTrungIncurredForm;
-        public static SubForm.ChuyenChiNhanhSubForm chuyenChiNhanhSubForm;
         public static SubForm.DDHSubForm dDHSubForm;
         public static SubForm.CTDDHSubForm cTDDHSubForm;
         public static SubForm.PhieuNhapSubForm phieuNhapSubForm;

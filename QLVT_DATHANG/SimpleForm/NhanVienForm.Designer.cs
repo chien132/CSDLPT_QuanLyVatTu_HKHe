@@ -38,14 +38,14 @@
             System.Windows.Forms.Label maNVLabel;
             System.Windows.Forms.Label trangThaiXoaLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienForm));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode9 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode10 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode11 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode12 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode13 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode14 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode15 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode16 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode6 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode7 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode8 = new DevExpress.XtraGrid.GridLevelNode();
             this.gb_thongtinNV = new System.Windows.Forms.GroupBox();
             this.trangThaiXoaCheckBox = new System.Windows.Forms.CheckBox();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,14 +65,9 @@
             this.chiNhanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnThongBao = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.chiNhanhBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nhanVienTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.NhanVienTableAdapter();
             this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
             this.chiNhanhTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.ChiNhanhTableAdapter();
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN1 = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN2 = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN3 = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN4 = new QLVT_DATHANG.QLVT_DATHANGDataSet();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -127,14 +122,10 @@
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrangThaiXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcNhanVien = new DevExpress.XtraGrid.GridControl();
-            this.qlvT_DATHANGDataSet1 = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.qlvT_DATHANGDataSet2 = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datHangTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter();
-            this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cTDDHTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter();
             this.gbDonDatHang = new System.Windows.Forms.GroupBox();
             this.gcCTDDH = new DevExpress.XtraGrid.GridControl();
+            this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvCTDDH = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMasoDDH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -149,14 +140,12 @@
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gbPhieuNhap = new System.Windows.Forms.GroupBox();
             this.cTPNGridControl = new DevExpress.XtraGrid.GridControl();
-            this.cTPNBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvCTPN = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONG1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDONGIA1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.phieuNhapGridControl = new DevExpress.XtraGrid.GridControl();
-            this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvPN = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -170,27 +159,32 @@
             this.colNhaCC1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.phieuNhapTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter();
-            this.cTPNTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter();
             this.gbPhieuXuat = new System.Windows.Forms.GroupBox();
             this.cTPXGridControl = new DevExpress.XtraGrid.GridControl();
             this.cTPXBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvCTPX = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPX1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAVT2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONG2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDONGIA2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.phieuXuatGridControl = new DevExpress.XtraGrid.GridControl();
-            this.phieuXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvPX = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPX = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHOTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.datHangTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter();
+            this.cTDDHTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter();
             this.phieuXuatTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter();
             this.cTPXTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPXTableAdapter();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.fKDatHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuNhapTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter();
+            this.cTPNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cTPNTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter();
             ngaySinhLabel = new System.Windows.Forms.Label();
             hoLabel = new System.Windows.Forms.Label();
             tenLabel = new System.Windows.Forms.Label();
@@ -215,41 +209,35 @@
             this.pnChiNhanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).BeginInit();
             this.pnThongBao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
             this.gbDonDatHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDDH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDDH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDDH)).BeginInit();
             this.gbPhieuNhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDDH_PN)).BeginInit();
             this.gbPhieuXuat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTPXGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTPXBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuXuatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuXuatGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuXuatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ngaySinhLabel
@@ -566,11 +554,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Chi nhánh";
             // 
-            // chiNhanhBindingSource1
-            // 
-            this.chiNhanhBindingSource1.DataMember = "ChiNhanh";
-            this.chiNhanhBindingSource1.DataSource = this.qLVT_DATHANGDataSet;
-            // 
             // nhanVienTableAdapter
             // 
             this.nhanVienTableAdapter.ClearBeforeFill = true;
@@ -593,26 +576,6 @@
             // chiNhanhTableAdapter
             // 
             this.chiNhanhTableAdapter.ClearBeforeFill = true;
-            // 
-            // qlvT_DATHANGDataSet_DS_NHANVIEN1
-            // 
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN1.DataSetName = "QLVT_DATHANGDataSet_DS_NHANVIEN";
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qlvT_DATHANGDataSet_DS_NHANVIEN2
-            // 
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN2.DataSetName = "QLVT_DATHANGDataSet_DS_NHANVIEN";
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qlvT_DATHANGDataSet_DS_NHANVIEN3
-            // 
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN3.DataSetName = "QLVT_DATHANGDataSet_DS_NHANVIEN";
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qlvT_DATHANGDataSet_DS_NHANVIEN4
-            // 
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN4.DataSetName = "QLVT_DATHANGDataSet_DS_NHANVIEN";
-            this.qlvT_DATHANGDataSet_DS_NHANVIEN4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bar2
             // 
@@ -1252,27 +1215,27 @@
             this.gcNhanVien.DataSource = this.nhanVienBindingSource;
             this.gcNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcNhanVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            gridLevelNode10.RelationName = "FK_CTDDH_DatHang";
-            gridLevelNode12.RelationName = "FK_CTPN_PhieuNhap";
-            gridLevelNode11.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode12});
-            gridLevelNode11.RelationName = "FK_PhieuNhap_DatHang";
-            gridLevelNode9.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode10,
-            gridLevelNode11});
-            gridLevelNode9.RelationName = "FK_DatHang_NhanVien";
-            gridLevelNode14.RelationName = "FK_CTPN_PhieuNhap";
-            gridLevelNode13.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode14});
-            gridLevelNode13.RelationName = "FK_PhieuNhap_NhanVien";
-            gridLevelNode16.RelationName = "FK_CTPX_PX";
-            gridLevelNode15.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode16});
-            gridLevelNode15.RelationName = "FK_PX_NhanVien";
+            gridLevelNode2.RelationName = "FK_CTDDH_DatHang";
+            gridLevelNode4.RelationName = "FK_CTPN_PhieuNhap";
+            gridLevelNode3.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode4});
+            gridLevelNode3.RelationName = "FK_PhieuNhap_DatHang";
+            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2,
+            gridLevelNode3});
+            gridLevelNode1.RelationName = "FK_DatHang_NhanVien";
+            gridLevelNode6.RelationName = "FK_CTPN_PhieuNhap";
+            gridLevelNode5.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode6});
+            gridLevelNode5.RelationName = "FK_PhieuNhap_NhanVien";
+            gridLevelNode8.RelationName = "FK_CTPX_PX";
+            gridLevelNode7.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode8});
+            gridLevelNode7.RelationName = "FK_PX_NhanVien";
             this.gcNhanVien.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode9,
-            gridLevelNode13,
-            gridLevelNode15});
+            gridLevelNode1,
+            gridLevelNode5,
+            gridLevelNode7});
             this.gcNhanVien.Location = new System.Drawing.Point(0, 80);
             this.gcNhanVien.MainView = this.gvNhanVien;
             this.gcNhanVien.Name = "gcNhanVien";
@@ -1280,34 +1243,6 @@
             this.gcNhanVien.TabIndex = 6;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhanVien});
-            // 
-            // qlvT_DATHANGDataSet1
-            // 
-            this.qlvT_DATHANGDataSet1.DataSetName = "QLVT_DATHANGDataSet";
-            this.qlvT_DATHANGDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qlvT_DATHANGDataSet2
-            // 
-            this.qlvT_DATHANGDataSet2.DataSetName = "QLVT_DATHANGDataSet";
-            this.qlvT_DATHANGDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // datHangBindingSource
-            // 
-            this.datHangBindingSource.DataMember = "DatHang";
-            this.datHangBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // datHangTableAdapter
-            // 
-            this.datHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // cTDDHBindingSource
-            // 
-            this.cTDDHBindingSource.DataMember = "CTDDH";
-            this.cTDDHBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // cTDDHTableAdapter
-            // 
-            this.cTDDHTableAdapter.ClearBeforeFill = true;
             // 
             // gbDonDatHang
             // 
@@ -1335,6 +1270,16 @@
             this.gcCTDDH.TabIndex = 1;
             this.gcCTDDH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTDDH});
+            // 
+            // cTDDHBindingSource
+            // 
+            this.cTDDHBindingSource.DataMember = "FK_CTDDH_DatHang";
+            this.cTDDHBindingSource.DataSource = this.datHangBindingSource;
+            // 
+            // datHangBindingSource
+            // 
+            this.datHangBindingSource.DataMember = "FK_DatHang_NhanVien";
+            this.datHangBindingSource.DataSource = this.nhanVienBindingSource;
             // 
             // gvCTDDH
             // 
@@ -1548,11 +1493,6 @@
             this.cTPNGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTPN});
             // 
-            // cTPNBindingSource
-            // 
-            this.cTPNBindingSource.DataMember = "CTPN";
-            this.cTPNBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
             // gvCTPN
             // 
             this.gvCTPN.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -1642,11 +1582,6 @@
             this.phieuNhapGridControl.TabIndex = 32;
             this.phieuNhapGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPN});
-            // 
-            // phieuNhapBindingSource
-            // 
-            this.phieuNhapBindingSource.DataMember = "PhieuNhap";
-            this.phieuNhapBindingSource.DataSource = this.qLVT_DATHANGDataSet;
             // 
             // gvPN
             // 
@@ -1739,7 +1674,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.datHangBindingSource;
+            this.gridControl1.DataSource = this.fKDatHangBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Location = new System.Drawing.Point(3, 25);
@@ -1823,14 +1758,6 @@
             this.colMAKHO2.OptionsColumn.AllowFocus = false;
             this.colMAKHO2.Width = 117;
             // 
-            // phieuNhapTableAdapter
-            // 
-            this.phieuNhapTableAdapter.ClearBeforeFill = true;
-            // 
-            // cTPNTableAdapter
-            // 
-            this.cTPNTableAdapter.ClearBeforeFill = true;
-            // 
             // gbPhieuXuat
             // 
             this.gbPhieuXuat.Controls.Add(this.cTPXGridControl);
@@ -1860,8 +1787,13 @@
             // 
             // cTPXBindingSource
             // 
-            this.cTPXBindingSource.DataMember = "CTPX";
-            this.cTPXBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            this.cTPXBindingSource.DataMember = "FK_CTPX_PX";
+            this.cTPXBindingSource.DataSource = this.phieuXuatBindingSource;
+            // 
+            // phieuXuatBindingSource
+            // 
+            this.phieuXuatBindingSource.DataMember = "FK_PX_NhanVien";
+            this.phieuXuatBindingSource.DataSource = this.nhanVienBindingSource;
             // 
             // gvCTPX
             // 
@@ -1950,11 +1882,6 @@
             this.phieuXuatGridControl.TabIndex = 33;
             this.phieuXuatGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPX});
-            // 
-            // phieuXuatBindingSource
-            // 
-            this.phieuXuatBindingSource.DataMember = "PhieuXuat";
-            this.phieuXuatBindingSource.DataSource = this.qLVT_DATHANGDataSet;
             // 
             // gvPX
             // 
@@ -2045,6 +1972,22 @@
             this.colMAKHO3.Visible = true;
             this.colMAKHO3.VisibleIndex = 4;
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 330);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1545, 45);
+            this.panel1.TabIndex = 46;
+            // 
+            // datHangTableAdapter
+            // 
+            this.datHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // cTDDHTableAdapter
+            // 
+            this.cTDDHTableAdapter.ClearBeforeFill = true;
+            // 
             // phieuXuatTableAdapter
             // 
             this.phieuXuatTableAdapter.ClearBeforeFill = true;
@@ -2053,13 +1996,28 @@
             // 
             this.cTPXTableAdapter.ClearBeforeFill = true;
             // 
-            // panel1
+            // fKDatHangBindingSource
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 330);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1545, 45);
-            this.panel1.TabIndex = 46;
+            this.fKDatHangBindingSource.DataMember = "FK_DatHang_NhanVien";
+            this.fKDatHangBindingSource.DataSource = this.nhanVienBindingSource;
+            // 
+            // phieuNhapBindingSource
+            // 
+            this.phieuNhapBindingSource.DataMember = "FK_PhieuNhap_DatHang";
+            this.phieuNhapBindingSource.DataSource = this.fKDatHangBindingSource;
+            // 
+            // phieuNhapTableAdapter
+            // 
+            this.phieuNhapTableAdapter.ClearBeforeFill = true;
+            // 
+            // cTPNBindingSource
+            // 
+            this.cTPNBindingSource.DataMember = "FK_CTPN_PhieuNhap";
+            this.cTPNBindingSource.DataSource = this.phieuNhapBindingSource;
+            // 
+            // cTPNTableAdapter
+            // 
+            this.cTPNTableAdapter.ClearBeforeFill = true;
             // 
             // NhanVienForm
             // 
@@ -2113,41 +2071,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).EndInit();
             this.pnThongBao.ResumeLayout(false);
             this.pnThongBao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet_DS_NHANVIEN4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qlvT_DATHANGDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
             this.gbDonDatHang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDDH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDDH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDDH)).EndInit();
             this.gbPhieuNhap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDDH_PN)).EndInit();
             this.gbPhieuXuat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cTPXGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTPXBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuXuatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuXuatGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuXuatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKDatHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2163,17 +2115,13 @@
         private QLVT_DATHANGDataSetTableAdapters.ChiNhanhTableAdapter chiNhanhTableAdapter;
         private System.Windows.Forms.BindingSource chiNhanhBindingSource;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN1;
         private DevExpress.XtraEditors.TextEdit maCNTextEdit;
         private DevExpress.XtraEditors.SpinEdit luongSpinEdit;
         private DevExpress.XtraEditors.TextEdit diaChiTextEdit;
         private DevExpress.XtraEditors.TextEdit tenTextEdit;
         private DevExpress.XtraEditors.TextEdit hoTextEdit;
         private DevExpress.XtraEditors.DateEdit ngaySinhDateEdit;
-        private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN2;
         private System.Windows.Forms.CheckBox trangThaiXoaCheckBox;
-        private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN3;
-        private QLVT_DATHANGDataSet qlvT_DATHANGDataSet_DS_NHANVIEN4;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar3;
@@ -2223,7 +2171,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTrangThaiXoa;
         private System.Windows.Forms.ComboBox cbChiNhanh;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource chiNhanhBindingSource1;
         private DevExpress.XtraBars.BarButtonItem btnDDH;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
@@ -2232,35 +2179,21 @@
         private DevExpress.XtraBars.BarButtonItem btnPhieuXuat;
         private System.Windows.Forms.PictureBox pbThongBao;
         private System.Windows.Forms.Label lbThongBao;
-        private QLVT_DATHANGDataSet qlvT_DATHANGDataSet1;
-        private QLVT_DATHANGDataSet qlvT_DATHANGDataSet2;
         private System.Windows.Forms.Panel pnThongBao;
         private System.Windows.Forms.NumericUpDown maNVNumericUpDown;
-        private System.Windows.Forms.BindingSource datHangBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
-        private System.Windows.Forms.BindingSource cTDDHBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
         private System.Windows.Forms.GroupBox gbDonDatHang;
         private System.Windows.Forms.GroupBox gbPhieuNhap;
         private DevExpress.XtraGrid.GridControl gcCTDDH;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCTDDH;
         private DevExpress.XtraGrid.GridControl gcDDH;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDDH;
-        private System.Windows.Forms.BindingSource phieuNhapBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
         private DevExpress.XtraGrid.GridControl phieuNhapGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPN;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDDH_PN;
-        private System.Windows.Forms.BindingSource cTPNBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter cTPNTableAdapter;
         private System.Windows.Forms.GroupBox gbPhieuXuat;
-        private System.Windows.Forms.BindingSource phieuXuatBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter phieuXuatTableAdapter;
         private DevExpress.XtraGrid.GridControl phieuXuatGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPX;
-        private System.Windows.Forms.BindingSource cTPXBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.CTPXTableAdapter cTPXTableAdapter;
         private DevExpress.XtraGrid.GridControl cTPXGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCTPX;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPX1;
@@ -2299,5 +2232,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA1;
         private DevExpress.XtraBars.BarButtonItem btnInfo;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource datHangBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
+        private System.Windows.Forms.BindingSource cTDDHBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
+        private System.Windows.Forms.BindingSource phieuXuatBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter phieuXuatTableAdapter;
+        private System.Windows.Forms.BindingSource cTPXBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.CTPXTableAdapter cTPXTableAdapter;
+        private System.Windows.Forms.BindingSource fKDatHangBindingSource;
+        private System.Windows.Forms.BindingSource phieuNhapBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
+        private System.Windows.Forms.BindingSource cTPNBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter cTPNTableAdapter;
     }
 }

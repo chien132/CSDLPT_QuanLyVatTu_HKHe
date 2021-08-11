@@ -35,8 +35,8 @@
             this.tbMaSoDDH = new System.Windows.Forms.TextBox();
             this.tbMaPN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             masoDDHLabel = new System.Windows.Forms.Label();
             mAPNLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -107,6 +107,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm phiếu nhập";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVT_DATHANG.Properties.Resources.packing_list2;
+            this.pictureBox1.Location = new System.Drawing.Point(212, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(88, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -118,16 +128,6 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QLVT_DATHANG.Properties.Resources.packing_list2;
-            this.pictureBox1.Location = new System.Drawing.Point(212, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
             // 
             // PhieuNhapSubForm
             // 
@@ -143,6 +143,7 @@
             this.Name = "PhieuNhapSubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập phiếu nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuNhapSubForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
