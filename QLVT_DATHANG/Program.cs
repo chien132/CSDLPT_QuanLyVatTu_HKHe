@@ -103,7 +103,8 @@ namespace QLVT_DATHANG
             catch (SqlException ex)
             {
                 Program.conn.Close();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

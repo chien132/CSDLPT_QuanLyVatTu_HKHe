@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mAVTLabel;
-            System.Windows.Forms.Label tENVTLabel;
-            System.Windows.Forms.Label dVTLabel;
-            System.Windows.Forms.Label sOLUONGTONLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VatTuForm));
+            this.mAVTLabel = new System.Windows.Forms.Label();
+            this.tENVTLabel = new System.Windows.Forms.Label();
+            this.dVTLabel = new System.Windows.Forms.Label();
+            this.sOLUONGTONLabel = new System.Windows.Forms.Label();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThoatVatTu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -70,10 +70,6 @@
             this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONGTON = new DevExpress.XtraGrid.Columns.GridColumn();
-            mAVTLabel = new System.Windows.Forms.Label();
-            tENVTLabel = new System.Windows.Forms.Label();
-            dVTLabel = new System.Windows.Forms.Label();
-            sOLUONGTONLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
@@ -93,39 +89,39 @@
             // 
             // mAVTLabel
             // 
-            mAVTLabel.AutoSize = true;
-            mAVTLabel.Location = new System.Drawing.Point(761, 48);
-            mAVTLabel.Name = "mAVTLabel";
-            mAVTLabel.Size = new System.Drawing.Size(78, 18);
-            mAVTLabel.TabIndex = 7;
-            mAVTLabel.Text = "Mã vật tư:";
+            this.mAVTLabel.AutoSize = true;
+            this.mAVTLabel.Location = new System.Drawing.Point(761, 48);
+            this.mAVTLabel.Name = "mAVTLabel";
+            this.mAVTLabel.Size = new System.Drawing.Size(78, 18);
+            this.mAVTLabel.TabIndex = 7;
+            this.mAVTLabel.Text = "Mã vật tư:";
             // 
             // tENVTLabel
             // 
-            tENVTLabel.AutoSize = true;
-            tENVTLabel.Location = new System.Drawing.Point(1003, 48);
-            tENVTLabel.Name = "tENVTLabel";
-            tENVTLabel.Size = new System.Drawing.Size(84, 18);
-            tENVTLabel.TabIndex = 8;
-            tENVTLabel.Text = "Tên vật tư:";
+            this.tENVTLabel.AutoSize = true;
+            this.tENVTLabel.Location = new System.Drawing.Point(1003, 48);
+            this.tENVTLabel.Name = "tENVTLabel";
+            this.tENVTLabel.Size = new System.Drawing.Size(84, 18);
+            this.tENVTLabel.TabIndex = 8;
+            this.tENVTLabel.Text = "Tên vật tư:";
             // 
             // dVTLabel
             // 
-            dVTLabel.AutoSize = true;
-            dVTLabel.Location = new System.Drawing.Point(759, 98);
-            dVTLabel.Name = "dVTLabel";
-            dVTLabel.Size = new System.Drawing.Size(82, 18);
-            dVTLabel.TabIndex = 9;
-            dVTLabel.Text = "Đơn vị tính:";
+            this.dVTLabel.AutoSize = true;
+            this.dVTLabel.Location = new System.Drawing.Point(759, 98);
+            this.dVTLabel.Name = "dVTLabel";
+            this.dVTLabel.Size = new System.Drawing.Size(82, 18);
+            this.dVTLabel.TabIndex = 9;
+            this.dVTLabel.Text = "Đơn vị tính:";
             // 
             // sOLUONGTONLabel
             // 
-            sOLUONGTONLabel.AutoSize = true;
-            sOLUONGTONLabel.Location = new System.Drawing.Point(1000, 100);
-            sOLUONGTONLabel.Name = "sOLUONGTONLabel";
-            sOLUONGTONLabel.Size = new System.Drawing.Size(95, 18);
-            sOLUONGTONLabel.TabIndex = 10;
-            sOLUONGTONLabel.Text = "Số lượng tồn:";
+            this.sOLUONGTONLabel.AutoSize = true;
+            this.sOLUONGTONLabel.Location = new System.Drawing.Point(1000, 100);
+            this.sOLUONGTONLabel.Name = "sOLUONGTONLabel";
+            this.sOLUONGTONLabel.Size = new System.Drawing.Size(95, 18);
+            this.sOLUONGTONLabel.TabIndex = 10;
+            this.sOLUONGTONLabel.Text = "Số lượng tồn:";
             // 
             // barManager1
             // 
@@ -141,11 +137,12 @@
             this.btnThem,
             this.btnXoa,
             this.btnLuu,
-            this.btnThoatVatTu,
+            this.btnThoat,
             this.btnRefresh,
-            this.btnUndo});
+            this.btnUndo,
+            this.btnSua});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 8;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -156,11 +153,12 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUndo),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnThoatVatTu)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -178,18 +176,16 @@
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
-            // btnXoa
+            // btnSua
             // 
-            this.btnXoa.Caption = "Xóa";
-            this.btnXoa.Id = 1;
-            this.btnXoa.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.remove;
-            this.btnXoa.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnXoa.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 7;
+            this.btnSua.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.pencil;
+            this.btnSua.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnLuu
             // 
@@ -204,18 +200,18 @@
             this.btnLuu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuu_ItemClick);
             // 
-            // btnRefresh
+            // btnXoa
             // 
-            this.btnRefresh.Caption = "Làm mới";
-            this.btnRefresh.Id = 5;
-            this.btnRefresh.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.refresh;
-            this.btnRefresh.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnRefresh.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 1;
+            this.btnXoa.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.remove;
+            this.btnXoa.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnXoa.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnUndo
             // 
@@ -230,18 +226,31 @@
             this.btnUndo.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
             // 
-            // btnThoatVatTu
+            // btnRefresh
             // 
-            this.btnThoatVatTu.Caption = "Thoát";
-            this.btnThoatVatTu.Id = 4;
-            this.btnThoatVatTu.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.next;
-            this.btnThoatVatTu.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoatVatTu.ItemAppearance.Hovered.Options.UseFont = true;
-            this.btnThoatVatTu.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoatVatTu.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnThoatVatTu.Name = "btnThoatVatTu";
-            this.btnThoatVatTu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnThoatVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatVatTu_ItemClick);
+            this.btnRefresh.Caption = "Làm mới";
+            this.btnRefresh.Id = 5;
+            this.btnRefresh.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.refresh;
+            this.btnRefresh.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnRefresh.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 4;
+            this.btnThoat.ImageOptions.Image = global::QLVT_DATHANG.Properties.Resources.next;
+            this.btnThoat.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btnThoat.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatVatTu_ItemClick);
             // 
             // bar3
             // 
@@ -328,12 +337,12 @@
             // gbChiTietVT
             // 
             this.gbChiTietVT.Controls.Add(this.sOLUONGTONNumericUpDown1);
-            this.gbChiTietVT.Controls.Add(sOLUONGTONLabel);
-            this.gbChiTietVT.Controls.Add(dVTLabel);
+            this.gbChiTietVT.Controls.Add(this.sOLUONGTONLabel);
+            this.gbChiTietVT.Controls.Add(this.dVTLabel);
             this.gbChiTietVT.Controls.Add(this.dVTTextEdit);
-            this.gbChiTietVT.Controls.Add(tENVTLabel);
+            this.gbChiTietVT.Controls.Add(this.tENVTLabel);
             this.gbChiTietVT.Controls.Add(this.tENVTTextEdit);
-            this.gbChiTietVT.Controls.Add(mAVTLabel);
+            this.gbChiTietVT.Controls.Add(this.mAVTLabel);
             this.gbChiTietVT.Controls.Add(this.mAVTTextEdit);
             this.gbChiTietVT.Controls.Add(this.pictureBox10);
             this.gbChiTietVT.Dock = System.Windows.Forms.DockStyle.Top;
@@ -480,6 +489,8 @@
             this.colSOLUONGTON});
             this.gridView1.GridControl = this.vattuGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowViewCaption = true;
             this.gridView1.ViewCaption = "DANH SÁCH VẬT TƯ";
@@ -564,7 +575,6 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("VatTuForm.IconOptions.Image")));
             this.Name = "VatTuForm";
             this.Text = "Vật tư";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -600,7 +610,7 @@
         private DevExpress.XtraBars.BarButtonItem btnLuu;
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
         private DevExpress.XtraBars.BarButtonItem btnUndo;
-        private DevExpress.XtraBars.BarButtonItem btnThoatVatTu;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -629,5 +639,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENVT;
         private DevExpress.XtraGrid.Columns.GridColumn colDVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONGTON;
+        private System.Windows.Forms.Label mAVTLabel;
+        private System.Windows.Forms.Label tENVTLabel;
+        private System.Windows.Forms.Label dVTLabel;
+        private System.Windows.Forms.Label sOLUONGTONLabel;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
     }
 }

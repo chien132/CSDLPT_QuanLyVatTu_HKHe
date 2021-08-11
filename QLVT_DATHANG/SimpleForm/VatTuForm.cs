@@ -14,6 +14,7 @@ namespace QLVT_DATHANG
 {
     public partial class VatTuForm : DevExpress.XtraEditors.XtraForm
     {
+        private bool dangThem = false;
         private int position;
         public VatTuForm()
         {
@@ -55,29 +56,39 @@ namespace QLVT_DATHANG
         }
 
 
-  
-   
+
+
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+
             position = vattuBindingSource.Position;
             this.vattuBindingSource.AddNew();
-            btnThem.Enabled = btnXoa.Enabled = vattuGridControl.Enabled = btnRefresh.Enabled  = false;
+            btnThem.Enabled = btnXoa.Enabled = vattuGridControl.Enabled = false;
+            btnRefresh.Enabled = btnSua.Enabled = btnThoat.Enabled = false;
             btnUndo.Enabled = gbChiTietVT.Enabled = btnLuu.Enabled = true;
+
             Program.flagCloseFormVT = false;    //Bật cờ lên để chặn tắt Form đột ngột khi nhập liệu
-            //Giá trị mặc định khi Thêm VT
-             sOLUONGTONNumericUpDown1.Value = 0;
-            
+                                                //Giá trị mặc định khi Thêm VT
+            sOLUONGTONNumericUpDown1.Value = 0;
+
         }
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnThem.Enabled = btnXoa.Enabled = vattuGridControl.Enabled = btnRefresh.Enabled = true;
-            btnUndo.Enabled = false;
+            btnRefresh.Enabled = btnThem.Enabled = btnXoa.Enabled = vattuGridControl.Enabled = true;
+            btnSua.Enabled = btnThoat.Enabled = true;
+            btnUndo.Enabled = btnLuu.Enabled = gbChiTietVT.Enabled = false;
+
             Program.flagCloseFormVT = true; //Undo lại thì cho phép thoát mà ko kiểm tra dữ liệu
+
+            if (dangThem == true)
+            {
+                vattuBindingSource.RemoveCurrent();
+                vattuBindingSource.Position = position;
+            }
+            dangThem = false;
             vattuBindingSource.CancelEdit();
-            vattuBindingSource.Position = position;
         }
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -117,39 +128,39 @@ namespace QLVT_DATHANG
                            "EXEC @result = SP_CheckID @p1, @p2 " +
                            "SELECT 'result' = @result";
 
-            using (SqlConnection sqlConnection =new SqlConnection(Program.connstr))
+            using (SqlConnection sqlConnection = new SqlConnection(Program.connstr))
             {
                 sqlConnection.Open();
                 SqlDataReader dataReader = null;
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            sqlCommand.Parameters.AddWithValue("@p1", mAVTTextEdit.Text);
-            sqlCommand.Parameters.AddWithValue("@p2", "MAVT");
-          
-            try
-            {
-                dataReader = sqlCommand.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            dataReader.Read();
-            int result = int.Parse(dataReader.GetValue(0).ToString());
-            dataReader.Close();
-            int positionMAVT = vattuBindingSource.Find("MAVT", mAVTTextEdit.Text);
-            int postionCurrent = vattuBindingSource.Position;
-            //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
-            if (result == 1 && (positionMAVT != postionCurrent))
-            {
-                MessageBox.Show("Mã VT đã tồn tại!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào Database?", "Thông báo",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                sqlCommand.Parameters.AddWithValue("@p1", mAVTTextEdit.Text);
+                sqlCommand.Parameters.AddWithValue("@p2", "MAVT");
+
+                try
+                {
+                    dataReader = sqlCommand.ExecuteReader();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                dataReader.Read();
+                int result = int.Parse(dataReader.GetValue(0).ToString());
+                dataReader.Close();
+                int positionMAVT = vattuBindingSource.Find("MAVT", mAVTTextEdit.Text);
+                int postionCurrent = vattuBindingSource.Position;
+                //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
+                if (result == 1 && (positionMAVT != postionCurrent))
+                {
+                    MessageBox.Show("Mã VT đã tồn tại!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào Database?", "Thông báo",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.OK)
                     {
                         try
@@ -160,6 +171,11 @@ namespace QLVT_DATHANG
                             this.vattuBindingSource.EndEdit();
                             this.vattuTableAdapter.Update(this.qLVT_DATHANGDataSet.Vattu);
                             vattuBindingSource.Position = position;
+
+                            btnThem.Enabled = btnXoa.Enabled = btnRefresh.Enabled = true;
+                            vattuGridControl.Enabled = btnSua.Enabled = btnThoat.Enabled = true;
+                            dangThem = btnUndo.Enabled = gbChiTietVT.Enabled = btnLuu.Enabled = false;
+
                             pnThongBao.Visible = true;
                             lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin nhân viên thành công. ";
                         }
@@ -208,7 +224,7 @@ namespace QLVT_DATHANG
                         SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                         sqlCommand.Parameters.AddWithValue("@p1", mavt);
                         sqlCommand.Parameters.AddWithValue("@p2", "MAVT_EXIST");
-                       
+
                         try
                         {
                             dataReader = sqlCommand.ExecuteReader();
@@ -247,13 +263,20 @@ namespace QLVT_DATHANG
             if (vattuBindingSource.Count == 0) btnXoa.Enabled = false;
 
         }
-        
+
 
         private void btnThoatVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
 
-   
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dangThem = false;
+            this.gbChiTietVT.Enabled = true;
+            position = vattuBindingSource.Position;
+            btnXoa.Enabled = btnThem.Enabled = btnSua.Enabled = btnRefresh.Enabled = btnThoat.Enabled = vattuGridControl.Enabled = false;
+            btnUndo.Enabled = btnLuu.Enabled = true;
+        }
     }
 }

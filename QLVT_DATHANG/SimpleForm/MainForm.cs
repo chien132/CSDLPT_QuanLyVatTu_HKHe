@@ -75,7 +75,10 @@ namespace QLVT_DATHANG
             }
         }
 
-
+        public void updateNVDN(String hoTen)
+        {
+            sslTen.Text = "Họ tên: " + hoTen;
+        }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {

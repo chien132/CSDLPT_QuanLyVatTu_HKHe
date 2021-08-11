@@ -32,6 +32,7 @@ namespace QLVT_DATHANG.SubForm
              * Trường hợp này xảy ra khi đăng nhập từ 1 Nhân viên ở CN2 và cần GrowTable dữ liệu cũng của CN2
             */
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.nhanVienBindingSource.Filter = "TrangThaiXoa =0";
             this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
             this.cbChiNhanh.DataSource = Program.bds_dspm; //DataSource của cbChiNhanh tham chiếu đến bindingSource ở LoginForm
             cbChiNhanh.DisplayMember = "TENCN";

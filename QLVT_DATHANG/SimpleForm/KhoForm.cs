@@ -15,7 +15,7 @@ namespace QLVT_DATHANG
     public partial class KhoForm : DevExpress.XtraEditors.XtraForm
     {
         private int position;
-       
+        private bool dangThem = false;
         public KhoForm()
         {
             InitializeComponent();
@@ -49,9 +49,12 @@ namespace QLVT_DATHANG
             this.khoTableAdapter.Connection.ConnectionString = Program.connstr;
             this.khoTableAdapter.Fill(this.qLVT_DATHANGDataSet.Kho);
 
+
+            this.cbChiNhanh.Enabled = false;
             if (Program.group == "CONGTY")
             {
-                btnThem.Links[0].Visible = btnXoa.Links[0].Visible = btnLuu.Links[0].Visible= btnUndo.Links[0].Visible = false;
+                btnThem.Links[0].Visible = btnXoa.Links[0].Visible = btnLuu.Links[0].Visible = btnUndo.Links[0].Visible = false;
+                cbChiNhanh.Enabled = true;
             }
 
             //maCN = (((DataRowView)chiNhanhBindingSource[0])["MACN"].ToString());    //Cập nhật tự động vào label MACN khi tạo mới
@@ -60,21 +63,23 @@ namespace QLVT_DATHANG
             this.cbChiNhanh.DataSource = Program.bds_dspm; //DataSource của cbChiNhanh tham chiếu đến bindingSource ở LoginForm
             cbChiNhanh.DisplayMember = "TENCN";
             cbChiNhanh.ValueMember = "TENSERVER";
+            this.cbChiNhanh.SelectedIndex = Program.mChinhanh;
 
             //Mặc định vừa vào groupbox không dx hiện để tránh lỗi sửa các dòng cũ chưa lưu đi qua dòng khác
-            btnUndo.Enabled  = false;
+            btnUndo.Enabled = btnLuu.Enabled = gbInfor.Enabled = false;
             Program.flagCloseFormKho = true; //Khi load bật cho phép có thể đóng form
         }
 
 
-     
+
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int position = khoBindingSource.Position;
             this.khoTableAdapter.Fill(this.qLVT_DATHANGDataSet.Kho);
             khoBindingSource.Position = position;
-            pnThongBao.Visible = true;
+            pnThongBao.Visible = btnThoat.Enabled = btnThem.Enabled = true;
+            btnLuu.Enabled = btnUndo.Enabled = false;
             lbThongBao.Text = "Làm mới danh sách kho thành công. ";
         }
 
@@ -84,18 +89,20 @@ namespace QLVT_DATHANG
         {
             position = khoBindingSource.Position;
             this.khoBindingSource.AddNew();
-            if (cbChiNhanh.Text == "CHI NHÁNH 1")
+            dangThem = true;
+            if (cbChiNhanh.Text == "Chi Nhánh 1")
             {
                 maCNTextEdit.Text = "CN1";
             }
-            else if (cbChiNhanh.Text == "CHI NHÁNH 2")
+            else if (cbChiNhanh.Text == "Chi Nhánh 2")
             {
                 maCNTextEdit.Text = "CN2";
             }
-            
+
             btnThem.Enabled = btnXoa.Enabled = khoGridControl.Enabled = false;
-            btnRefresh.Enabled  = false;
+            btnRefresh.Enabled = btnSua.Enabled = btnThoat.Enabled = false;
             btnUndo.Enabled = gbInfor.Enabled = btnLuu.Enabled = true;
+
             Program.flagCloseFormKho = false;    //Bật cờ lên để chặn tắt Form đột ngột khi nhập liệu
         }
 
@@ -111,117 +118,84 @@ namespace QLVT_DATHANG
             if (!checkValidate(diaChiTextEdit, "Địa chỉ is not empty!")) return;
             if (maKhoTextEdit.Text.Trim().Length > 4)
             {
-                MessageBox.Show("Mã KHO không được quá 4 kí tự!", "Notification",
+                MessageBox.Show("Mã KHO không được quá 4 kí tự!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (maKhoTextEdit.Text.Contains(" "))
             {
-                MessageBox.Show("Mã KHO không được chứa khoảng trắng!", "Notification",
+                MessageBox.Show("Mã KHO không được chứa khoảng trắng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string query = "DECLARE	@result int " +
-                           "EXEC @result = SP_CheckID @p1, @p2 " +
-                           "SELECT 'result' = @result";
+            string query = "DECLARE @result int EXEC @result = SP_CheckID " + maKhoTextEdit.Text + ", MAKHO SELECT 'result' = @result";
+            SqlDataReader dataReader = Program.ExecSqlDataReader(query);
+            if (dataReader == null) return;
+            dataReader.Read();
+            int resultMAKHO = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
 
-            using (SqlConnection sqlConnection = new SqlConnection(Program.connstr))
+            query = "DECLARE @result int EXEC @result = SP_CheckID '" + tenKhoTextEdit.Text + "', TENKHO SELECT 'result' = @result";
+            dataReader = Program.ExecSqlDataReader(query);
+            if (dataReader == null) return;
+            dataReader.Read();
+            int resultTENKHO = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
+
+
+            int positionMAKHO = khoBindingSource.Find("MAKHO", maKhoTextEdit.Text);
+            int postionTENKHO = khoBindingSource.Find("TENKHO", tenKhoTextEdit.Text);
+            int postionCurrent = khoBindingSource.Position;
+            //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
+            if (resultMAKHO == 1 && (positionMAKHO != postionCurrent))
             {
-                sqlConnection.Open();
-
-                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@p1", maKhoTextEdit.Text);
-                sqlCommand.Parameters.AddWithValue("@p2", "MAKHO");
-                SqlDataReader dataReader = null;
-                try
+                MessageBox.Show("Mã KHO đã tồn tại ở Chi Nhánh hiện tại!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultTENKHO == 1 && (postionTENKHO != postionCurrent))
+            {
+                MessageBox.Show("Tên Kho đã tồn tại ở Chi Nhánh hiện tại!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultMAKHO == 2)
+            {
+                MessageBox.Show("Mã KHO đã tồn tại ở Chi Nhánh khác!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultTENKHO == 2)
+            {
+                MessageBox.Show("Tên Kho đã tồn tại ở Chi Nhánh khác!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào Database?", "Thông báo",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
                 {
-                    dataReader = sqlCommand.ExecuteReader();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                dataReader.Read();
-                int resultMAKHO = int.Parse(dataReader.GetValue(0).ToString());
-                dataReader.Close();
-            
-
-            query = "DECLARE @result int " +
-                    "EXEC @result = SP_CheckID @p1, @p2 " +
-                    "SELECT 'result' = @result";
-
-
-            //sqlConnection.Open();
-
-            SqlCommand sqlCommand1 = new SqlCommand(query, sqlConnection);
-                sqlCommand1.Parameters.AddWithValue("@p1", tenKhoTextEdit.Text);
-                sqlCommand1.Parameters.AddWithValue("@p2", "TENKHO");
-                try
-                {
-                    dataReader = sqlCommand1.ExecuteReader();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                dataReader.Read();
-                int resultTENKHO = int.Parse(dataReader.GetValue(0).ToString());
-                dataReader.Close();
-
-                int positionMAKHO = khoBindingSource.Find("MAKHO", maKhoTextEdit.Text);
-                int postionTENKHO = khoBindingSource.Find("TENKHO", tenKhoTextEdit.Text);
-                int postionCurrent = khoBindingSource.Position;
-                //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
-                if (resultMAKHO == 1 && (positionMAKHO != postionCurrent))
-                {
-                    MessageBox.Show("Mã KHO đã tồn tại ở Chi Nhánh hiện tại!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (resultTENKHO == 1 && (postionTENKHO != postionCurrent))
-                {
-                    MessageBox.Show("Tên Kho đã tồn tại ở Chi Nhánh hiện tại!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (resultMAKHO == 2)
-                {
-                    MessageBox.Show("Mã KHO đã tồn tại ở Chi Nhánh khác!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (resultTENKHO == 2)
-                {
-                    MessageBox.Show("Tên Kho đã tồn tại ở Chi Nhánh khác!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào Database?", "Thông báo",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (dr == DialogResult.OK)
+                    try
                     {
-                        try
-                        {
-                            Program.flagCloseFormKho = true; //Bật cờ cho phép tắt Form NV
-                            this.khoBindingSource.EndEdit();
-                            this.khoTableAdapter.Update(this.qLVT_DATHANGDataSet.Kho);
-                            khoBindingSource.Position = position;
-                            btnThem.Enabled = btnXoa.Enabled = btnRefresh.Enabled = khoGridControl.Enabled = true;
-                           pnThongBao.Visible = true;
-                            lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin kho thành công. ";
-                        }
-                        catch (Exception ex)
-                        {
-                            //Khi Update database lỗi thì xóa record vừa thêm trong bds
-                            khoBindingSource.RemoveCurrent();
-                            MessageBox.Show("Ghi dữ liệu thất lại. Vui lòng kiểm tra lại!\n" + ex.Message, "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        Program.flagCloseFormKho = true; //Bật cờ cho phép tắt Form NV
+                        this.khoBindingSource.EndEdit();
+                        this.khoTableAdapter.Update(this.qLVT_DATHANGDataSet.Kho);
+                        khoBindingSource.Position = position;
+                        btnThem.Enabled = btnXoa.Enabled = btnRefresh.Enabled = true;
+                        khoGridControl.Enabled = btnSua.Enabled = btnThoat.Enabled = true;
+                        dangThem = btnUndo.Enabled = gbInfor.Enabled = btnLuu.Enabled = false;
+
+                        pnThongBao.Visible = true;
+                        lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin kho thành công. ";
+                    }
+                    catch (Exception ex)
+                    {
+                        //Khi Update database lỗi thì xóa record vừa thêm trong bds
+                        khoBindingSource.RemoveCurrent();
+                        MessageBox.Show("Ghi dữ liệu thất lại. Vui lòng kiểm tra lại!\n" + ex.Message, "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -233,7 +207,7 @@ namespace QLVT_DATHANG
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu!", "Notification",
+                MessageBox.Show("Không có dữ liệu!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -244,43 +218,24 @@ namespace QLVT_DATHANG
                 try
                 {
                     //Kiểm tra MAKHO có tồn tại trong các Phiếu
-                    string query = "DECLARE	@result int " +
-                          "EXEC @result = SP_CheckID @p1, @p2 " +
-                          "SELECT 'result' = @result";
-
-                    using (SqlConnection sqlConnection = new SqlConnection(Program.connstr))
+                    string query = "DECLARE	@result int EXEC @result = SP_CheckID " + makho + ", MAKHO_EXIST SELECT 'result' = @result";
+                    SqlDataReader dataReader = Program.ExecSqlDataReader(query);
+                    if (dataReader == null) return;
+                    dataReader.Read();
+                    int result = int.Parse(dataReader.GetValue(0).ToString());
+                    dataReader.Close();
+                    if (result == 1)
                     {
-                        sqlConnection.Open();
-
-                        SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-                        sqlCommand.Parameters.AddWithValue("@p1", makho);
-                        sqlCommand.Parameters.AddWithValue("@p2", "MAKHO_EXIST");
-                        SqlDataReader dataReader = null;
-                        try
-                        {
-                            dataReader = sqlCommand.ExecuteReader();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Lỗi khi thực thi Database!\n" + ex.Message, "Notification",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        dataReader.Read();
-                        int result = int.Parse(dataReader.GetValue(0).ToString());
-                        dataReader.Close();
-                        if (result == 1)
-                        {
-                            MessageBox.Show("Kho này đã tồn tại trong các Phiếu, không thể xóa. Vui lòng kiểm tra lại!\n", "Notification",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                        khoBindingSource.RemoveCurrent();
-                        this.khoTableAdapter.Update(this.qLVT_DATHANGDataSet.Kho);
-                       
-                        pnThongBao.Visible = true;
-                        lbThongBao.Text = "Xóa kho thành công. ";
+                        MessageBox.Show("Kho này đã tồn tại trong các Phiếu, không thể xóa. Vui lòng kiểm tra lại!\n", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
+                    khoBindingSource.RemoveCurrent();
+                    this.khoTableAdapter.Update(this.qLVT_DATHANGDataSet.Kho);
+
+                    pnThongBao.Visible = true;
+                    lbThongBao.Text = "Xóa kho thành công. ";
+
                 }
                 catch (Exception ex)
                 {
@@ -297,10 +252,32 @@ namespace QLVT_DATHANG
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             btnRefresh.Enabled = btnThem.Enabled = btnXoa.Enabled = khoGridControl.Enabled = true;
-           
+            btnSua.Enabled = btnThoat.Enabled = true;
+            btnUndo.Enabled = btnLuu.Enabled = gbInfor.Enabled = false;
+
             Program.flagCloseFormKho = true; //Undo lại thì cho phép thoát mà ko kiểm tra dữ liệu
+            if (dangThem == true)
+            {
+                khoBindingSource.RemoveCurrent();
+                khoBindingSource.Position = position;
+            }
+            dangThem = false;
             khoBindingSource.CancelEdit();
-            khoBindingSource.Position = position;
+
+        }
+
+        public QLVT_DATHANGDataSet getDataSet()
+        {
+            return this.qLVT_DATHANGDataSet;
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dangThem = false;
+            this.gbInfor.Enabled = true;
+            position = khoBindingSource.Position;
+            btnXoa.Enabled = btnThem.Enabled = btnSua.Enabled = btnRefresh.Enabled = btnThoat.Enabled = khoGridControl.Enabled = false;
+            btnUndo.Enabled = btnLuu.Enabled = true;
         }
     }
 }
