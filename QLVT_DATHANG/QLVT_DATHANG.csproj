@@ -69,7 +69,9 @@
     <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraSpellChecker.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
@@ -92,11 +94,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLVT_DATHANGDataSet_DSPhanManh.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLVT_DATHANGDataSet_DSPhanManh.xsd</DependentUpon>
     </Compile>
     <Compile Include="QLVT_DATHANGDataSet_NVTrung.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -138,12 +135,6 @@
     </Compile>
     <Compile Include="SimpleForm\VatTuForm.Designer.cs">
       <DependentUpon>VatTuForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForm\ChuyenChiNhanhSubForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForm\ChuyenChiNhanhSubForm.Designer.cs">
-      <DependentUpon>ChuyenChiNhanhSubForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\CTDDHSubForm.cs">
       <SubType>Form</SubType>
@@ -217,9 +208,6 @@
     <EmbeddedResource Include="SimpleForm\VatTuForm.resx">
       <DependentUpon>VatTuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\ChuyenChiNhanhSubForm.resx">
-      <DependentUpon>ChuyenChiNhanhSubForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\CTDDHSubForm.resx">
       <DependentUpon>CTDDHSubForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,17 +258,7 @@
   <ItemGroup>
     <Content Include="Properties\account.png" />
     <Content Include="Properties\lock.png" />
-    <None Include="QLVT_DATHANGDataSet_DSPhanManh.xsc">
-      <DependentUpon>QLVT_DATHANGDataSet_DSPhanManh.xsd</DependentUpon>
-    </None>
-    <None Include="QLVT_DATHANGDataSet_DSPhanManh.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLVT_DATHANGDataSet_DSPhanManh.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLVT_DATHANGDataSet_DSPhanManh.xss">
-      <DependentUpon>QLVT_DATHANGDataSet_DSPhanManh.xsd</DependentUpon>
-    </None>
+    <None Include="Resources\pencil1.png" />
     <None Include="Resources\export %281%29.png" />
     <None Include="Resources\inventory22.png" />
     <None Include="Resources\packing-list3.png" />

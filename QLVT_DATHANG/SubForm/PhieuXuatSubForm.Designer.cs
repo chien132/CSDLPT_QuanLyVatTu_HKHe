@@ -301,6 +301,7 @@
             this.Name = "PhieuXuatSubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhieuXuatSubForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuXuatSubForm_FormClosing);
             this.Load += new System.EventHandler(this.PhieuXuatSubForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();

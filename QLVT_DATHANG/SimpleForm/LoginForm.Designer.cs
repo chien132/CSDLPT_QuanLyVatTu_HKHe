@@ -28,86 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.bt_dang_nhap = new System.Windows.Forms.Button();
-            this.cb_chi_nhanh = new System.Windows.Forms.ComboBox();
-            this.get_SubscribesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVT_DATHANGDataSet_DSPhanManh = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManh();
-            this.tb_dang_nhap = new System.Windows.Forms.TextBox();
-            this.tb_mat_khau = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
+            this.tbLogin = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pbPassword = new System.Windows.Forms.PictureBox();
+            this.pbLogin = new System.Windows.Forms.PictureBox();
+            this.pbChiNhanh = new System.Windows.Forms.PictureBox();
+            this.lbChiNhanh = new System.Windows.Forms.Label();
+            this.lbLogin = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.get_SubscribesTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManhTableAdapters.Get_SubscribesTableAdapter();
-            this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManhTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.get_SubscribesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_DSPhanManh)).BeginInit();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChiNhanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // bt_dang_nhap
+            // btnLogin
             // 
-            this.bt_dang_nhap.BackColor = System.Drawing.Color.LightCyan;
-            this.bt_dang_nhap.Location = new System.Drawing.Point(132, 275);
-            this.bt_dang_nhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bt_dang_nhap.Name = "bt_dang_nhap";
-            this.bt_dang_nhap.Size = new System.Drawing.Size(250, 60);
-            this.bt_dang_nhap.TabIndex = 0;
-            this.bt_dang_nhap.Text = "           Đăng nhập  ";
-            this.bt_dang_nhap.UseVisualStyleBackColor = false;
-            this.bt_dang_nhap.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.LightCyan;
+            this.btnLogin.Location = new System.Drawing.Point(132, 267);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(250, 60);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "           Đăng nhập  ";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cb_chi_nhanh
+            // cbChiNhanh
             // 
-            this.cb_chi_nhanh.DataSource = this.get_SubscribesBindingSource;
-            this.cb_chi_nhanh.DisplayMember = "TENCN";
-            this.cb_chi_nhanh.FormattingEnabled = true;
-            this.cb_chi_nhanh.Location = new System.Drawing.Point(257, 78);
-            this.cb_chi_nhanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cb_chi_nhanh.Name = "cb_chi_nhanh";
-            this.cb_chi_nhanh.Size = new System.Drawing.Size(178, 24);
-            this.cb_chi_nhanh.TabIndex = 1;
-            this.cb_chi_nhanh.ValueMember = "TENSERVER";
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(257, 78);
+            this.cbChiNhanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(178, 24);
+            this.cbChiNhanh.TabIndex = 1;
             // 
-            // get_SubscribesBindingSource
+            // tbLogin
             // 
-            this.get_SubscribesBindingSource.DataMember = "Get_Subscribes";
-            this.get_SubscribesBindingSource.DataSource = this.qLVT_DATHANGDataSet_DSPhanManh;
+            this.tbLogin.Location = new System.Drawing.Point(257, 141);
+            this.tbLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbLogin.Name = "tbLogin";
+            this.tbLogin.Size = new System.Drawing.Size(178, 23);
+            this.tbLogin.TabIndex = 2;
+            this.tbLogin.Text = "TT";
+            this.tbLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLogin_KeyPress);
             // 
-            // qLVT_DATHANGDataSet_DSPhanManh
+            // tbPassword
             // 
-            this.qLVT_DATHANGDataSet_DSPhanManh.DataSetName = "QLVT_DATHANGDataSet_DSPhanManh";
-            this.qLVT_DATHANGDataSet_DSPhanManh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tb_dang_nhap
-            // 
-            this.tb_dang_nhap.Location = new System.Drawing.Point(257, 141);
-            this.tb_dang_nhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tb_dang_nhap.Name = "tb_dang_nhap";
-            this.tb_dang_nhap.Size = new System.Drawing.Size(178, 23);
-            this.tb_dang_nhap.TabIndex = 2;
-            this.tb_dang_nhap.Text = "TT";
-            // 
-            // tb_mat_khau
-            // 
-            this.tb_mat_khau.Location = new System.Drawing.Point(257, 206);
-            this.tb_mat_khau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tb_mat_khau.Name = "tb_mat_khau";
-            this.tb_mat_khau.Size = new System.Drawing.Size(178, 23);
-            this.tb_mat_khau.TabIndex = 3;
-            this.tb_mat_khau.Text = "12345";
-            this.tb_mat_khau.UseSystemPasswordChar = true;
+            this.tbPassword.Location = new System.Drawing.Point(257, 206);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(178, 23);
+            this.tbPassword.TabIndex = 3;
+            this.tbPassword.Text = "12345";
+            this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPassword_KeyPress);
             // 
             // pictureBox4
             // 
@@ -121,65 +103,65 @@
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox3
+            // pbPassword
             // 
-            this.pictureBox3.Image = global::QLVT_DATHANG.Properties.Resources._lock;
-            this.pictureBox3.Location = new System.Drawing.Point(80, 190);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 43);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
+            this.pbPassword.Image = global::QLVT_DATHANG.Properties.Resources._lock;
+            this.pbPassword.Location = new System.Drawing.Point(80, 190);
+            this.pbPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbPassword.Name = "pbPassword";
+            this.pbPassword.Size = new System.Drawing.Size(44, 43);
+            this.pbPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPassword.TabIndex = 6;
+            this.pbPassword.TabStop = false;
             // 
-            // pictureBox2
+            // pbLogin
             // 
-            this.pictureBox2.Image = global::QLVT_DATHANG.Properties.Resources._6405579;
-            this.pictureBox2.Location = new System.Drawing.Point(80, 122);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.pbLogin.Image = global::QLVT_DATHANG.Properties.Resources._6405579;
+            this.pbLogin.Location = new System.Drawing.Point(80, 122);
+            this.pbLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbLogin.Name = "pbLogin";
+            this.pbLogin.Size = new System.Drawing.Size(41, 43);
+            this.pbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogin.TabIndex = 5;
+            this.pbLogin.TabStop = false;
             // 
-            // pictureBox1
+            // pbChiNhanh
             // 
-            this.pictureBox1.Image = global::QLVT_DATHANG.Properties.Resources.branch;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbChiNhanh.Image = global::QLVT_DATHANG.Properties.Resources.branch;
+            this.pbChiNhanh.Location = new System.Drawing.Point(80, 60);
+            this.pbChiNhanh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbChiNhanh.Name = "pbChiNhanh";
+            this.pbChiNhanh.Size = new System.Drawing.Size(44, 43);
+            this.pbChiNhanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbChiNhanh.TabIndex = 4;
+            this.pbChiNhanh.TabStop = false;
             // 
-            // label1
+            // lbChiNhanh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Chi nhánh:";
+            this.lbChiNhanh.AutoSize = true;
+            this.lbChiNhanh.Location = new System.Drawing.Point(129, 86);
+            this.lbChiNhanh.Name = "lbChiNhanh";
+            this.lbChiNhanh.Size = new System.Drawing.Size(70, 16);
+            this.lbChiNhanh.TabIndex = 8;
+            this.lbChiNhanh.Text = "Chi nhánh:";
             // 
-            // label2
+            // lbLogin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 16);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Tên đăng nhập:";
+            this.lbLogin.AutoSize = true;
+            this.lbLogin.Location = new System.Drawing.Point(129, 148);
+            this.lbLogin.Name = "lbLogin";
+            this.lbLogin.Size = new System.Drawing.Size(99, 16);
+            this.lbLogin.TabIndex = 9;
+            this.lbLogin.Text = "Tên đăng nhập:";
             // 
-            // label3
+            // lbPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 213);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Mật khẩu:";
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Location = new System.Drawing.Point(129, 213);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(65, 16);
+            this.lbPassword.TabIndex = 10;
+            this.lbPassword.Text = "Mật khẩu:";
             // 
             // pictureBox5
             // 
@@ -193,60 +175,49 @@
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
             // 
-            // button1
+            // btnExit
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCyan;
-            this.button1.Location = new System.Drawing.Point(178, 353);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 47);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "           Thoát  ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Exit);
-            // 
-            // get_SubscribesTableAdapter
-            // 
-            this.get_SubscribesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSet_DSPhanManhTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.btnExit.BackColor = System.Drawing.Color.LightPink;
+            this.btnExit.Location = new System.Drawing.Point(178, 345);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(166, 47);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "           Thoát  ";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.Exit);
             // 
             // LoginForm
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 401);
+            this.ClientSize = new System.Drawing.Size(441, 374);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lbPassword);
+            this.Controls.Add(this.lbLogin);
+            this.Controls.Add(this.lbChiNhanh);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tb_mat_khau);
-            this.Controls.Add(this.tb_dang_nhap);
-            this.Controls.Add(this.cb_chi_nhanh);
-            this.Controls.Add(this.bt_dang_nhap);
+            this.Controls.Add(this.pbPassword);
+            this.Controls.Add(this.pbLogin);
+            this.Controls.Add(this.pbChiNhanh);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.tbLogin);
+            this.Controls.Add(this.cbChiNhanh);
+            this.Controls.Add(this.btnLogin);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("LoginForm.IconOptions.LargeImage")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.LoginForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.get_SubscribesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_DSPhanManh)).EndInit();
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoginForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChiNhanh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,23 +226,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button bt_dang_nhap;
-        private System.Windows.Forms.ComboBox cb_chi_nhanh;
-        private System.Windows.Forms.TextBox tb_dang_nhap;
-        private System.Windows.Forms.TextBox tb_mat_khau;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.ComboBox cbChiNhanh;
+        private System.Windows.Forms.TextBox tbLogin;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.PictureBox pbChiNhanh;
+        private System.Windows.Forms.PictureBox pbLogin;
+        private System.Windows.Forms.PictureBox pbPassword;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbChiNhanh;
+        private System.Windows.Forms.Label lbLogin;
+        private System.Windows.Forms.Label lbPassword;
 
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button1;
-        private QLVT_DATHANGDataSet_DSPhanManh qLVT_DATHANGDataSet_DSPhanManh;
-        private System.Windows.Forms.BindingSource get_SubscribesBindingSource;
-        private QLVT_DATHANGDataSet_DSPhanManhTableAdapters.Get_SubscribesTableAdapter get_SubscribesTableAdapter;
-        private QLVT_DATHANGDataSet_DSPhanManhTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Button btnExit;
     }
 }

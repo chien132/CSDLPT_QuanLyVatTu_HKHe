@@ -15,6 +15,8 @@ namespace QLVT_DATHANG
     {
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
+        public static String connstr_publisher = "Data Source=MINHCHIENPC;Initial Catalog=QLVT_DATHANG;Integrated Security=True";
+
         public static SqlDataReader myReader;
         public static String servername = "";
         public static String username = "";
@@ -23,12 +25,12 @@ namespace QLVT_DATHANG
         public static String password = "";
 
         public static String database = "QLVT_DATHANG";
-        //public static String remotelogin = "htkn";
-        //public static String remotepassword = "123";
-        //public static String mloginDN = "";
-        //public static String passwordDN = "";
-        //public static String mGroup = "";
-        //public static String mHoten = "";
+        public static String remotelogin = "htkn";
+        public static String remotepassword = "12345";
+        public static String mloginDN = "";
+        public static String passwordDN = "";
+        public static String mGroup = "";
+        public static String mHoten = "";
         public static string group = "";    //role
 
 
@@ -39,12 +41,12 @@ namespace QLVT_DATHANG
         public static bool flagCloseFormKho;
         public static bool flagCloseFormTaoTaiKhoan;
 
-        //public static int mChinhanh = 0;
-        //public static int maNVChuyenCN;
+        public static int mChinhanh = 0;
+        public static int maNVChuyenCN;
 
 
 
-        public static frmMain frmMain;
+        public static frmMain mainForm;
         public static NhanVienForm nhanVienForm;
         public static VatTuForm vatTuForm;
         public static KhoForm khoForm;
@@ -52,13 +54,13 @@ namespace QLVT_DATHANG
         public static LoginForm loginForm;
 
         public static SubForm.NVTrungIncurredForm nVTrungIncurredForm;
-        public static SubForm.ChuyenChiNhanhSubForm chuyenChiNhanhSubForm;
         public static SubForm.DDHSubForm dDHSubForm;
         public static SubForm.CTDDHSubForm cTDDHSubForm;
         public static SubForm.PhieuNhapSubForm phieuNhapSubForm;
         public static SubForm.CTPNSubForm cTPNSubForm;
         public static SubForm.PhieuXuatSubForm phieuXuatSubForm;
         public static SubForm.CTPXSubForm CTPXSubForm;
+        public static SubForm.NhanVienSubForm nhanVienSubForm;
 
 
 

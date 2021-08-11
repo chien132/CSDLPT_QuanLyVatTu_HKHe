@@ -38,7 +38,13 @@ namespace QLVT_DATHANG.SubForm
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CTPXSubForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
             Program.nhanVienForm.Enabled = true;
+            Program.mainForm.Enabled = true;
+
         }
     }
 }

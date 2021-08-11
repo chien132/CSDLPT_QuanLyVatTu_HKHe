@@ -26,7 +26,8 @@ namespace QLVT_DATHANG.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MINHCHIENPC;Initial Catalog=QLVT_DATHANG;User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MINHCHIENPC\\SERVER1;Initial Catalog=QLVT_DATHANG;User ID=sa;Password=" +
+            "123")]
         public string QLVT_DATHANGConnectionString {
             get {
                 return ((string)(this["QLVT_DATHANGConnectionString"]));

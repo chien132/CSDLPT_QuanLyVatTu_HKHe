@@ -28,6 +28,8 @@ namespace QLVT_DATHANG.SubForm
 
         private void PhieuXuatSubForm_Load(object sender, EventArgs e)
         {
+            this.qLVT_DATHANGDataSet.EnforceConstraints = false;
+            this.khoTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.Kho' table. You can move, or remove it, as needed.
             this.khoTableAdapter.Fill(this.qLVT_DATHANGDataSet.Kho);
 
@@ -36,7 +38,13 @@ namespace QLVT_DATHANG.SubForm
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PhieuXuatSubForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
             Program.nhanVienForm.Enabled = true;
+            Program.mainForm.Enabled = true;
+
         }
     }
 }

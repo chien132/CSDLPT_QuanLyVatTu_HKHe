@@ -349,6 +349,7 @@
             this.Name = "CTPNSubForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập chi tiết phiếu nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CTPNSubForm_FormClosing);
             this.Load += new System.EventHandler(this.CTPNSubForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();

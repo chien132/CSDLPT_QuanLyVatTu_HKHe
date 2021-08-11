@@ -39,10 +39,12 @@ namespace QLVT_DATHANG
 
         private void KhoForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.NhanVien' table. You can move, or remove it, as needed.
-            this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
-            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.ChiNhanh' table. You can move, or remove it, as needed.
-            this.chiNhanhTableAdapter.Fill(this.qLVT_DATHANGDataSet.ChiNhanh);
+            this.qLVT_DATHANGDataSet.EnforceConstraints = false;
+
+            //// TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.NhanVien' table. You can move, or remove it, as needed.
+            //this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            //// TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.ChiNhanh' table. You can move, or remove it, as needed.
+            //this.chiNhanhTableAdapter.Fill(this.qLVT_DATHANGDataSet.ChiNhanh);
 
             this.khoTableAdapter.Connection.ConnectionString = Program.connstr;
             this.khoTableAdapter.Fill(this.qLVT_DATHANGDataSet.Kho);
@@ -84,11 +86,11 @@ namespace QLVT_DATHANG
             this.khoBindingSource.AddNew();
             if (cbChiNhanh.Text == "CHI NHÁNH 1")
             {
-                mACNTextEdit.Text = "CN1";
+                maCNTextEdit.Text = "CN1";
             }
             else if (cbChiNhanh.Text == "CHI NHÁNH 2")
             {
-                mACNTextEdit.Text = "CN2";
+                maCNTextEdit.Text = "CN2";
             }
             
             btnThem.Enabled = btnXoa.Enabled = khoGridControl.Enabled = false;
@@ -104,16 +106,16 @@ namespace QLVT_DATHANG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!checkValidate(mAKHOTextEdit, "Mã Kho is not empty!")) return;
-            if (!checkValidate(tENKHOTextEdit, "Tên Kho is not empty!")) return;
-            if (!checkValidate(dIACHITextEdit, "Địa chỉ is not empty!")) return;
-            if (mAKHOTextEdit.Text.Trim().Length > 4)
+            if (!checkValidate(maKhoTextEdit, "Mã Kho is not empty!")) return;
+            if (!checkValidate(tenKhoTextEdit, "Tên Kho is not empty!")) return;
+            if (!checkValidate(diaChiTextEdit, "Địa chỉ is not empty!")) return;
+            if (maKhoTextEdit.Text.Trim().Length > 4)
             {
                 MessageBox.Show("Mã KHO không được quá 4 kí tự!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (mAKHOTextEdit.Text.Contains(" "))
+            else if (maKhoTextEdit.Text.Contains(" "))
             {
                 MessageBox.Show("Mã KHO không được chứa khoảng trắng!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -128,7 +130,7 @@ namespace QLVT_DATHANG
                 sqlConnection.Open();
 
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@p1", mAKHOTextEdit.Text);
+                sqlCommand.Parameters.AddWithValue("@p1", maKhoTextEdit.Text);
                 sqlCommand.Parameters.AddWithValue("@p2", "MAKHO");
                 SqlDataReader dataReader = null;
                 try
@@ -154,7 +156,7 @@ namespace QLVT_DATHANG
             //sqlConnection.Open();
 
             SqlCommand sqlCommand1 = new SqlCommand(query, sqlConnection);
-                sqlCommand1.Parameters.AddWithValue("@p1", tENKHOTextEdit.Text);
+                sqlCommand1.Parameters.AddWithValue("@p1", tenKhoTextEdit.Text);
                 sqlCommand1.Parameters.AddWithValue("@p2", "TENKHO");
                 try
                 {
@@ -170,8 +172,8 @@ namespace QLVT_DATHANG
                 int resultTENKHO = int.Parse(dataReader.GetValue(0).ToString());
                 dataReader.Close();
 
-                int positionMAKHO = khoBindingSource.Find("MAKHO", mAKHOTextEdit.Text);
-                int postionTENKHO = khoBindingSource.Find("TENKHO", tENKHOTextEdit.Text);
+                int positionMAKHO = khoBindingSource.Find("MAKHO", maKhoTextEdit.Text);
+                int postionTENKHO = khoBindingSource.Find("TENKHO", tenKhoTextEdit.Text);
                 int postionCurrent = khoBindingSource.Position;
                 //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
                 if (resultMAKHO == 1 && (positionMAKHO != postionCurrent))
