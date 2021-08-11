@@ -94,7 +94,7 @@ namespace QLVT_DATHANG
             }
             //LoginForm loginForm1 = new LoginForm();
             //loginForm1.Visible= true;
-            Program.loginForm.reset();
+            //Program.loginForm.reset();
             Program.loginForm.Show();
         }
 

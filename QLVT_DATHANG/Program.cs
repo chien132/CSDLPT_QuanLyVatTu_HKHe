@@ -15,6 +15,8 @@ namespace QLVT_DATHANG
     {
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
+        public static String connstr_publisher = "Data Source=MINHCHIENPC;Initial Catalog=QLVT_DATHANG;Integrated Security=True";
+
         public static SqlDataReader myReader;
         public static String servername = "";
         public static String username = "";
