@@ -223,6 +223,7 @@
             this.Name = "NVTrungIncurredForm";
             this.Text = "Nhân viên trùng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NVTrungIncurredForm_FormClosing);
+            this.Load += new System.EventHandler(this.NVTrungIncurredForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_NVTrung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CheckNVTrungBindingSource)).EndInit();
             this.fillToolStrip.ResumeLayout(false);

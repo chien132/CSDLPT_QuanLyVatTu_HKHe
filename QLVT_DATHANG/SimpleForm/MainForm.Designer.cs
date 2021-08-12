@@ -118,6 +118,7 @@
             this.barButtonItem3.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem3.LargeWidth = 100;
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barbtnNhanVien
             // 
@@ -217,6 +218,7 @@
             this.barButtonItem8.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem8.LargeWidth = 90;
             this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -245,6 +247,7 @@
             this.barButtonItem10.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonItem10.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
             // barButtonItem11
             // 
@@ -259,6 +262,7 @@
             this.barButtonItem11.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonItem11.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -302,6 +306,7 @@
             this.barButtonItem14.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonItem14.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // rb_quantri
             // 
@@ -446,7 +451,7 @@
             this.sslMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslMaNhanVien.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sslMaNhanVien.Name = "sslMaNhanVien";
-            this.sslMaNhanVien.Size = new System.Drawing.Size(48, 26);
+            this.sslMaNhanVien.Size = new System.Drawing.Size(48, 17);
             this.sslMaNhanVien.Text = "MANV";
             // 
             // sslTen
@@ -454,7 +459,7 @@
             this.sslTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslTen.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sslTen.Name = "sslTen";
-            this.sslTen.Size = new System.Drawing.Size(33, 26);
+            this.sslTen.Size = new System.Drawing.Size(33, 17);
             this.sslTen.Text = "TEN";
             // 
             // sslNhom
@@ -462,7 +467,7 @@
             this.sslNhom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sslNhom.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sslNhom.Name = "sslNhom";
-            this.sslNhom.Size = new System.Drawing.Size(50, 26);
+            this.sslNhom.Size = new System.Drawing.Size(50, 17);
             this.sslNhom.Text = "NHOM";
             // 
             // barButtonItem15

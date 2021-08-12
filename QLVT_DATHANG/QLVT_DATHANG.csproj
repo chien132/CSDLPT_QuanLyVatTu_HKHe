@@ -53,19 +53,31 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.SpellChecker.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraSpellChecker.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -160,6 +172,18 @@
     <Compile Include="SubForm\DDHSubForm.Designer.cs">
       <DependentUpon>DDHSubForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\HDNVPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\HDNVPicker.Designer.cs">
+      <DependentUpon>HDNVPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\HoatDongNVSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\HoatDongNVSubForm.Designer.cs">
+      <DependentUpon>HoatDongNVSubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\NhanVienSubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +207,30 @@
     </Compile>
     <Compile Include="SubForm\PhieuXuatSubForm.Designer.cs">
       <DependentUpon>PhieuXuatSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachNhanVien.Designer.cs">
+      <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachVatTu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachVatTu.Designer.cs">
+      <DependentUpon>Xrpt_DanhSachVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_DSDDHChuaLapPN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DSDDHChuaLapPN.Designer.cs">
+      <DependentUpon>Xrpt_DSDDHChuaLapPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_HoatDongNV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_HoatDongNV.Designer.cs">
+      <DependentUpon>Xrpt_HoatDongNV.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -220,6 +268,12 @@
     <EmbeddedResource Include="SubForm\DDHSubForm.resx">
       <DependentUpon>DDHSubForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\HDNVPicker.resx">
+      <DependentUpon>HDNVPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\HoatDongNVSubForm.resx">
+      <DependentUpon>HoatDongNVSubForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\NhanVienSubForm.resx">
       <DependentUpon>NhanVienSubForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +285,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\PhieuXuatSubForm.resx">
       <DependentUpon>PhieuXuatSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DanhSachNhanVien.resx">
+      <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DanhSachVatTu.resx">
+      <DependentUpon>Xrpt_DanhSachVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DSDDHChuaLapPN.resx">
+      <DependentUpon>Xrpt_DSDDHChuaLapPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_HoatDongNV.resx">
+      <DependentUpon>Xrpt_HoatDongNV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

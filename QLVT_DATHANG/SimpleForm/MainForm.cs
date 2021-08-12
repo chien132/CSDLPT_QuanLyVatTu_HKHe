@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
 
 namespace QLVT_DATHANG
 {
@@ -38,10 +39,10 @@ namespace QLVT_DATHANG
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlCommand.CommandType = CommandType.Text;
-                
+
                 try
                 {
-                     dataReader = sqlCommand.ExecuteReader();
+                    dataReader = sqlCommand.ExecuteReader();
 
 
                 }
@@ -119,7 +120,7 @@ namespace QLVT_DATHANG
                 Program.nhanVienForm.MdiParent = this;
                 Program.nhanVienForm.Show();
 
-             
+
             }
         }
 
@@ -163,6 +164,39 @@ namespace QLVT_DATHANG
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Xrpt_DanhSachNhanVien reportDSNhanVien = new Xrpt_DanhSachNhanVien();
+            ReportPrintTool rpt = new ReportPrintTool(reportDSNhanVien);
+            reportDSNhanVien.ShowPreviewDialog();
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Xrpt_DanhSachVatTu reportDSVatTu = new Xrpt_DanhSachVatTu();
+            ReportPrintTool rpt = new ReportPrintTool(reportDSVatTu);
+            reportDSVatTu.ShowPreviewDialog();
+        }
+
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Xrpt_DSDDHChuaLapPN reportDSDDHChuaLapPN = new Xrpt_DSDDHChuaLapPN();
+            ReportPrintTool rpt = new ReportPrintTool(reportDSDDHChuaLapPN);
+            reportDSDDHChuaLapPN.ShowPreviewDialog();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Program.hoatDongNVSubForm = new SubForm.HoatDongNVSubForm();
+            Program.hoatDongNVSubForm.Show();
+            Program.mainForm.Enabled = false;
         }
     }
 }

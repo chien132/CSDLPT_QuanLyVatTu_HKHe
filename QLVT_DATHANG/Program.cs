@@ -61,6 +61,7 @@ namespace QLVT_DATHANG
         public static SubForm.PhieuXuatSubForm phieuXuatSubForm;
         public static SubForm.CTPXSubForm CTPXSubForm;
         public static SubForm.NhanVienSubForm nhanVienSubForm;
+        public static SubForm.HoatDongNVSubForm hoatDongNVSubForm;
 
 
 
