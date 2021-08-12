@@ -30,43 +30,127 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
-            this.nhanVienGridControl = new DevExpress.XtraGrid.GridControl();
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSNVChuaCoTKGridControl = new DevExpress.XtraGrid.GridControl();
+            this.dSNVChuaCoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTrangThaiXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chiNhanhTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.ChiNhanhTableAdapter();
             this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
-            this.nhanVienTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.NhanVienTableAdapter();
+            this.dSNVChuaCoTKTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.DSNVChuaCoTKTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSNVChuaCoTKGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSNVChuaCoTKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dSNVChuaCoTKGridControl);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Controls.Add(this.cbChiNhanh);
-            this.panel1.Controls.Add(this.nhanVienGridControl);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 435);
+            this.panel1.Size = new System.Drawing.Size(814, 427);
             this.panel1.TabIndex = 0;
+            // 
+            // dSNVChuaCoTKGridControl
+            // 
+            this.dSNVChuaCoTKGridControl.DataSource = this.dSNVChuaCoTKBindingSource;
+            this.dSNVChuaCoTKGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dSNVChuaCoTKGridControl.Location = new System.Drawing.Point(3, 48);
+            this.dSNVChuaCoTKGridControl.MainView = this.gridView1;
+            this.dSNVChuaCoTKGridControl.Name = "dSNVChuaCoTKGridControl";
+            this.dSNVChuaCoTKGridControl.Size = new System.Drawing.Size(912, 356);
+            this.dSNVChuaCoTKGridControl.TabIndex = 3;
+            this.dSNVChuaCoTKGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            this.dSNVChuaCoTKGridControl.DoubleClick += new System.EventHandler(this.dSNVChuaCoTKGridControl_DoubleClick);
+            // 
+            // dSNVChuaCoTKBindingSource
+            // 
+            this.dSNVChuaCoTKBindingSource.DataMember = "DSNVChuaCoTK";
+            this.dSNVChuaCoTKBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            // 
+            // qLVT_DATHANGDataSet
+            // 
+            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
+            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.Transparent;
+            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Lime;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMANV,
+            this.colHOTEN,
+            this.colDIACHI,
+            this.colNGAYSINH,
+            this.colLUONG,
+            this.colMACN});
+            this.gridView1.GridControl = this.dSNVChuaCoTKGridControl;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowViewCaption = true;
+            this.gridView1.ViewCaption = "Danh sách nhân viên chưa có TK";
+            // 
+            // colMANV
+            // 
+            this.colMANV.FieldName = "MANV";
+            this.colMANV.Name = "colMANV";
+            this.colMANV.Visible = true;
+            this.colMANV.VisibleIndex = 0;
+            // 
+            // colHOTEN
+            // 
+            this.colHOTEN.FieldName = "HOTEN";
+            this.colHOTEN.Name = "colHOTEN";
+            this.colHOTEN.Visible = true;
+            this.colHOTEN.VisibleIndex = 1;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 2;
+            // 
+            // colNGAYSINH
+            // 
+            this.colNGAYSINH.FieldName = "NGAYSINH";
+            this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.Visible = true;
+            this.colNGAYSINH.VisibleIndex = 3;
+            // 
+            // colLUONG
+            // 
+            this.colLUONG.FieldName = "LUONG";
+            this.colLUONG.Name = "colLUONG";
+            this.colLUONG.Visible = true;
+            this.colLUONG.VisibleIndex = 4;
+            // 
+            // colMACN
+            // 
+            this.colMACN.FieldName = "MACN";
+            this.colMACN.Name = "colMACN";
+            this.colMACN.Visible = true;
+            this.colMACN.VisibleIndex = 5;
             // 
             // btnOk
             // 
@@ -87,127 +171,6 @@
             this.cbChiNhanh.Size = new System.Drawing.Size(233, 24);
             this.cbChiNhanh.TabIndex = 1;
             this.cbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cbChiNhanh_SelectedIndexChanged);
-            // 
-            // nhanVienGridControl
-            // 
-            this.nhanVienGridControl.DataSource = this.nhanVienBindingSource;
-            this.nhanVienGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.nhanVienGridControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nhanVienGridControl.Location = new System.Drawing.Point(3, 56);
-            this.nhanVienGridControl.MainView = this.gridView1;
-            this.nhanVienGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.nhanVienGridControl.Name = "nhanVienGridControl";
-            this.nhanVienGridControl.Size = new System.Drawing.Size(912, 347);
-            this.nhanVienGridControl.TabIndex = 1;
-            this.nhanVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.nhanVienGridControl.DoubleClick += new System.EventHandler(this.nhanVienGridControl_DoubleClick);
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // qLVT_DATHANGDataSet
-            // 
-            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
-            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.Transparent;
-            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Lime;
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMANV,
-            this.colHO,
-            this.colTEN,
-            this.colDIACHI,
-            this.colNGAYSINH,
-            this.colLUONG,
-            this.colMACN,
-            this.colTrangThaiXoa});
-            this.gridView1.DetailHeight = 431;
-            this.gridView1.GridControl = this.nhanVienGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowViewCaption = true;
-            this.gridView1.ViewCaption = "Danh sách nhân viên";
-            // 
-            // colMANV
-            // 
-            this.colMANV.FieldName = "MANV";
-            this.colMANV.MinWidth = 23;
-            this.colMANV.Name = "colMANV";
-            this.colMANV.Visible = true;
-            this.colMANV.VisibleIndex = 0;
-            this.colMANV.Width = 87;
-            // 
-            // colHO
-            // 
-            this.colHO.FieldName = "HO";
-            this.colHO.MinWidth = 23;
-            this.colHO.Name = "colHO";
-            this.colHO.Visible = true;
-            this.colHO.VisibleIndex = 1;
-            this.colHO.Width = 87;
-            // 
-            // colTEN
-            // 
-            this.colTEN.FieldName = "TEN";
-            this.colTEN.MinWidth = 23;
-            this.colTEN.Name = "colTEN";
-            this.colTEN.Visible = true;
-            this.colTEN.VisibleIndex = 2;
-            this.colTEN.Width = 87;
-            // 
-            // colDIACHI
-            // 
-            this.colDIACHI.FieldName = "DIACHI";
-            this.colDIACHI.MinWidth = 23;
-            this.colDIACHI.Name = "colDIACHI";
-            this.colDIACHI.Visible = true;
-            this.colDIACHI.VisibleIndex = 3;
-            this.colDIACHI.Width = 87;
-            // 
-            // colNGAYSINH
-            // 
-            this.colNGAYSINH.FieldName = "NGAYSINH";
-            this.colNGAYSINH.MinWidth = 23;
-            this.colNGAYSINH.Name = "colNGAYSINH";
-            this.colNGAYSINH.Visible = true;
-            this.colNGAYSINH.VisibleIndex = 4;
-            this.colNGAYSINH.Width = 87;
-            // 
-            // colLUONG
-            // 
-            this.colLUONG.FieldName = "LUONG";
-            this.colLUONG.MinWidth = 23;
-            this.colLUONG.Name = "colLUONG";
-            this.colLUONG.Visible = true;
-            this.colLUONG.VisibleIndex = 5;
-            this.colLUONG.Width = 87;
-            // 
-            // colMACN
-            // 
-            this.colMACN.FieldName = "MACN";
-            this.colMACN.MinWidth = 23;
-            this.colMACN.Name = "colMACN";
-            this.colMACN.Visible = true;
-            this.colMACN.VisibleIndex = 6;
-            this.colMACN.Width = 87;
-            // 
-            // colTrangThaiXoa
-            // 
-            this.colTrangThaiXoa.FieldName = "TrangThaiXoa";
-            this.colTrangThaiXoa.MinWidth = 23;
-            this.colTrangThaiXoa.Name = "colTrangThaiXoa";
-            this.colTrangThaiXoa.Visible = true;
-            this.colTrangThaiXoa.VisibleIndex = 7;
-            this.colTrangThaiXoa.Width = 87;
             // 
             // label1
             // 
@@ -231,22 +194,22 @@
             this.tableAdapterManager.CTPXTableAdapter = null;
             this.tableAdapterManager.DatHangTableAdapter = null;
             this.tableAdapterManager.KhoTableAdapter = null;
-            this.tableAdapterManager.NhanVienTableAdapter = this.nhanVienTableAdapter;
+            this.tableAdapterManager.NhanVienTableAdapter = null;
             this.tableAdapterManager.PhieuNhapTableAdapter = null;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VattuTableAdapter = null;
             // 
-            // nhanVienTableAdapter
+            // dSNVChuaCoTKTableAdapter
             // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
+            this.dSNVChuaCoTKTableAdapter.ClearBeforeFill = true;
             // 
             // NhanVienSubForm
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 435);
+            this.ClientSize = new System.Drawing.Size(814, 427);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -259,8 +222,8 @@
             this.Load += new System.EventHandler(this.NhanVienSubForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSNVChuaCoTKGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSNVChuaCoTKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -275,18 +238,16 @@
         private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
         private QLVT_DATHANGDataSetTableAdapters.ChiNhanhTableAdapter chiNhanhTableAdapter;
         private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private QLVT_DATHANGDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
-        private System.Windows.Forms.BindingSource nhanVienBindingSource;
-        private DevExpress.XtraGrid.GridControl nhanVienGridControl;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.BindingSource dSNVChuaCoTKBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.DSNVChuaCoTKTableAdapter dSNVChuaCoTKTableAdapter;
+        private DevExpress.XtraGrid.GridControl dSNVChuaCoTKGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
-        private DevExpress.XtraGrid.Columns.GridColumn colHO;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colHOTEN;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
         private DevExpress.XtraGrid.Columns.GridColumn colLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
-        private DevExpress.XtraGrid.Columns.GridColumn colTrangThaiXoa;
-        private System.Windows.Forms.Button btnOk;
     }
 }

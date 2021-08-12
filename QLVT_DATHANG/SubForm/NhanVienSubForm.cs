@@ -21,19 +21,20 @@ namespace QLVT_DATHANG.SubForm
 
         private void NhanVienSubForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLVT_DATHANGDataSet.DSNVChuaCoTK' table. You can move, or remove it, as needed.
+            this.dSNVChuaCoTKTableAdapter.Fill(this.qLVT_DATHANGDataSet.DSNVChuaCoTK);
             this.qLVT_DATHANGDataSet.EnforceConstraints = false;
-            if (Program.mGroup == "CHINHANH" || Program.group == "USER")
-            {
+            //if (Program.mGroup == "CHINHANH" || Program.group == "USER")
+            //{
                 cbChiNhanh.Visible = false;
                 label1.Visible = false;
-            }
+            //}
             /*
              * Trước khi đổ dữ liệu cần cập nhập Connection của Adapter điều này xảy ra khi
              * Trường hợp này xảy ra khi đăng nhập từ 1 Nhân viên ở CN2 và cần GrowTable dữ liệu cũng của CN2
             */
-            this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.nhanVienBindingSource.Filter = "TrangThaiXoa =0";
-            this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+            this.dSNVChuaCoTKTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.dSNVChuaCoTKTableAdapter.Fill(this.qLVT_DATHANGDataSet.DSNVChuaCoTK);
             this.cbChiNhanh.DataSource = Program.bds_dspm; //DataSource của cbChiNhanh tham chiếu đến bindingSource ở LoginForm
             cbChiNhanh.DisplayMember = "TENCN";
             cbChiNhanh.ValueMember = "TENSERVER";
@@ -79,8 +80,8 @@ namespace QLVT_DATHANG.SubForm
                         MessageBox.Show("Kết nối Server thất bại! " + ex.Message, "Thông báo", MessageBoxButtons.OK);
                         return;
                     }
-                    this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+                    this.dSNVChuaCoTKTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.dSNVChuaCoTKTableAdapter.Fill(this.qLVT_DATHANGDataSet.DSNVChuaCoTK);
                 }
             }
         }
@@ -94,7 +95,7 @@ namespace QLVT_DATHANG.SubForm
         {
             if (Program.themTaiKhoanForm != null)    //Thỏa điều kiện Form Tạo TK đang mở => có đối tượng => mới set được value
             {
-                Program.themTaiKhoanForm.tbNhanVien.Text = ((DataRowView)nhanVienBindingSource.Current)["MANV"].ToString();
+                Program.themTaiKhoanForm.tbNhanVien.Text = ((DataRowView)dSNVChuaCoTKBindingSource.Current)["MANV"].ToString();
             }
 
             //if (Program.FormHoatDongNhanVien != null) //Thỏa điều kiện Form Báo cáo Hoạt động NV đang mở => có đối tượng => mới set được value
@@ -108,6 +109,11 @@ namespace QLVT_DATHANG.SubForm
         {
             confirm();
 
+        }
+
+        private void dSNVChuaCoTKGridControl_DoubleClick(object sender, EventArgs e)
+        {
+            confirm();
         }
     }
 }
