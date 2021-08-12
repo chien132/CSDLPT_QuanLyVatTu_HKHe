@@ -184,6 +184,8 @@
             this.cTPXTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPXTableAdapter();
             this.phieuNhapTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuNhapTableAdapter();
             this.cTPNTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter();
+            this.cmsDDH = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiThemDDH = new System.Windows.Forms.ToolStripMenuItem();
             ngaySinhLabel = new System.Windows.Forms.Label();
             hoLabel = new System.Windows.Forms.Label();
             tenLabel = new System.Windows.Forms.Label();
@@ -236,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuXuatGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).BeginInit();
+            this.cmsDDH.SuspendLayout();
             this.SuspendLayout();
             // 
             // ngaySinhLabel
@@ -1376,6 +1379,7 @@
             this.gcDDH.TabIndex = 0;
             this.gcDDH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDDH});
+            this.gcDDH.MouseHover += new System.EventHandler(this.gcDDH_MouseHover);
             // 
             // gvDDH
             // 
@@ -2025,6 +2029,21 @@
             // 
             this.cTPNTableAdapter.ClearBeforeFill = true;
             // 
+            // cmsDDH
+            // 
+            this.cmsDDH.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiThemDDH});
+            this.cmsDDH.Name = "cmsDDH";
+            this.cmsDDH.Size = new System.Drawing.Size(181, 48);
+            // 
+            // tsmiThemDDH
+            // 
+            this.tsmiThemDDH.Image = global::QLVT_DATHANG.Properties.Resources.plus;
+            this.tsmiThemDDH.Name = "tsmiThemDDH";
+            this.tsmiThemDDH.Size = new System.Drawing.Size(180, 22);
+            this.tsmiThemDDH.Text = "Thêm ĐĐH";
+            this.tsmiThemDDH.Click += new System.EventHandler(this.tsmiThemDDH_Click);
+            // 
             // NhanVienForm
             // 
             this.Appearance.Options.UseFont = true;
@@ -2105,6 +2124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuXuatGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPX)).EndInit();
+            this.cmsDDH.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2249,5 +2269,7 @@
         private QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter cTPNTableAdapter;
         private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraEditors.TextEdit luongTextEdit;
+        private System.Windows.Forms.ContextMenuStrip cmsDDH;
+        private System.Windows.Forms.ToolStripMenuItem tsmiThemDDH;
     }
 }

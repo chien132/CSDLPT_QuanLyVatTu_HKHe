@@ -33,34 +33,37 @@
             System.Windows.Forms.Label nhaCCLabel;
             System.Windows.Forms.Label masoDDHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DDHSubForm));
-            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.khoTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter();
             this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbMaKho = new DevExpress.XtraEditors.TextEdit();
+            this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
+            this.tbNCC = new DevExpress.XtraEditors.TextEdit();
+            this.tbMaDDH = new DevExpress.XtraEditors.TextEdit();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbMaKho = new System.Windows.Forms.TextBox();
-            this.tbNCC = new System.Windows.Forms.TextBox();
-            this.tbMaDDH = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
-            this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datHangTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter();
             this.khoGridControl = new DevExpress.XtraGrid.GridControl();
+            this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvKho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.datHangTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter();
+            this.khoTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter();
             mAKHOLabel = new System.Windows.Forms.Label();
             nhaCCLabel = new System.Windows.Forms.Label();
             masoDDHLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMaKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbNCC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMaDDH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvKho)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,29 +94,16 @@
             masoDDHLabel.TabIndex = 19;
             masoDDHLabel.Text = "Mã ĐĐH:";
             // 
-            // qLVT_DATHANGDataSet
-            // 
-            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
-            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // khoBindingSource
-            // 
-            this.khoBindingSource.DataMember = "Kho";
-            this.khoBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // khoTableAdapter
-            // 
-            this.khoTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.CTDDHTableAdapter = null;
             this.tableAdapterManager.CTPNTableAdapter = null;
             this.tableAdapterManager.CTPXTableAdapter = null;
             this.tableAdapterManager.DatHangTableAdapter = null;
-            this.tableAdapterManager.KhoTableAdapter = this.khoTableAdapter;
+            this.tableAdapterManager.KhoTableAdapter = null;
             this.tableAdapterManager.NhanVienTableAdapter = null;
             this.tableAdapterManager.PhieuNhapTableAdapter = null;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
@@ -122,14 +112,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbMaKho);
+            this.groupBox1.Controls.Add(this.tbNCC);
+            this.groupBox1.Controls.Add(this.tbMaDDH);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(mAKHOLabel);
-            this.groupBox1.Controls.Add(this.tbMaKho);
             this.groupBox1.Controls.Add(nhaCCLabel);
-            this.groupBox1.Controls.Add(this.tbNCC);
             this.groupBox1.Controls.Add(masoDDHLabel);
-            this.groupBox1.Controls.Add(this.tbMaDDH);
             this.groupBox1.Controls.Add(this.btnOk);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 31);
@@ -138,6 +128,41 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm đơn đặt hàng";
+            // 
+            // tbMaKho
+            // 
+            this.tbMaKho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource, "MAKHO", true));
+            this.tbMaKho.Enabled = false;
+            this.tbMaKho.Location = new System.Drawing.Point(131, 254);
+            this.tbMaKho.Name = "tbMaKho";
+            this.tbMaKho.Size = new System.Drawing.Size(185, 20);
+            this.tbMaKho.TabIndex = 30;
+            // 
+            // datHangBindingSource
+            // 
+            this.datHangBindingSource.DataMember = "DatHang";
+            this.datHangBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            // 
+            // qLVT_DATHANGDataSet
+            // 
+            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
+            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbNCC
+            // 
+            this.tbNCC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource, "NhaCC", true));
+            this.tbNCC.Location = new System.Drawing.Point(131, 206);
+            this.tbNCC.Name = "tbNCC";
+            this.tbNCC.Size = new System.Drawing.Size(185, 20);
+            this.tbNCC.TabIndex = 29;
+            // 
+            // tbMaDDH
+            // 
+            this.tbMaDDH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.datHangBindingSource, "MasoDDH", true));
+            this.tbMaDDH.Location = new System.Drawing.Point(131, 161);
+            this.tbMaDDH.Name = "tbMaDDH";
+            this.tbMaDDH.Size = new System.Drawing.Size(185, 20);
+            this.tbMaDDH.TabIndex = 28;
             // 
             // button1
             // 
@@ -161,28 +186,6 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
-            // tbMaKho
-            // 
-            this.tbMaKho.Enabled = false;
-            this.tbMaKho.Location = new System.Drawing.Point(131, 252);
-            this.tbMaKho.Name = "tbMaKho";
-            this.tbMaKho.Size = new System.Drawing.Size(185, 23);
-            this.tbMaKho.TabIndex = 24;
-            // 
-            // tbNCC
-            // 
-            this.tbNCC.Location = new System.Drawing.Point(131, 207);
-            this.tbNCC.Name = "tbNCC";
-            this.tbNCC.Size = new System.Drawing.Size(185, 23);
-            this.tbNCC.TabIndex = 22;
-            // 
-            // tbMaDDH
-            // 
-            this.tbMaDDH.Location = new System.Drawing.Point(131, 162);
-            this.tbMaDDH.Name = "tbMaDDH";
-            this.tbMaDDH.Size = new System.Drawing.Size(185, 23);
-            this.tbMaDDH.TabIndex = 21;
-            // 
             // btnOk
             // 
             this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -195,15 +198,6 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // datHangBindingSource
-            // 
-            this.datHangBindingSource.DataMember = "DatHang";
-            this.datHangBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // datHangTableAdapter
-            // 
-            this.datHangTableAdapter.ClearBeforeFill = true;
-            // 
             // khoGridControl
             // 
             this.khoGridControl.DataSource = this.khoBindingSource;
@@ -215,6 +209,11 @@
             this.khoGridControl.TabIndex = 29;
             this.khoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvKho});
+            // 
+            // khoBindingSource
+            // 
+            this.khoBindingSource.DataMember = "Kho";
+            this.khoBindingSource.DataSource = this.qLVT_DATHANGDataSet;
             // 
             // gvKho
             // 
@@ -234,6 +233,7 @@
             this.gvKho.OptionsView.ShowGroupPanel = false;
             this.gvKho.OptionsView.ShowViewCaption = true;
             this.gvKho.ViewCaption = "DANH SÁCH KHO";
+            this.gvKho.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvKho_RowClick);
             // 
             // colMAKHO
             // 
@@ -299,6 +299,14 @@
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 3;
             // 
+            // datHangTableAdapter
+            // 
+            this.datHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // khoTableAdapter
+            // 
+            this.khoTableAdapter.ClearBeforeFill = true;
+            // 
             // DDHSubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,38 +321,40 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DDHSubForm_FormClosing);
             this.Load += new System.EventHandler(this.DDHSubForm_Load);
             this.Shown += new System.EventHandler(this.SubFormDDH_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMaKho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbNCC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMaDDH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvKho)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
-        private System.Windows.Forms.BindingSource khoBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter khoTableAdapter;
         private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbMaKho;
-        private System.Windows.Forms.TextBox tbNCC;
-        private System.Windows.Forms.TextBox tbMaDDH;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource datHangBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
         private DevExpress.XtraGrid.GridControl khoGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gvKho;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTENKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
+        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
+        private System.Windows.Forms.BindingSource datHangBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
+        private DevExpress.XtraEditors.TextEdit tbNCC;
+        private DevExpress.XtraEditors.TextEdit tbMaDDH;
+        private System.Windows.Forms.BindingSource khoBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter khoTableAdapter;
+        private DevExpress.XtraEditors.TextEdit tbMaKho;
     }
 }

@@ -36,13 +36,13 @@ namespace QLVT_DATHANG.SubForm
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Program.nhanVienForm.Enabled = true;
+            Program.mainForm.Enabled = true;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.Close();
-            Program.nhanVienForm.Enabled = true;
+            Program.mainForm.Enabled = true;
         }
 
         private void nuDonGia_ValueChanged(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace QLVT_DATHANG.SubForm
         private void btnOK_Click_1(object sender, EventArgs e)
         {
             this.Close();
-            Program.nhanVienForm.Enabled = true;
+            Program.mainForm.Enabled = true;
         }
     }
 }

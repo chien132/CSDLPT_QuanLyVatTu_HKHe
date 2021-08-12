@@ -42,7 +42,6 @@ namespace QLVT_DATHANG.SubForm
 
         private void PhieuXuatSubForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.nhanVienForm.Enabled = true;
             Program.mainForm.Enabled = true;
 
         }

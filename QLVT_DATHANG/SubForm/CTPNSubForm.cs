@@ -40,7 +40,6 @@ namespace QLVT_DATHANG.SubForm
 
         private void CTPNSubForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.nhanVienForm.Enabled = true;
             Program.mainForm.Enabled = true;
 
         }

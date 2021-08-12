@@ -32,6 +32,7 @@ namespace QLVT_DATHANG.SubForm
 
         private void DDHSubForm_Load(object sender, EventArgs e)
         {
+
             this.qLVT_DATHANGDataSet.EnforceConstraints = false;
 
             this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -54,11 +55,23 @@ namespace QLVT_DATHANG.SubForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            datHangBindingSource.RemoveCurrent();
+            datHangBindingSource.CancelEdit();
+            Program.mainForm.Enabled = true;
             this.Close();
-            Program.nhanVienForm.Enabled = true;
         }
 
         private bool checkValidate(TextBox tb, string str)
+        {
+            if (tb.Text.Trim().Equals(""))
+            {
+                MessageBox.Show(str, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tb.Focus();
+                return false;
+            }
+            return true;
+        }
+        private bool checkValidate(TextEdit tb, string str)
         {
             if (tb.Text.Trim().Equals(""))
             {
@@ -136,7 +149,7 @@ namespace QLVT_DATHANG.SubForm
                             this.datHangTableAdapter.Update(Program.nhanVienForm.getDataSet().DatHang);
                             flagSuccess = true;
                             this.Close();
-                            Program.nhanVienForm.Enabled = true;
+                            Program.mainForm.Enabled = true;
                             
                         }
                         catch (Exception ex)

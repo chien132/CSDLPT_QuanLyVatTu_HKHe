@@ -34,7 +34,6 @@ namespace QLVT_DATHANG.SubForm
         private void NVTrungIncurredForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.mainForm.Enabled = true;
-            Program.nhanVienForm.Enabled = true;
         }
     }
 }

@@ -56,6 +56,11 @@ namespace QLVT_DATHANG
                 btnThem.Links[0].Visible = btnXoa.Links[0].Visible = btnLuu.Links[0].Visible = btnUndo.Links[0].Visible = false;
                 cbChiNhanh.Enabled = true;
             }
+            else if (Program.group == "USER")
+            {
+                btnThem.Links[0].Visible = btnSua.Links[0].Visible = btnRefresh.Links[0].Visible = false;
+                btnXoa.Links[0].Visible = btnUndo.Links[0].Visible = btnLuu.Links[0].Visible = false;
+            }
 
             //maCN = (((DataRowView)chiNhanhBindingSource[0])["MACN"].ToString());    //Cập nhật tự động vào label MACN khi tạo mới
 

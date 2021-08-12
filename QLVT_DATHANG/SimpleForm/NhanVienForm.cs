@@ -37,7 +37,7 @@ namespace QLVT_DATHANG
             this.cbChiNhanh.DisplayMember = "TENCN";
             this.cbChiNhanh.ValueMember = "TENSERVER";
             this.cbChiNhanh.SelectedIndex = Program.mChinhanh;
-            maCN = Program.mChinhanh==0 ? "CN1" : "CN2";
+            maCN = Program.mChinhanh == 0 ? "CN1" : "CN2";
             //this.chiNhanhTableAdapter.Fill(this.qLVT_DATHANGDataSet.ChiNhanh);
 
             this.cTPXTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -70,7 +70,7 @@ namespace QLVT_DATHANG
 
             //Tắt các panel của PhieuNhap - PhieuXuat - DatHang trước
             gbDonDatHang.Visible = gbPhieuNhap.Visible = gbPhieuXuat.Visible = false;
-            
+
             cbChiNhanh.Enabled = false;
             if (Program.group == "CONGTY")
             {
@@ -82,6 +82,10 @@ namespace QLVT_DATHANG
             else if (Program.group == "USER")
             {
                 btnChuyenCN.Links[0].Visible = false;
+                gcNhanVien.Visible = false;
+                btnThem.Links[0].Visible = btnEdit.Links[0].Visible = btnRefresh.Links[0].Visible = false;
+                btnXoa.Links[0].Visible = btnUndo.Links[0].Visible = btnLuu.Links[0].Visible = false;
+                nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
             }
 
 
@@ -89,7 +93,7 @@ namespace QLVT_DATHANG
             cbChiNhanh.DisplayMember = "TENCN";
             cbChiNhanh.ValueMember = "TENSERVER";
 
-            
+
             maCNTextEdit.Enabled = false;
         }
 
@@ -191,7 +195,7 @@ namespace QLVT_DATHANG
                 ngaySinhDateEdit.Focus();
                 return;
             }
-            if (Int32.Parse(luongTextEdit.Text.Replace(",",String.Empty).Replace(".",String.Empty)) < 4000000)
+            if (Int32.Parse(luongTextEdit.Text.Replace(",", String.Empty).Replace(".", String.Empty)) < 4000000)
             {
                 MessageBox.Show("Lương không được < 4,000,000!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -597,7 +601,7 @@ namespace QLVT_DATHANG
             Program.dDHSubForm.Show();
 
 
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
 
@@ -622,7 +626,7 @@ namespace QLVT_DATHANG
         {
             Program.cTDDHSubForm = new SubForm.CTDDHSubForm();
             Program.cTDDHSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
 
         private bool kiemTraCTDDHCuaNV()
@@ -707,14 +711,14 @@ namespace QLVT_DATHANG
             }
             Program.phieuNhapSubForm = new SubForm.PhieuNhapSubForm();
             Program.phieuNhapSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
 
         private void smiAddPN_Click(object sender, EventArgs e)
         {
             Program.phieuNhapSubForm = new SubForm.PhieuNhapSubForm();
             Program.phieuNhapSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
 
         //CT PN
@@ -748,7 +752,7 @@ namespace QLVT_DATHANG
             }
             Program.cTPNSubForm = new SubForm.CTPNSubForm();
             Program.cTPNSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
 
         //Phieu Xuat
@@ -784,14 +788,14 @@ namespace QLVT_DATHANG
         {
             Program.phieuXuatSubForm = new SubForm.PhieuXuatSubForm();
             Program.phieuXuatSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
         private void smiAddPX_Click(object sender, EventArgs e)
         {
             Program.phieuXuatSubForm = new SubForm.PhieuXuatSubForm();
             Program.phieuXuatSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
 
@@ -820,13 +824,13 @@ namespace QLVT_DATHANG
         {
             Program.CTPXSubForm = new SubForm.CTPXSubForm();
             Program.CTPXSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
         private void smiAddCTPX_Click(object sender, EventArgs e)
         {
             Program.CTPXSubForm = new SubForm.CTPXSubForm();
             Program.CTPXSubForm.Show();
-            Program.nhanVienForm.Enabled = false;
+            Program.mainForm.Enabled = false;
         }
 
         //Getter-Setter các DataSet và BindingSource
@@ -936,6 +940,22 @@ namespace QLVT_DATHANG
                     }
                 }
             }
+        }
+
+        private void gcDDH_MouseHover(object sender, EventArgs e)
+        {
+            if (Program.group == "CHINHANH" || Program.group == "USER")
+            {
+                gcDDH.ContextMenuStrip = (datHangBindingSource.Count == 0) ? cmsDDH : null;
+            }
+        }
+
+        private void tsmiThemDDH_Click(object sender, EventArgs e)
+        {
+            Program.dDHSubForm = new SubForm.DDHSubForm();
+            Program.dDHSubForm.Show();
+            Program.mainForm.Enabled = false;
+            nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
     }
 }
