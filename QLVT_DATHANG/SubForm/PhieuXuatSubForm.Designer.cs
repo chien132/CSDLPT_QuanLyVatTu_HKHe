@@ -32,32 +32,38 @@
             System.Windows.Forms.Label mAPXLabel;
             System.Windows.Forms.Label mAKHOLabel;
             System.Windows.Forms.Label hOTENKHLabel;
-            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.khoTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter();
-            this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.tbMaPX = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
-            this.tbMaKho = new System.Windows.Forms.TextBox();
-            this.tbKhachHang = new System.Windows.Forms.TextBox();
             this.khoGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvKho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.mAPXTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.hOTENKHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mAKHOTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
+            this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.khoTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter();
+            this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
+            this.phieuXuatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phieuXuatTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter();
             mAPXLabel = new System.Windows.Forms.Label();
             mAKHOLabel = new System.Windows.Forms.Label();
             hOTENKHLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAPXTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOTENKHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHOTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuXuatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAPXLabel
@@ -90,50 +96,21 @@
             hOTENKHLabel.TabIndex = 9;
             hOTENKHLabel.Text = "Họ tên Khách Hàng:";
             // 
-            // qLVT_DATHANGDataSet
-            // 
-            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
-            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // khoBindingSource
-            // 
-            this.khoBindingSource.DataMember = "Kho";
-            this.khoBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // khoTableAdapter
-            // 
-            this.khoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChiNhanhTableAdapter = null;
-            this.tableAdapterManager.CTDDHTableAdapter = null;
-            this.tableAdapterManager.CTPNTableAdapter = null;
-            this.tableAdapterManager.CTPXTableAdapter = null;
-            this.tableAdapterManager.DatHangTableAdapter = null;
-            this.tableAdapterManager.KhoTableAdapter = this.khoTableAdapter;
-            this.tableAdapterManager.NhanVienTableAdapter = null;
-            this.tableAdapterManager.PhieuNhapTableAdapter = null;
-            this.tableAdapterManager.PhieuXuatTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VattuTableAdapter = null;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mAKHOTextEdit);
+            this.groupBox1.Controls.Add(this.hOTENKHTextEdit);
+            this.groupBox1.Controls.Add(this.mAPXTextEdit);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(mAPXLabel);
-            this.groupBox1.Controls.Add(this.tbMaPX);
             this.groupBox1.Controls.Add(this.btnOK);
             this.groupBox1.Controls.Add(mAKHOLabel);
-            this.groupBox1.Controls.Add(this.tbMaKho);
             this.groupBox1.Controls.Add(hOTENKHLabel);
-            this.groupBox1.Controls.Add(this.tbKhachHang);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(39, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 343);
+            this.groupBox1.Size = new System.Drawing.Size(375, 343);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm phiếu xuất";
@@ -160,14 +137,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tbMaPX
-            // 
-            this.tbMaPX.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaPX.Location = new System.Drawing.Point(134, 168);
-            this.tbMaPX.Name = "tbMaPX";
-            this.tbMaPX.Size = new System.Drawing.Size(178, 22);
-            this.tbMaPX.TabIndex = 8;
-            // 
             // btnOK
             // 
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -178,53 +147,38 @@
             this.btnOK.TabIndex = 14;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // tbMaKho
-            // 
-            this.tbMaKho.Enabled = false;
-            this.tbMaKho.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaKho.Location = new System.Drawing.Point(134, 238);
-            this.tbMaKho.Name = "tbMaKho";
-            this.tbMaKho.Size = new System.Drawing.Size(178, 22);
-            this.tbMaKho.TabIndex = 12;
-            // 
-            // tbKhachHang
-            // 
-            this.tbKhachHang.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKhachHang.Location = new System.Drawing.Point(134, 203);
-            this.tbKhachHang.Name = "tbKhachHang";
-            this.tbKhachHang.Size = new System.Drawing.Size(178, 22);
-            this.tbKhachHang.TabIndex = 10;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // khoGridControl
             // 
             this.khoGridControl.DataSource = this.khoBindingSource;
             this.khoGridControl.Location = new System.Drawing.Point(403, 29);
-            this.khoGridControl.MainView = this.gridView1;
+            this.khoGridControl.MainView = this.gvKho;
             this.khoGridControl.Name = "khoGridControl";
             this.khoGridControl.Size = new System.Drawing.Size(434, 343);
             this.khoGridControl.TabIndex = 28;
             this.khoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvKho});
             // 
-            // gridView1
+            // gvKho
             // 
-            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Lime;
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvKho.Appearance.FocusedRow.BackColor = System.Drawing.Color.Lime;
+            this.gvKho.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvKho.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvKho.Appearance.Row.Options.UseFont = true;
+            this.gvKho.Appearance.Row.Options.UseTextOptions = true;
+            this.gvKho.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvKho.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKHO,
             this.colTENKHO,
             this.colDIACHI,
             this.colMACN});
-            this.gridView1.GridControl = this.khoGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowViewCaption = true;
-            this.gridView1.ViewCaption = "DANH SÁCH KHO";
+            this.gvKho.GridControl = this.khoGridControl;
+            this.gvKho.Name = "gvKho";
+            this.gvKho.OptionsView.ShowGroupPanel = false;
+            this.gvKho.OptionsView.ShowViewCaption = true;
+            this.gvKho.ViewCaption = "DANH SÁCH KHO";
+            this.gvKho.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colMAKHO
             // 
@@ -290,11 +244,73 @@
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 3;
             // 
+            // mAPXTextEdit
+            // 
+            this.mAPXTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "MAPX", true));
+            this.mAPXTextEdit.Location = new System.Drawing.Point(125, 168);
+            this.mAPXTextEdit.Name = "mAPXTextEdit";
+            this.mAPXTextEdit.Size = new System.Drawing.Size(175, 20);
+            this.mAPXTextEdit.TabIndex = 17;
+            // 
+            // hOTENKHTextEdit
+            // 
+            this.hOTENKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "HOTENKH", true));
+            this.hOTENKHTextEdit.Location = new System.Drawing.Point(125, 204);
+            this.hOTENKHTextEdit.Name = "hOTENKHTextEdit";
+            this.hOTENKHTextEdit.Size = new System.Drawing.Size(175, 20);
+            this.hOTENKHTextEdit.TabIndex = 18;
+            // 
+            // mAKHOTextEdit
+            // 
+            this.mAKHOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "MAKHO", true));
+            this.mAKHOTextEdit.Location = new System.Drawing.Point(125, 238);
+            this.mAKHOTextEdit.Name = "mAKHOTextEdit";
+            this.mAKHOTextEdit.Size = new System.Drawing.Size(175, 20);
+            this.mAKHOTextEdit.TabIndex = 19;
+            // 
+            // qLVT_DATHANGDataSet
+            // 
+            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
+            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // khoBindingSource
+            // 
+            this.khoBindingSource.DataMember = "Kho";
+            this.khoBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            // 
+            // khoTableAdapter
+            // 
+            this.khoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.CTDDHTableAdapter = null;
+            this.tableAdapterManager.CTPNTableAdapter = null;
+            this.tableAdapterManager.CTPXTableAdapter = null;
+            this.tableAdapterManager.DatHangTableAdapter = null;
+            this.tableAdapterManager.KhoTableAdapter = this.khoTableAdapter;
+            this.tableAdapterManager.NhanVienTableAdapter = null;
+            this.tableAdapterManager.PhieuNhapTableAdapter = null;
+            this.tableAdapterManager.PhieuXuatTableAdapter = this.phieuXuatTableAdapter;
+            this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
+            // 
+            // phieuXuatBindingSource
+            // 
+            this.phieuXuatBindingSource.DataMember = "PhieuXuat";
+            this.phieuXuatBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            // 
+            // phieuXuatTableAdapter
+            // 
+            this.phieuXuatTableAdapter.ClearBeforeFill = true;
+            // 
             // PhieuXuatSubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 384);
+            this.ClientSize = new System.Drawing.Size(857, 392);
             this.Controls.Add(this.khoGridControl);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -303,35 +319,41 @@
             this.Text = "PhieuXuatSubForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuXuatSubForm_FormClosing);
             this.Load += new System.EventHandler(this.PhieuXuatSubForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();
+            this.Shown += new System.EventHandler(this.PhieuXuatSubForm_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAPXTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOTENKHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHOTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuXuatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
-        private System.Windows.Forms.BindingSource khoBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter khoTableAdapter;
-        private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox tbMaPX;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.TextBox tbMaKho;
-        private System.Windows.Forms.TextBox tbKhachHang;
         private DevExpress.XtraGrid.GridControl khoGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvKho;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTENKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.TextEdit mAKHOTextEdit;
+        private DevExpress.XtraEditors.TextEdit hOTENKHTextEdit;
+        private DevExpress.XtraEditors.TextEdit mAPXTextEdit;
+        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
+        private System.Windows.Forms.BindingSource khoBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.KhoTableAdapter khoTableAdapter;
+        private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private QLVT_DATHANGDataSetTableAdapters.PhieuXuatTableAdapter phieuXuatTableAdapter;
+        private System.Windows.Forms.BindingSource phieuXuatBindingSource;
     }
 }

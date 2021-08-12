@@ -33,35 +33,38 @@
             System.Windows.Forms.Label dONGIALabel;
             System.Windows.Forms.Label mAVTLabel;
             System.Windows.Forms.Label mAPNLabel;
-            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
-            this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cTDDHTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter();
-            this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
             this.nuSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.cTPNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.nuDonGia = new System.Windows.Forms.NumericUpDown();
             this.tbMaVT = new System.Windows.Forms.TextBox();
             this.tbMaPN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.gcCTDDH = new DevExpress.XtraGrid.GridControl();
+            this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvCTDDH = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMasoDDH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cTPNTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter();
+            this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
+            this.cTDDHTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter();
             sOLUONGLabel = new System.Windows.Forms.Label();
             dONGIALabel = new System.Windows.Forms.Label();
             mAVTLabel = new System.Windows.Forms.Label();
             mAPNLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuSoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuDonGia)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDDH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,37 +104,9 @@
             mAPNLabel.TabIndex = 11;
             mAPNLabel.Text = "Mã Phiếu Nhập:";
             // 
-            // qLVT_DATHANGDataSet
-            // 
-            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
-            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cTDDHBindingSource
-            // 
-            this.cTDDHBindingSource.DataMember = "CTDDH";
-            this.cTDDHBindingSource.DataSource = this.qLVT_DATHANGDataSet;
-            // 
-            // cTDDHTableAdapter
-            // 
-            this.cTDDHTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChiNhanhTableAdapter = null;
-            this.tableAdapterManager.CTDDHTableAdapter = this.cTDDHTableAdapter;
-            this.tableAdapterManager.CTPNTableAdapter = null;
-            this.tableAdapterManager.CTPXTableAdapter = null;
-            this.tableAdapterManager.DatHangTableAdapter = null;
-            this.tableAdapterManager.KhoTableAdapter = null;
-            this.tableAdapterManager.NhanVienTableAdapter = null;
-            this.tableAdapterManager.PhieuNhapTableAdapter = null;
-            this.tableAdapterManager.PhieuXuatTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VattuTableAdapter = null;
-            // 
             // nuSoLuong
             // 
+            this.nuSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.cTPNBindingSource, "SOLUONG", true));
             this.nuSoLuong.Location = new System.Drawing.Point(135, 230);
             this.nuSoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nuSoLuong.Maximum = new decimal(new int[] {
@@ -154,21 +129,32 @@
             0,
             0});
             // 
-            // btnOK
+            // cTPNBindingSource
             // 
-            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOK.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(237, 320);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(87, 40);
-            this.btnOK.TabIndex = 18;
-            this.btnOK.Text = "Thoát";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.cTPNBindingSource.DataMember = "CTPN";
+            this.cTPNBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            // 
+            // qLVT_DATHANGDataSet
+            // 
+            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
+            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(237, 320);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(87, 40);
+            this.btnThoat.TabIndex = 18;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // nuDonGia
             // 
+            this.nuDonGia.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.cTPNBindingSource, "DONGIA", true));
             this.nuDonGia.DecimalPlaces = 2;
             this.nuDonGia.Increment = new decimal(new int[] {
             1,
@@ -189,6 +175,7 @@
             // 
             // tbMaVT
             // 
+            this.tbMaVT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cTPNBindingSource, "MAVT", true));
             this.tbMaVT.Enabled = false;
             this.tbMaVT.Location = new System.Drawing.Point(135, 184);
             this.tbMaVT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -198,6 +185,7 @@
             // 
             // tbMaPN
             // 
+            this.tbMaPN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cTPNBindingSource, "MAPN", true));
             this.tbMaPN.Enabled = false;
             this.tbMaPN.Location = new System.Drawing.Point(135, 139);
             this.tbMaPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -208,13 +196,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnOK);
             this.groupBox1.Controls.Add(this.tbMaPN);
             this.groupBox1.Controls.Add(sOLUONGLabel);
             this.groupBox1.Controls.Add(mAPNLabel);
             this.groupBox1.Controls.Add(this.nuSoLuong);
             this.groupBox1.Controls.Add(this.tbMaVT);
-            this.groupBox1.Controls.Add(this.btnOK);
+            this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(mAVTLabel);
             this.groupBox1.Controls.Add(dONGIALabel);
             this.groupBox1.Controls.Add(this.nuDonGia);
@@ -235,17 +223,18 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnOK
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(126, 320);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 40);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOK.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Location = new System.Drawing.Point(126, 320);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(87, 40);
+            this.btnOK.TabIndex = 20;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // gcCTDDH
             // 
@@ -258,6 +247,11 @@
             this.gcCTDDH.TabIndex = 21;
             this.gcCTDDH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTDDH});
+            // 
+            // cTDDHBindingSource
+            // 
+            this.cTDDHBindingSource.DataMember = "CTDDH";
+            this.cTDDHBindingSource.DataSource = this.qLVT_DATHANGDataSet;
             // 
             // gvCTDDH
             // 
@@ -285,6 +279,7 @@
             this.gvCTDDH.OptionsView.ShowGroupPanel = false;
             this.gvCTDDH.OptionsView.ShowViewCaption = true;
             this.gvCTDDH.ViewCaption = "CHI TIẾT ĐƠN ĐẶT HÀNG";
+            this.gvCTDDH.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCTDDH_RowClick);
             // 
             // colMasoDDH1
             // 
@@ -334,6 +329,29 @@
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 3;
             // 
+            // cTPNTableAdapter
+            // 
+            this.cTPNTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.CTDDHTableAdapter = this.cTDDHTableAdapter;
+            this.tableAdapterManager.CTPNTableAdapter = this.cTPNTableAdapter;
+            this.tableAdapterManager.CTPXTableAdapter = null;
+            this.tableAdapterManager.DatHangTableAdapter = null;
+            this.tableAdapterManager.KhoTableAdapter = null;
+            this.tableAdapterManager.NhanVienTableAdapter = null;
+            this.tableAdapterManager.PhieuNhapTableAdapter = null;
+            this.tableAdapterManager.PhieuXuatTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
+            // 
+            // cTDDHTableAdapter
+            // 
+            this.cTDDHTableAdapter.ClearBeforeFill = true;
+            // 
             // CTPNSubForm
             // 
             this.Appearance.Options.UseFont = true;
@@ -351,38 +369,41 @@
             this.Text = "Lập chi tiết phiếu nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CTPNSubForm_FormClosing);
             this.Load += new System.EventHandler(this.CTPNSubForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
+            this.Shown += new System.EventHandler(this.CTPNSubForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nuSoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuDonGia)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDDH)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
-        private System.Windows.Forms.BindingSource cTDDHBindingSource;
-        private QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
-        private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.NumericUpDown nuSoLuong;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.NumericUpDown nuDonGia;
         private System.Windows.Forms.TextBox tbMaVT;
         private System.Windows.Forms.TextBox tbMaPN;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOK;
         private DevExpress.XtraGrid.GridControl gcCTDDH;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCTDDH;
         private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
+        private System.Windows.Forms.BindingSource cTPNBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.CTPNTableAdapter cTPNTableAdapter;
+        private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private QLVT_DATHANGDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
+        private System.Windows.Forms.BindingSource cTDDHBindingSource;
     }
 }

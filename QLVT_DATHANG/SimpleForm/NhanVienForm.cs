@@ -156,7 +156,7 @@ namespace QLVT_DATHANG
             return ((DataRowView)bindingSource[bindingSource.Position])[column].ToString().Trim();
         }
 
-        //Button
+        //Bar Button
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             switchPanel("Thông tin", Properties.Resources.business__1_, gb_thongtinNV);
@@ -419,8 +419,87 @@ namespace QLVT_DATHANG
             nhanVienBindingSource.Position = position;
         }
 
+        //Khong cho MaNV empty
+        private void maNVNumericUpDown_Leave(object sender, EventArgs e)
+        {
+            if (maNVNumericUpDown.Text == "")
+            {
+                maNVNumericUpDown.Value = taoMaNVMoi();
+                maNVNumericUpDown.Text = maNVNumericUpDown.Value.ToString();
+            }
+        }
 
-        // CHUYEN CHI NHANH
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.gb_thongtinNV.Enabled = true;
+            position = nhanVienBindingSource.Position;
+            btnXoa.Enabled = btnThem.Enabled = btnEdit.Enabled = btnRefresh.Enabled = false;
+            btnExit.Enabled = btnChuyenCN.Enabled = btnSwitchPanel.Enabled = gcNhanVien.Enabled = false;
+            btnUndo.Enabled = btnLuu.Enabled = true;
+        }
+
+        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbChiNhanh.ValueMember != "")   //Xử lý trường hợp Event autorun khi vừa khởi chạy project
+            {
+                if (this.cbChiNhanh.SelectedValue != null && Program.servername != this.cbChiNhanh.SelectedValue.ToString()) //Khi enable FormNhanVien thì value = null nên lỗi
+                {
+                    Program.servername = this.cbChiNhanh.SelectedValue.ToString();
+                    if (Program.mloginDN != Program.remotelogin) //Why?
+                    {
+                        Program.mloginDN = Program.remotelogin;
+                        Program.passwordDN = Program.remotepassword;
+                    }
+                    else
+                    {
+                        Program.mloginDN = Program.mlogin;
+                        Program.passwordDN = Program.password;
+                    }
+                    try
+                    {
+                        Program.connstr = "Server=" + Program.servername + ";"
+                                        + "database=QLVT_DATHANG;"
+                                        + "User id=" + Program.mloginDN + ";"
+                                        + "Password=" + Program.passwordDN;
+                        Program.conn = new SqlConnection(Program.connstr);
+                        Program.conn.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Kết nối Server thất bại! " + ex.Message, "Notification", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.cTPXTableAdapter.Connection.ConnectionString = Program.connstr;
+
+                    this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
+                    this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
+                    this.cTDDHTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTDDH);
+                    this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
+                    this.cTPNTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPN);
+                    this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
+                    this.cTPXTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPX);
+
+                    //Đồng thời cập nhật cho Form Kho nếu thay đổi ConnectionString và Fill lại
+                    if (Program.khoForm != null)
+                    {
+
+                        Program.khoForm.khoTableAdapter.Connection.ConnectionString = Program.connstr;
+
+                        Program.khoForm.khoTableAdapter.Fill(Program.khoForm.getDataSet().Kho);
+
+                    }
+                }
+            }
+        }
+
+        // Chuyen CN
         private void btnChuyenCN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int positionNV = nhanVienBindingSource.Find("MANV", maNVNumericUpDown.Value);
@@ -517,12 +596,6 @@ namespace QLVT_DATHANG
             }
         }
 
-        private void btnExit_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
-
-
 
         private void btnDDH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -532,12 +605,11 @@ namespace QLVT_DATHANG
         }
 
 
-        // SWITCH PANEL
+        // Panel Don hang/Thong tin
         private void btnInfo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             switchPanel("Thông tin", Properties.Resources.business__1_, gb_thongtinNV);
         }
-
 
         private void btnPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -552,7 +624,6 @@ namespace QLVT_DATHANG
             //Đồng thời cho con trỏ chuột về đúng vị trí NV đang login
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
-
 
         private void switchPanel(string caption, Bitmap image, GroupBox groupBox)
         {
@@ -599,12 +670,25 @@ namespace QLVT_DATHANG
         {
             Program.dDHSubForm = new SubForm.DDHSubForm();
             Program.dDHSubForm.Show();
-
-
             Program.mainForm.Enabled = false;
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
 
+        private void gcDDH_MouseHover(object sender, EventArgs e)
+        {
+            if (Program.group == "CHINHANH" || Program.group == "USER")
+            {
+                gcDDH.ContextMenuStrip = (datHangBindingSource.Count == 0) ? cmsDDH : null;
+            }
+        }
+
+        private void tsmiThemDDH_Click(object sender, EventArgs e)
+        {
+            Program.dDHSubForm = new SubForm.DDHSubForm();
+            Program.dDHSubForm.Show();
+            Program.mainForm.Enabled = false;
+            nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
+        }
 
         //CHI TIET DDH
 
@@ -622,13 +706,6 @@ namespace QLVT_DATHANG
             }
         }
 
-        private void menuAddChiTietDDH_Click(object sender, EventArgs e)//MenuItem của PopupMenu
-        {
-            Program.cTDDHSubForm = new SubForm.CTDDHSubForm();
-            Program.cTDDHSubForm.Show();
-            Program.mainForm.Enabled = false;
-        }
-
         private bool kiemTraCTDDHCuaNV()
         {
             int maNVLapDDH = 0;
@@ -637,6 +714,13 @@ namespace QLVT_DATHANG
                 maNVLapDDH = int.Parse(gvDDH.GetRowCellValue(datHangBindingSource.Position, "MANV").ToString().Trim());
             }
             return (maNVLapDDH == Program.manv);
+        }
+
+        private void menuAddChiTietDDH_Click(object sender, EventArgs e)//MenuItem của PopupMenu
+        {
+            Program.cTDDHSubForm = new SubForm.CTDDHSubForm();
+            Program.cTDDHSubForm.Show();
+            Program.mainForm.Enabled = false;
         }
 
         private void menuAddPN_Click(object sender, EventArgs e)
@@ -695,6 +779,13 @@ namespace QLVT_DATHANG
             }
         }
 
+        private void smiAddPN_Click(object sender, EventArgs e)
+        {
+            Program.phieuNhapSubForm = new SubForm.PhieuNhapSubForm();
+            Program.phieuNhapSubForm.Show();
+            Program.mainForm.Enabled = false;
+        }
+
         private void menuAddCTPN_Click(object sender, EventArgs e)
         {
             if (cTDDHBindingSource.Count == 0)
@@ -703,21 +794,14 @@ namespace QLVT_DATHANG
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (cTDDHBindingSource.Count == cTDDHBindingSource.Count)
+            else if (cTDDHBindingSource.Count == cTPNBindingSource.Count)
             {
                 MessageBox.Show("Đơn đặt hàng này đã lập đủ Chi Tiết Phiếu Nhập!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Program.phieuNhapSubForm = new SubForm.PhieuNhapSubForm();
-            Program.phieuNhapSubForm.Show();
-            Program.mainForm.Enabled = false;
-        }
-
-        private void smiAddPN_Click(object sender, EventArgs e)
-        {
-            Program.phieuNhapSubForm = new SubForm.PhieuNhapSubForm();
-            Program.phieuNhapSubForm.Show();
+            Program.cTPNSubForm = new SubForm.CTPNSubForm();
+            Program.cTPNSubForm.Show();
             Program.mainForm.Enabled = false;
         }
 
@@ -783,6 +867,20 @@ namespace QLVT_DATHANG
             }
         }
 
+        private void phieuXuatGridControl_MouseHover(object sender, EventArgs e)
+        {
+            if (Program.group == "CHINHANH" || Program.group == "USER")
+            {
+                phieuXuatGridControl.ContextMenuStrip = (phieuXuatBindingSource.Count == 0) ? cmsPX : null;
+            }
+        }
+        private void tsmiPX_Click(object sender, EventArgs e)
+        {
+            Program.phieuXuatSubForm = new SubForm.PhieuXuatSubForm();
+            Program.phieuXuatSubForm.Show();
+            Program.mainForm.Enabled = false;
+            nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
+        }
 
         private void menuAddPX_Click(object sender, EventArgs e)
         {
@@ -791,13 +889,13 @@ namespace QLVT_DATHANG
             Program.mainForm.Enabled = false;
             nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
         }
-        private void smiAddPX_Click(object sender, EventArgs e)
-        {
-            Program.phieuXuatSubForm = new SubForm.PhieuXuatSubForm();
-            Program.phieuXuatSubForm.Show();
-            Program.mainForm.Enabled = false;
-            nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
-        }
+        //private void smiAddPX_Click(object sender, EventArgs e)
+        //{
+        //    Program.phieuXuatSubForm = new SubForm.PhieuXuatSubForm();
+        //    Program.phieuXuatSubForm.Show();
+        //    Program.mainForm.Enabled = false;
+        //    nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
+        //}
 
         // CHI TIET PHIEU XUAT
 
@@ -833,7 +931,7 @@ namespace QLVT_DATHANG
             Program.mainForm.Enabled = false;
         }
 
-        //Getter-Setter các DataSet và BindingSource
+        // Getter/Setter
         public BindingSource getDatHangBDS()
         {
             return this.datHangBindingSource;
@@ -863,99 +961,5 @@ namespace QLVT_DATHANG
             return this.qLVT_DATHANGDataSet;
         }
 
-        private void maNVNumericUpDown_Leave(object sender, EventArgs e)
-        {
-            if (maNVNumericUpDown.Text == "")
-            {
-                maNVNumericUpDown.Value = taoMaNVMoi();
-                maNVNumericUpDown.Text = maNVNumericUpDown.Value.ToString();
-            }
-        }
-
-        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.gb_thongtinNV.Enabled = true;
-            position = nhanVienBindingSource.Position;
-            btnXoa.Enabled = btnThem.Enabled = btnEdit.Enabled = btnRefresh.Enabled = false;
-            btnExit.Enabled = btnChuyenCN.Enabled = btnSwitchPanel.Enabled = gcNhanVien.Enabled = false;
-            btnUndo.Enabled = btnLuu.Enabled = true;
-        }
-
-        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.cbChiNhanh.ValueMember != "")   //Xử lý trường hợp Event autorun khi vừa khởi chạy project
-            {
-                if (this.cbChiNhanh.SelectedValue != null && Program.servername != this.cbChiNhanh.SelectedValue.ToString()) //Khi enable FormNhanVien thì value = null nên lỗi
-                {
-                    Program.servername = this.cbChiNhanh.SelectedValue.ToString();
-                    if (Program.mloginDN != Program.remotelogin) //Why?
-                    {
-                        Program.mloginDN = Program.remotelogin;
-                        Program.passwordDN = Program.remotepassword;
-                    }
-                    else
-                    {
-                        Program.mloginDN = Program.mlogin;
-                        Program.passwordDN = Program.password;
-                    }
-                    try
-                    {
-                        Program.connstr = "Server=" + Program.servername + ";"
-                                        + "database=QLVT_DATHANG;"
-                                        + "User id=" + Program.mloginDN + ";"
-                                        + "Password=" + Program.passwordDN;
-                        Program.conn = new SqlConnection(Program.connstr);
-                        Program.conn.Open();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Kết nối Server thất bại! " + ex.Message, "Notification", MessageBoxButtons.OK);
-                        return;
-                    }
-
-                    this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.cTDDHTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.cTPNTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.cTPXTableAdapter.Connection.ConnectionString = Program.connstr;
-
-                    this.nhanVienTableAdapter.Fill(this.qLVT_DATHANGDataSet.NhanVien);
-                    this.datHangTableAdapter.Fill(this.qLVT_DATHANGDataSet.DatHang);
-                    this.cTDDHTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTDDH);
-                    this.phieuNhapTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuNhap);
-                    this.cTPNTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPN);
-                    this.phieuXuatTableAdapter.Fill(this.qLVT_DATHANGDataSet.PhieuXuat);
-                    this.cTPXTableAdapter.Fill(this.qLVT_DATHANGDataSet.CTPX);
-
-                    //Đồng thời cập nhật cho Form Kho nếu thay đổi ConnectionString và Fill lại
-                    if (Program.khoForm != null)
-                    {
-
-                        Program.khoForm.khoTableAdapter.Connection.ConnectionString = Program.connstr;
-
-                        Program.khoForm.khoTableAdapter.Fill(Program.khoForm.getDataSet().Kho);
-
-                    }
-                }
-            }
-        }
-
-        private void gcDDH_MouseHover(object sender, EventArgs e)
-        {
-            if (Program.group == "CHINHANH" || Program.group == "USER")
-            {
-                gcDDH.ContextMenuStrip = (datHangBindingSource.Count == 0) ? cmsDDH : null;
-            }
-        }
-
-        private void tsmiThemDDH_Click(object sender, EventArgs e)
-        {
-            Program.dDHSubForm = new SubForm.DDHSubForm();
-            Program.dDHSubForm.Show();
-            Program.mainForm.Enabled = false;
-            nhanVienBindingSource.Position = nhanVienBindingSource.Find("MANV", Program.manv);
-        }
     }
 }
