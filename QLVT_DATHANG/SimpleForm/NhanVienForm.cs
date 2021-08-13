@@ -236,10 +236,10 @@ namespace QLVT_DATHANG
                 int result = int.Parse(dataReader.GetValue(0).ToString());
                 dataReader.Close();
 
-                int positionMANV = nhanVienBindingSource.Find("MANV", maNVNumericUpDown.Value);
+                //int positionMANV = nhanVienBindingSource.Find("MANV", maNVNumericUpDown.Value);
                 int postionCurrent = nhanVienBindingSource.Position;
                 //Bỏ qua TH tồn tại ở CN hiện tại khi vị trí MANV đang nhập đúng băng vị trí đang đứng
-                if (result == 1 && (positionMANV != postionCurrent))
+                if (result == 1)
                 {
                     MessageBox.Show("Mã NV đã tồn tại!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -259,7 +259,7 @@ namespace QLVT_DATHANG
                             btnUndo.Enabled = gb_thongtinNV.Enabled = btnLuu.Enabled = false;
                             this.nhanVienBindingSource.EndEdit();
                             this.nhanVienTableAdapter.Update(this.qLVT_DATHANGDataSet.NhanVien);
-                            nhanVienBindingSource.Position = positionMANV;
+                            //nhanVienBindingSource.Position = positionMANV;
                             pnThongBao.Visible = true;
                             lbThongBao.Text = "Thêm mới hoặc cập nhật thông tin nhân viên thành công. ";
 

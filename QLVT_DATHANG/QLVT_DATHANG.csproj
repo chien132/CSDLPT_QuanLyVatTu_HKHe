@@ -107,11 +107,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLVT_DATHANGDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLVT_DATHANGDataSet_NVTrung.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLVT_DATHANGDataSet_NVTrung.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SimpleForm\KhoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,17 +328,6 @@
     <None Include="Resources\invoice.png" />
     <None Include="Resources\export.png" />
     <None Include="Resources\packing-list.png" />
-    <None Include="QLVT_DATHANGDataSet_NVTrung.xsc">
-      <DependentUpon>QLVT_DATHANGDataSet_NVTrung.xsd</DependentUpon>
-    </None>
-    <None Include="QLVT_DATHANGDataSet_NVTrung.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLVT_DATHANGDataSet_NVTrung.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLVT_DATHANGDataSet_NVTrung.xss">
-      <DependentUpon>QLVT_DATHANGDataSet_NVTrung.xsd</DependentUpon>
-    </None>
     <None Include="Resources\plus32.png" />
     <None Include="Resources\inventor.png" />
     <None Include="Resources\supply-chain %281%29.png" />

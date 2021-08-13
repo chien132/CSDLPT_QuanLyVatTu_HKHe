@@ -30,15 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NVTrungIncurredForm));
-            this.qLVT_DATHANGDataSet_NVTrung = new QLVT_DATHANG.QLVT_DATHANGDataSet_NVTrung();
             this.sP_CheckNVTrungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_CheckNVTrungTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSet_NVTrungTableAdapters.SP_CheckNVTrungTableAdapter();
-            this.tableAdapterManager = new QLVT_DATHANG.QLVT_DATHANGDataSet_NVTrungTableAdapters.TableAdapterManager();
-            this.fillToolStrip = new System.Windows.Forms.ToolStrip();
-            this.mANVToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.mANVToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.sP_CheckNVTrungGridControl = new DevExpress.XtraGrid.GridControl();
+            this.sP_ListNVTrungChuyenChiNhanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVT_DATHANGDataSet = new QLVT_DATHANG.QLVT_DATHANGDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,75 +44,37 @@
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrangThaiXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_NVTrung)).BeginInit();
+            this.sP_ListNVTrungChuyenChiNhanhTableAdapter = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.SP_ListNVTrungChuyenChiNhanhTableAdapter();
+            this.tableAdapterManager1 = new QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnReplace = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CheckNVTrungBindingSource)).BeginInit();
-            this.fillToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CheckNVTrungGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_ListNVTrungChuyenChiNhanhBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // qLVT_DATHANGDataSet_NVTrung
-            // 
-            this.qLVT_DATHANGDataSet_NVTrung.DataSetName = "QLVT_DATHANGDataSet_NVTrung";
-            this.qLVT_DATHANGDataSet_NVTrung.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_CheckNVTrungBindingSource
-            // 
-            this.sP_CheckNVTrungBindingSource.DataMember = "SP_CheckNVTrung";
-            this.sP_CheckNVTrungBindingSource.DataSource = this.qLVT_DATHANGDataSet_NVTrung;
-            // 
-            // sP_CheckNVTrungTableAdapter
-            // 
-            this.sP_CheckNVTrungTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSet_NVTrungTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // fillToolStrip
-            // 
-            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mANVToolStripLabel,
-            this.mANVToolStripTextBox,
-            this.fillToolStripButton});
-            this.fillToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillToolStrip.Name = "fillToolStrip";
-            this.fillToolStrip.Size = new System.Drawing.Size(773, 25);
-            this.fillToolStrip.TabIndex = 1;
-            this.fillToolStrip.Text = "fillToolStrip";
-            // 
-            // mANVToolStripLabel
-            // 
-            this.mANVToolStripLabel.Name = "mANVToolStripLabel";
-            this.mANVToolStripLabel.Size = new System.Drawing.Size(45, 22);
-            this.mANVToolStripLabel.Text = "MANV:";
-            // 
-            // mANVToolStripTextBox
-            // 
-            this.mANVToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.mANVToolStripTextBox.Name = "mANVToolStripTextBox";
-            this.mANVToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillToolStripButton
-            // 
-            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillToolStripButton.Name = "fillToolStripButton";
-            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
-            this.fillToolStripButton.Text = "Fill";
-            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
-            // 
             // sP_CheckNVTrungGridControl
             // 
-            this.sP_CheckNVTrungGridControl.DataSource = this.sP_CheckNVTrungBindingSource;
-            this.sP_CheckNVTrungGridControl.Location = new System.Drawing.Point(21, 30);
+            this.sP_CheckNVTrungGridControl.DataSource = this.sP_ListNVTrungChuyenChiNhanhBindingSource;
+            this.sP_CheckNVTrungGridControl.Location = new System.Drawing.Point(12, 12);
             this.sP_CheckNVTrungGridControl.MainView = this.gridView1;
             this.sP_CheckNVTrungGridControl.Name = "sP_CheckNVTrungGridControl";
-            this.sP_CheckNVTrungGridControl.Size = new System.Drawing.Size(726, 164);
+            this.sP_CheckNVTrungGridControl.Size = new System.Drawing.Size(749, 241);
             this.sP_CheckNVTrungGridControl.TabIndex = 2;
             this.sP_CheckNVTrungGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // sP_ListNVTrungChuyenChiNhanhBindingSource
+            // 
+            this.sP_ListNVTrungChuyenChiNhanhBindingSource.DataMember = "SP_ListNVTrungChuyenChiNhanh";
+            this.sP_ListNVTrungChuyenChiNhanhBindingSource.DataSource = this.qLVT_DATHANGDataSet;
+            // 
+            // qLVT_DATHANGDataSet
+            // 
+            this.qLVT_DATHANGDataSet.DataSetName = "QLVT_DATHANGDataSet";
+            this.qLVT_DATHANGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -212,39 +169,73 @@
             this.colrowguid.FieldName = "rowguid";
             this.colrowguid.Name = "colrowguid";
             // 
+            // sP_ListNVTrungChuyenChiNhanhTableAdapter
+            // 
+            this.sP_ListNVTrungChuyenChiNhanhTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.CTDDHTableAdapter = null;
+            this.tableAdapterManager1.CTPNTableAdapter = null;
+            this.tableAdapterManager1.CTPXTableAdapter = null;
+            this.tableAdapterManager1.DatHangTableAdapter = null;
+            this.tableAdapterManager1.KhoTableAdapter = null;
+            this.tableAdapterManager1.NhanVienTableAdapter = null;
+            this.tableAdapterManager1.PhieuNhapTableAdapter = null;
+            this.tableAdapterManager1.PhieuXuatTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = QLVT_DATHANG.QLVT_DATHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.VattuTableAdapter = null;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNew.Location = new System.Drawing.Point(529, 268);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(107, 33);
+            this.btnNew.TabIndex = 8;
+            this.btnNew.Text = "Tạo mới";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnReplace
+            // 
+            this.btnReplace.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReplace.Location = new System.Drawing.Point(653, 268);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(107, 33);
+            this.btnReplace.TabIndex = 7;
+            this.btnReplace.Text = "Ghi đè";
+            this.btnReplace.UseVisualStyleBackColor = true;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            // 
             // NVTrungIncurredForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 416);
+            this.ClientSize = new System.Drawing.Size(773, 316);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.btnReplace);
             this.Controls.Add(this.sP_CheckNVTrungGridControl);
-            this.Controls.Add(this.fillToolStrip);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("NVTrungIncurredForm.IconOptions.Image")));
             this.Name = "NVTrungIncurredForm";
             this.Text = "Nhân viên trùng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NVTrungIncurredForm_FormClosing);
             this.Load += new System.EventHandler(this.NVTrungIncurredForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet_NVTrung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CheckNVTrungBindingSource)).EndInit();
-            this.fillToolStrip.ResumeLayout(false);
-            this.fillToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CheckNVTrungGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_ListNVTrungChuyenChiNhanhBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DATHANGDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private QLVT_DATHANGDataSet_NVTrung qLVT_DATHANGDataSet_NVTrung;
         private System.Windows.Forms.BindingSource sP_CheckNVTrungBindingSource;
-        private QLVT_DATHANGDataSet_NVTrungTableAdapters.SP_CheckNVTrungTableAdapter sP_CheckNVTrungTableAdapter;
-        private QLVT_DATHANGDataSet_NVTrungTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ToolStrip fillToolStrip;
-        private System.Windows.Forms.ToolStripLabel mANVToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox mANVToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillToolStripButton;
         private DevExpress.XtraGrid.GridControl sP_CheckNVTrungGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
@@ -256,5 +247,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
         private DevExpress.XtraGrid.Columns.GridColumn colTrangThaiXoa;
         private DevExpress.XtraGrid.Columns.GridColumn colrowguid;
+        private QLVT_DATHANGDataSet qLVT_DATHANGDataSet;
+        private System.Windows.Forms.BindingSource sP_ListNVTrungChuyenChiNhanhBindingSource;
+        private QLVT_DATHANGDataSetTableAdapters.SP_ListNVTrungChuyenChiNhanhTableAdapter sP_ListNVTrungChuyenChiNhanhTableAdapter;
+        private QLVT_DATHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnReplace;
     }
 }

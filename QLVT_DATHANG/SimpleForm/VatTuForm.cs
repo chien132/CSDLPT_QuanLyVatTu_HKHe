@@ -39,7 +39,7 @@ namespace QLVT_DATHANG
                 btnUndo.Links[0].Visible = false;
             }
             //Mặc định vừa vào groupbox không dx hiện để tránh lỗi sửa các dòng cũ chưa lưu đi qua dòng khác
-            btnUndo.Enabled = btnLuu.Enabled = false;
+            btnUndo.Enabled = btnLuu.Enabled = gbChiTietVT.Enabled= false;
             Program.flagCloseFormVT = true; //Khi load bật cho phép có thể đóng form
 
         }
